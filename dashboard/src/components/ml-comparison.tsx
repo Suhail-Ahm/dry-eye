@@ -394,7 +394,7 @@ export function MLComparison({ data }: MLComparisonProps) {
                     <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                     <XAxis dataKey="metric" tick={{ fontSize: 10, fill: "#64748b" }} axisLine={{ stroke: "#e2e8f0" }} tickLine={false} />
                     <YAxis tick={{ fontSize: 10, fill: "#64748b" }} axisLine={false} tickLine={false} domain={[40, 100]} tickFormatter={(v) => `${v}%`} />
-                    <Tooltip contentStyle={TT} formatter={(v: number) => [`${v}%`, ""]} />
+                    <Tooltip contentStyle={TT} wrapperStyle={{ zIndex: 100 }} formatter={(v: number) => [`${v}%`, ""]} />
                     <Legend iconType="circle" iconSize={6} wrapperStyle={{ fontSize: "10px" }} />
                     {data.models.map((m: any) => (
                       <Bar key={m.name} dataKey={m.name} fill={m.color} radius={[3, 3, 0, 0]} />
@@ -421,7 +421,7 @@ export function MLComparison({ data }: MLComparisonProps) {
                     <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                     <XAxis dataKey="fpr" tick={{ fontSize: 10, fill: "#64748b" }} axisLine={{ stroke: "#e2e8f0" }} tickLine={false} label={{ value: "FPR", position: "insideBottom", offset: -5, fontSize: 10, fill: "#94a3b8" }} />
                     <YAxis tick={{ fontSize: 10, fill: "#64748b" }} axisLine={false} tickLine={false} label={{ value: "TPR", angle: -90, position: "insideLeft", fontSize: 10, fill: "#94a3b8" }} />
-                    <Tooltip contentStyle={TT} />
+                    <Tooltip contentStyle={TT} wrapperStyle={{ zIndex: 100 }} />
                     <Legend iconType="line" iconSize={12} wrapperStyle={{ fontSize: "10px" }} />
                     <Line dataKey="fpr" name="Random" stroke="#e2e8f0" strokeDasharray="5 5" strokeWidth={1} dot={false} />
                     {data.roc_curves.map((c: any) => (
@@ -453,7 +453,7 @@ export function MLComparison({ data }: MLComparisonProps) {
                       <Radar key={m.name} name={m.name} dataKey={m.name} stroke={m.color} fill={m.color} fillOpacity={0.06} strokeWidth={2} />
                     ))}
                     <Legend iconType="line" iconSize={12} wrapperStyle={{ fontSize: "10px" }} />
-                    <Tooltip contentStyle={TT} formatter={(v: number) => [`${v}%`, ""]} />
+                    <Tooltip contentStyle={TT} wrapperStyle={{ zIndex: 100 }} formatter={(v: number) => [`${v}%`, ""]} />
                   </RadarChart>
                 </ResponsiveContainer>
               </CardContent>
@@ -497,7 +497,7 @@ export function MLComparison({ data }: MLComparisonProps) {
                       <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
                       <XAxis type="number" tick={{ fontSize: 10, fill: "#64748b" }} axisLine={false} tickLine={false} />
                       <YAxis type="category" dataKey="name" tick={{ fontSize: 10, fill: "#334155" }} axisLine={false} tickLine={false} width={140} />
-                      <Tooltip contentStyle={TT} formatter={(v: number) => [v.toFixed(4), "Importance"]} />
+                      <Tooltip contentStyle={TT} wrapperStyle={{ zIndex: 100 }} formatter={(v: number) => [v.toFixed(4), "Importance"]} />
                       <Bar dataKey="importance" radius={[0, 6, 6, 0]}>
                         {selected.feature_importance.map((_: any, i: number) => (
                           <Cell key={i} fill={selected.color} opacity={1 - i * 0.07} />

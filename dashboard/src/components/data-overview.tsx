@@ -30,9 +30,10 @@ const STAT_TIPS: Record<string, string> = {
 };
 
 const TABS = [
-  { id: "table", icon: "📋", label: "Statistics Table" },
-  { id: "dist", icon: "📊", label: "Distribution Comparison" },
-  { id: "box", icon: "📦", label: "Box Plot Analysis" },
+  { id: "table", icon: "📋", label: "Numeric Stats" },
+  { id: "categorical", icon: "✅", label: "Categorical Stats" },
+  { id: "dist", icon: "📊", label: "Distribution" },
+  { id: "box", icon: "📦", label: "Box Plots" },
 ];
 
 /* ── Quick Insight Pill ─────────────────────────────────────────────── */
@@ -54,9 +55,10 @@ interface DataOverviewProps {
   summaryTable: any[];
   distributionComparison: any[];
   boxPlots: any[];
+  categoricalSummary?: any[];
 }
 
-export function DataOverview({ summaryTable, distributionComparison, boxPlots }: DataOverviewProps) {
+export function DataOverview({ summaryTable, distributionComparison, boxPlots, categoricalSummary }: DataOverviewProps) {
   const [selectedFeature, setSelectedFeature] = useState(0);
   const [activeTab, setActiveTab] = useState("table");
   const [highlightRow, setHighlightRow] = useState<string | null>(null);
@@ -80,9 +82,10 @@ export function DataOverview({ summaryTable, distributionComparison, boxPlots }:
       className="space-y-5"
     >
       {/* ── Hero Stats Row ──────────────────────────────────── */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
         <InsightPill label="Numeric Features" value={`${totalFeatures}`} color="#3b82f6" />
-        <InsightPill label="Records Each" value={totalRecords.toLocaleString()} color="#10b981" />
+        <InsightPill label="Binary/Cat Features" value={`${categoricalSummary?.length || 15}`} color="#10b981" />
+        <InsightPill label="Records" value={totalRecords.toLocaleString()} color="#06b6d4" />
         <InsightPill label="Avg Spread (σ)" value={avgStd} color="#f59e0b" />
         <InsightPill label="Widest Range" value={`${maxRange.feature}`} color="#8b5cf6" />
       </div>
@@ -209,6 +212,94 @@ export function DataOverview({ summaryTable, distributionComparison, boxPlots }:
             </Card>
           )}
 
+          {/* ━━━ Categorical Stats ━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+          {activeTab === "categorical" && categoricalSummary && (
+            <Card className="shadow-sm border-border/30">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-bold">
+                  Categorical / Binary Features — {categoricalSummary.length} Columns
+                </CardTitle>
+                <p className="text-[11px] text-muted-foreground/60">
+                  Value distributions and dry eye prevalence for all non-numeric attributes
+                </p>
+              </CardHeader>
+              <CardContent>
+                {/* Learn hint */}
+                <motion.div
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-2 bg-emerald-50/60 border border-emerald-100/60 rounded-lg px-3 py-2.5 mb-4"
+                >
+                  <span className="text-sm shrink-0 mt-0.5">💡</span>
+                  <p className="text-[11px] text-emerald-700/70 leading-relaxed">
+                    <strong>How to read:</strong> For each feature, the bars show the proportion of each value.
+                    The <strong className="text-red-500">dry eye rate</strong> next to each value tells you whether that
+                    group has higher or lower prevalence than the dataset average (65.2%). Large differences = potential risk factors.
+                  </p>
+                </motion.div>
+
+                <div className="space-y-3">
+                  {categoricalSummary.map((feat: any) => (
+                    <motion.div
+                      key={feat.feature}
+                      initial={{ opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="rounded-lg border border-border/30 p-4 hover:bg-slate-50/30 transition-colors"
+                    >
+                      <div className="flex items-center gap-2 mb-2.5">
+                        <span className="text-xs">✅</span>
+                        <p className="text-xs font-bold flex-1">{feat.feature}</p>
+                        <Badge variant="secondary" className="text-[8px]">{feat.type}</Badge>
+                        <span className="text-[9px] text-muted-foreground/50">
+                          Mode: <strong className="text-foreground">{feat.mode}</strong> ({feat.mode_pct}%)
+                        </span>
+                      </div>
+
+                      <div className="space-y-1.5">
+                        {feat.values.map((v: any) => (
+                          <div key={v.value} className="flex items-center gap-2">
+                            <span className="text-[10px] font-medium w-24 truncate shrink-0 text-right">
+                              {v.value}
+                            </span>
+                            <div className="flex-1 h-5 bg-slate-100 rounded-full overflow-hidden relative">
+                              <motion.div
+                                initial={{ width: 0 }}
+                                animate={{ width: `${v.pct}%` }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                className="h-full rounded-full"
+                                style={{
+                                  background: v.dry_eye_rate !== null
+                                    ? v.dry_eye_rate > 66 ? "#ef444480" : v.dry_eye_rate > 64 ? "#3b82f680" : "#22c55e80"
+                                    : "#94a3b880"
+                                }}
+                              />
+                              <span className="absolute inset-0 flex items-center px-2 text-[9px] font-medium text-foreground/70">
+                                {v.count.toLocaleString()} ({v.pct}%)
+                              </span>
+                            </div>
+                            {v.dry_eye_rate !== null && (
+                              <span className={`text-[9px] font-bold tabular-nums w-12 text-right ${
+                                v.dry_eye_rate > 66 ? "text-red-500" : v.dry_eye_rate > 64 ? "text-slate-500" : "text-emerald-500"
+                              }`}>
+                                {v.dry_eye_rate}%
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <p className="text-[10px] text-muted-foreground/40 mt-3 text-center">
+                  Dry eye rates: <span className="text-red-400 font-semibold">red</span> = above avg (66%+),
+                  <span className="text-emerald-400 font-semibold"> green</span> = below avg (&lt;64%),
+                  <span className="text-slate-400 font-semibold"> grey</span> = near average
+                </p>
+              </CardContent>
+            </Card>
+          )}
+
           {/* ━━━ Distribution Comparison ━━━━━━━━━━━━━━━━━━━━━ */}
           {activeTab === "dist" && (
             <Card className="shadow-sm border-border/30">
@@ -271,7 +362,7 @@ export function DataOverview({ summaryTable, distributionComparison, boxPlots }:
                         <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                         <XAxis dataKey="range" tick={AX} axisLine={{ stroke: "#e2e8f0" }} tickLine={false} />
                         <YAxis tick={AX} axisLine={false} tickLine={false} />
-                        <Tooltip contentStyle={TT} formatter={(v: number) => [v.toLocaleString(), ""]} />
+                        <Tooltip contentStyle={TT} wrapperStyle={{ zIndex: 100 }} formatter={(v: number) => [v.toLocaleString(), ""]} />
                         <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: "11px" }} />
                         <Bar dataKey="Dry Eye" fill="#3b82f6" radius={[3, 3, 0, 0]} opacity={0.85} />
                         <Bar dataKey="No Dry Eye" fill="#f59e0b" radius={[3, 3, 0, 0]} opacity={0.85} />

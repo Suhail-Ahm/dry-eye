@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { LearnHint } from "@/components/learn-tooltip";
 import {
   BarChart,
   Bar,
@@ -92,6 +93,7 @@ export function FeatureImportance({ data }: FeatureImportanceProps) {
         </p>
       </CardHeader>
       <CardContent>
+          <LearnHint text="Features are ranked by association strength with dry eye: Cramér's V for categorical features and |Point-Biserial r| for numeric ones. Taller bars = stronger statistical relationship. All features shown have p < 0.05 (statistically significant)." />
         <ResponsiveContainer width="100%" height={480}>
           <BarChart data={chartData} layout="vertical" barSize={18} margin={{ left: 20 }}>
             <CartesianGrid
@@ -116,6 +118,7 @@ export function FeatureImportance({ data }: FeatureImportanceProps) {
             />
             <Tooltip
               contentStyle={TOOLTIP_STYLE}
+              wrapperStyle={{ zIndex: 100 }}
               formatter={(value: number, _name: string, props: { payload: { type: string; pValue: number } }) => {
                 const { type, pValue } = props.payload;
                 return [

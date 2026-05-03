@@ -434,6 +434,66 @@
       ]
     },
     {
+      "feature": "Sleep quality",
+      "data": [
+        {
+          "range": "0",
+          "Dry Eye": 2624,
+          "No Dry Eye": 1379
+        },
+        {
+          "range": "2",
+          "Dry Eye": 2606,
+          "No Dry Eye": 1389
+        },
+        {
+          "range": "2",
+          "Dry Eye": 2616,
+          "No Dry Eye": 1408
+        },
+        {
+          "range": "4",
+          "Dry Eye": 2631,
+          "No Dry Eye": 1379
+        },
+        {
+          "range": "4",
+          "Dry Eye": 2560,
+          "No Dry Eye": 1408
+        }
+      ]
+    },
+    {
+      "feature": "Stress level",
+      "data": [
+        {
+          "range": "0",
+          "Dry Eye": 2614,
+          "No Dry Eye": 1398
+        },
+        {
+          "range": "2",
+          "Dry Eye": 2531,
+          "No Dry Eye": 1398
+        },
+        {
+          "range": "2",
+          "Dry Eye": 2713,
+          "No Dry Eye": 1418
+        },
+        {
+          "range": "4",
+          "Dry Eye": 2607,
+          "No Dry Eye": 1421
+        },
+        {
+          "range": "4",
+          "Dry Eye": 2572,
+          "No Dry Eye": 1328
+        }
+      ]
+    },
+    {
       "feature": "Average screen time",
       "data": [
         {
@@ -574,6 +634,86 @@
       ]
     },
     {
+      "feature": "BP_Systolic",
+      "data": [
+        {
+          "range": "100",
+          "Dry Eye": 2475,
+          "No Dry Eye": 1431
+        },
+        {
+          "range": "110",
+          "Dry Eye": 2568,
+          "No Dry Eye": 1336
+        },
+        {
+          "range": "120",
+          "Dry Eye": 2568,
+          "No Dry Eye": 1379
+        },
+        {
+          "range": "130",
+          "Dry Eye": 2578,
+          "No Dry Eye": 1319
+        },
+        {
+          "range": "140",
+          "Dry Eye": 272,
+          "No Dry Eye": 138
+        },
+        {
+          "range": "150",
+          "Dry Eye": 0,
+          "No Dry Eye": 0
+        },
+        {
+          "range": "160",
+          "Dry Eye": 0,
+          "No Dry Eye": 0
+        }
+      ]
+    },
+    {
+      "feature": "BP_Diastolic",
+      "data": [
+        {
+          "range": "60",
+          "Dry Eye": 3420,
+          "No Dry Eye": 1750
+        },
+        {
+          "range": "68",
+          "Dry Eye": 3317,
+          "No Dry Eye": 1869
+        },
+        {
+          "range": "76",
+          "Dry Eye": 3329,
+          "No Dry Eye": 1749
+        },
+        {
+          "range": "84",
+          "Dry Eye": 2971,
+          "No Dry Eye": 1595
+        },
+        {
+          "range": "92",
+          "Dry Eye": 0,
+          "No Dry Eye": 0
+        },
+        {
+          "range": "100",
+          "Dry Eye": 0,
+          "No Dry Eye": 0
+        },
+        {
+          "range": "108",
+          "Dry Eye": 0,
+          "No Dry Eye": 0
+        }
+      ]
+    },
+    {
       "feature": "Daily steps",
       "data": [
         {
@@ -635,6 +775,106 @@
           "range": "150",
           "Dry Eye": 2256,
           "No Dry Eye": 1205
+        }
+      ]
+    },
+    {
+      "feature": "Height",
+      "data": [
+        {
+          "range": "145",
+          "Dry Eye": 0,
+          "No Dry Eye": 0
+        },
+        {
+          "range": "150",
+          "Dry Eye": 1274,
+          "No Dry Eye": 667
+        },
+        {
+          "range": "155",
+          "Dry Eye": 1333,
+          "No Dry Eye": 709
+        },
+        {
+          "range": "160",
+          "Dry Eye": 1324,
+          "No Dry Eye": 687
+        },
+        {
+          "range": "165",
+          "Dry Eye": 1255,
+          "No Dry Eye": 669
+        },
+        {
+          "range": "170",
+          "Dry Eye": 1317,
+          "No Dry Eye": 660
+        },
+        {
+          "range": "175",
+          "Dry Eye": 1235,
+          "No Dry Eye": 713
+        },
+        {
+          "range": "180",
+          "Dry Eye": 1226,
+          "No Dry Eye": 692
+        },
+        {
+          "range": "185",
+          "Dry Eye": 1284,
+          "No Dry Eye": 650
+        },
+        {
+          "range": "190",
+          "Dry Eye": 1568,
+          "No Dry Eye": 817
+        }
+      ]
+    },
+    {
+      "feature": "Weight",
+      "data": [
+        {
+          "range": "40",
+          "Dry Eye": 0,
+          "No Dry Eye": 0
+        },
+        {
+          "range": "50",
+          "Dry Eye": 2579,
+          "No Dry Eye": 1404
+        },
+        {
+          "range": "60",
+          "Dry Eye": 2608,
+          "No Dry Eye": 1334
+        },
+        {
+          "range": "70",
+          "Dry Eye": 2470,
+          "No Dry Eye": 1372
+        },
+        {
+          "range": "80",
+          "Dry Eye": 2597,
+          "No Dry Eye": 1349
+        },
+        {
+          "range": "90",
+          "Dry Eye": 2526,
+          "No Dry Eye": 1366
+        },
+        {
+          "range": "100",
+          "Dry Eye": 257,
+          "No Dry Eye": 138
+        },
+        {
+          "range": "110",
+          "Dry Eye": 0,
+          "No Dry Eye": 0
         }
       ]
     }
@@ -703,24 +943,84 @@
       "mean": 7.0
     },
     {
-      "feature": "Average screen time",
+      "feature": "Sleep quality",
       "group": "Dry Eye",
       "min": 1.0,
-      "q1": 3.3,
-      "median": 5.6,
-      "q3": 7.8,
-      "max": 10.0,
-      "mean": 5.56
+      "q1": 2.0,
+      "median": 3.0,
+      "q3": 4.0,
+      "max": 5.0,
+      "mean": 2.99
     },
     {
-      "feature": "Average screen time",
+      "feature": "Sleep quality",
       "group": "No Dry Eye",
       "min": 1.0,
-      "q1": 3.2,
-      "median": 5.4,
-      "q3": 7.7,
-      "max": 10.0,
-      "mean": 5.44
+      "q1": 2.0,
+      "median": 3.0,
+      "q3": 4.0,
+      "max": 5.0,
+      "mean": 3.01
+    },
+    {
+      "feature": "Stress level",
+      "group": "Dry Eye",
+      "min": 1.0,
+      "q1": 2.0,
+      "median": 3.0,
+      "q3": 4.0,
+      "max": 5.0,
+      "mean": 3.0
+    },
+    {
+      "feature": "Stress level",
+      "group": "No Dry Eye",
+      "min": 1.0,
+      "q1": 2.0,
+      "median": 3.0,
+      "q3": 4.0,
+      "max": 5.0,
+      "mean": 2.98
+    },
+    {
+      "feature": "BP_Systolic",
+      "group": "Dry Eye",
+      "min": 90.0,
+      "q1": 102.0,
+      "median": 115.0,
+      "q3": 128.0,
+      "max": 140.0,
+      "mean": 115.06
+    },
+    {
+      "feature": "BP_Systolic",
+      "group": "No Dry Eye",
+      "min": 90.0,
+      "q1": 102.0,
+      "median": 115.0,
+      "q3": 127.0,
+      "max": 140.0,
+      "mean": 114.84
+    },
+    {
+      "feature": "BP_Diastolic",
+      "group": "Dry Eye",
+      "min": 60.0,
+      "q1": 67.0,
+      "median": 75.0,
+      "q3": 83.0,
+      "max": 90.0,
+      "mean": 74.97
+    },
+    {
+      "feature": "BP_Diastolic",
+      "group": "No Dry Eye",
+      "min": 60.0,
+      "q1": 67.0,
+      "median": 75.0,
+      "q3": 83.0,
+      "max": 90.0,
+      "mean": 75.06
     },
     {
       "feature": "Heart rate",
@@ -743,6 +1043,86 @@
       "mean": 79.95
     },
     {
+      "feature": "Daily steps",
+      "group": "Dry Eye",
+      "min": 1000.0,
+      "q1": 6000.0,
+      "median": 11000.0,
+      "q3": 16000.0,
+      "max": 20000.0,
+      "mean": 10560.71
+    },
+    {
+      "feature": "Daily steps",
+      "group": "No Dry Eye",
+      "min": 1000.0,
+      "q1": 5000.0,
+      "median": 10000.0,
+      "q3": 15000.0,
+      "max": 20000.0,
+      "mean": 10492.32
+    },
+    {
+      "feature": "Physical activity",
+      "group": "Dry Eye",
+      "min": 0.0,
+      "q1": 45.0,
+      "median": 91.0,
+      "q3": 135.0,
+      "max": 180.0,
+      "mean": 89.94
+    },
+    {
+      "feature": "Physical activity",
+      "group": "No Dry Eye",
+      "min": 0.0,
+      "q1": 45.0,
+      "median": 90.0,
+      "q3": 135.0,
+      "max": 180.0,
+      "mean": 90.31
+    },
+    {
+      "feature": "Height",
+      "group": "Dry Eye",
+      "min": 150.0,
+      "q1": 162.0,
+      "median": 175.0,
+      "q3": 188.0,
+      "max": 200.0,
+      "mean": 174.8
+    },
+    {
+      "feature": "Height",
+      "group": "No Dry Eye",
+      "min": 150.0,
+      "q1": 162.0,
+      "median": 175.0,
+      "q3": 188.0,
+      "max": 200.0,
+      "mean": 175.0
+    },
+    {
+      "feature": "Weight",
+      "group": "Dry Eye",
+      "min": 50.0,
+      "q1": 62.0,
+      "median": 75.0,
+      "q3": 88.0,
+      "max": 100.0,
+      "mean": 74.92
+    },
+    {
+      "feature": "Weight",
+      "group": "No Dry Eye",
+      "min": 50.0,
+      "q1": 62.0,
+      "median": 75.0,
+      "q3": 88.0,
+      "max": 100.0,
+      "mean": 74.84
+    },
+    {
       "feature": "BMI",
       "group": "Dry Eye",
       "min": 12.5,
@@ -763,24 +1143,341 @@
       "mean": 24.96
     },
     {
-      "feature": "Daily steps",
+      "feature": "Average screen time",
       "group": "Dry Eye",
-      "min": 1000.0,
-      "q1": 6000.0,
-      "median": 11000.0,
-      "q3": 16000.0,
-      "max": 20000.0,
-      "mean": 10560.71
+      "min": 1.0,
+      "q1": 3.3,
+      "median": 5.6,
+      "q3": 7.8,
+      "max": 10.0,
+      "mean": 5.56
     },
     {
-      "feature": "Daily steps",
+      "feature": "Average screen time",
       "group": "No Dry Eye",
-      "min": 1000.0,
-      "q1": 5000.0,
-      "median": 10000.0,
-      "q3": 15000.0,
-      "max": 20000.0,
-      "mean": 10492.32
+      "min": 1.0,
+      "q1": 3.2,
+      "median": 5.4,
+      "q3": 7.7,
+      "max": 10.0,
+      "mean": 5.44
+    }
+  ],
+  "categorical_summary": [
+    {
+      "feature": "Gender",
+      "type": "binary",
+      "unique": 2,
+      "mode": "M",
+      "mode_pct": 50.1,
+      "values": [
+        {
+          "value": "M",
+          "count": 10028,
+          "pct": 50.1,
+          "dry_eye_rate": 64.4
+        },
+        {
+          "value": "F",
+          "count": 9972,
+          "pct": 49.9,
+          "dry_eye_rate": 66.0
+        }
+      ]
+    },
+    {
+      "feature": "Sleep disorder",
+      "type": "binary",
+      "unique": 2,
+      "mode": "N",
+      "mode_pct": 50.3,
+      "values": [
+        {
+          "value": "N",
+          "count": 10069,
+          "pct": 50.3,
+          "dry_eye_rate": 65.1
+        },
+        {
+          "value": "Y",
+          "count": 9931,
+          "pct": 49.7,
+          "dry_eye_rate": 65.3
+        }
+      ]
+    },
+    {
+      "feature": "Wake up during night",
+      "type": "binary",
+      "unique": 2,
+      "mode": "N",
+      "mode_pct": 50.0,
+      "values": [
+        {
+          "value": "N",
+          "count": 10000,
+          "pct": 50.0,
+          "dry_eye_rate": 65.2
+        },
+        {
+          "value": "Y",
+          "count": 10000,
+          "pct": 50.0,
+          "dry_eye_rate": 65.2
+        }
+      ]
+    },
+    {
+      "feature": "Feel sleepy during day",
+      "type": "binary",
+      "unique": 2,
+      "mode": "N",
+      "mode_pct": 50.9,
+      "values": [
+        {
+          "value": "N",
+          "count": 10178,
+          "pct": 50.9,
+          "dry_eye_rate": 65.0
+        },
+        {
+          "value": "Y",
+          "count": 9822,
+          "pct": 49.1,
+          "dry_eye_rate": 65.4
+        }
+      ]
+    },
+    {
+      "feature": "Caffeine consumption",
+      "type": "binary",
+      "unique": 2,
+      "mode": "Y",
+      "mode_pct": 50.4,
+      "values": [
+        {
+          "value": "Y",
+          "count": 10089,
+          "pct": 50.4,
+          "dry_eye_rate": 65.3
+        },
+        {
+          "value": "N",
+          "count": 9911,
+          "pct": 49.6,
+          "dry_eye_rate": 65.0
+        }
+      ]
+    },
+    {
+      "feature": "Alcohol consumption",
+      "type": "binary",
+      "unique": 2,
+      "mode": "Y",
+      "mode_pct": 50.0,
+      "values": [
+        {
+          "value": "Y",
+          "count": 10009,
+          "pct": 50.0,
+          "dry_eye_rate": 65.7
+        },
+        {
+          "value": "N",
+          "count": 9991,
+          "pct": 50.0,
+          "dry_eye_rate": 64.6
+        }
+      ]
+    },
+    {
+      "feature": "Smoking",
+      "type": "binary",
+      "unique": 2,
+      "mode": "N",
+      "mode_pct": 50.1,
+      "values": [
+        {
+          "value": "N",
+          "count": 10017,
+          "pct": 50.1,
+          "dry_eye_rate": 65.4
+        },
+        {
+          "value": "Y",
+          "count": 9983,
+          "pct": 49.9,
+          "dry_eye_rate": 64.9
+        }
+      ]
+    },
+    {
+      "feature": "Medical issue",
+      "type": "binary",
+      "unique": 2,
+      "mode": "N",
+      "mode_pct": 50.6,
+      "values": [
+        {
+          "value": "N",
+          "count": 10111,
+          "pct": 50.6,
+          "dry_eye_rate": 65.2
+        },
+        {
+          "value": "Y",
+          "count": 9889,
+          "pct": 49.4,
+          "dry_eye_rate": 65.1
+        }
+      ]
+    },
+    {
+      "feature": "Ongoing medication",
+      "type": "binary",
+      "unique": 2,
+      "mode": "Y",
+      "mode_pct": 50.4,
+      "values": [
+        {
+          "value": "Y",
+          "count": 10082,
+          "pct": 50.4,
+          "dry_eye_rate": 65.0
+        },
+        {
+          "value": "N",
+          "count": 9918,
+          "pct": 49.6,
+          "dry_eye_rate": 65.4
+        }
+      ]
+    },
+    {
+      "feature": "Smart device before bed",
+      "type": "binary",
+      "unique": 2,
+      "mode": "Y",
+      "mode_pct": 50.0,
+      "values": [
+        {
+          "value": "Y",
+          "count": 10003,
+          "pct": 50.0,
+          "dry_eye_rate": 64.6
+        },
+        {
+          "value": "N",
+          "count": 9997,
+          "pct": 50.0,
+          "dry_eye_rate": 65.8
+        }
+      ]
+    },
+    {
+      "feature": "Blue-light filter",
+      "type": "binary",
+      "unique": 2,
+      "mode": "N",
+      "mode_pct": 50.1,
+      "values": [
+        {
+          "value": "N",
+          "count": 10016,
+          "pct": 50.1,
+          "dry_eye_rate": 64.9
+        },
+        {
+          "value": "Y",
+          "count": 9984,
+          "pct": 49.9,
+          "dry_eye_rate": 65.4
+        }
+      ]
+    },
+    {
+      "feature": "Discomfort Eye-strain",
+      "type": "binary",
+      "unique": 2,
+      "mode": "Y",
+      "mode_pct": 50.2,
+      "values": [
+        {
+          "value": "Y",
+          "count": 10037,
+          "pct": 50.2,
+          "dry_eye_rate": 70.4
+        },
+        {
+          "value": "N",
+          "count": 9963,
+          "pct": 49.8,
+          "dry_eye_rate": 59.9
+        }
+      ]
+    },
+    {
+      "feature": "Redness in eye",
+      "type": "binary",
+      "unique": 2,
+      "mode": "N",
+      "mode_pct": 50.6,
+      "values": [
+        {
+          "value": "N",
+          "count": 10129,
+          "pct": 50.6,
+          "dry_eye_rate": 60.3
+        },
+        {
+          "value": "Y",
+          "count": 9871,
+          "pct": 49.4,
+          "dry_eye_rate": 70.2
+        }
+      ]
+    },
+    {
+      "feature": "Itchiness/Irritation in eye",
+      "type": "binary",
+      "unique": 2,
+      "mode": "N",
+      "mode_pct": 50.3,
+      "values": [
+        {
+          "value": "N",
+          "count": 10063,
+          "pct": 50.3,
+          "dry_eye_rate": 60.4
+        },
+        {
+          "value": "Y",
+          "count": 9937,
+          "pct": 49.7,
+          "dry_eye_rate": 70.0
+        }
+      ]
+    },
+    {
+      "feature": "Dry Eye Disease",
+      "type": "binary",
+      "unique": 2,
+      "mode": "Y",
+      "mode_pct": 65.2,
+      "values": [
+        {
+          "value": "Y",
+          "count": 13037,
+          "pct": 65.2,
+          "dry_eye_rate": null
+        },
+        {
+          "value": "N",
+          "count": 6963,
+          "pct": 34.8,
+          "dry_eye_rate": null
+        }
+      ]
     }
   ]
 }

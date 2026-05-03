@@ -227,6 +227,7 @@ export default function DashboardPage() {
                 summaryTable={extraData.summary_table}
                 distributionComparison={extraData.distribution_comparison}
                 boxPlots={extraData.box_plots}
+                categoricalSummary={extraData.categorical_summary}
               />
             )}
 

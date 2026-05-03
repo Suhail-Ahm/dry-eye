@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { LearnHint } from "@/components/learn-tooltip";
 import { useMemo } from "react";
 
 interface CorrelationHeatmapProps {
@@ -96,6 +97,7 @@ export function CorrelationHeatmap({ data }: CorrelationHeatmapProps) {
         </p>
       </CardHeader>
       <CardContent className="overflow-x-auto">
+          <LearnHint text="Pearson correlation ranges from -1 to +1. Blue cells = features increase together (positive), Red = one rises as the other falls (negative). Values near 0 = no linear relationship. Look for the Dry Eye row to spot the strongest predictors." />
         <svg width={totalWidth} height={totalHeight} className="mx-auto">
           {/* Column labels */}
           {filteredLabels.map((label, j) => (

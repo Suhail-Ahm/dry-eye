@@ -136,11 +136,17 @@ print("Computing distribution comparisons (Dry Eye vs No Dry Eye)...")
 comparison_features = [
     ("Age", 5, 15, 50),
     ("Sleep duration", 1, 3.5, 11),
+    ("Sleep quality", 1, 0.5, 6),
+    ("Stress level", 1, 0.5, 6),
     ("Average screen time", 1, 0.5, 11),
     ("Heart rate", 8, 55, 105),
     ("BMI", 3, 12, 42),
+    ("BP_Systolic", 10, 100, 180),
+    ("BP_Diastolic", 8, 60, 120),
     ("Daily steps", 4000, 0, 21000),
     ("Physical activity", 30, 0, 181),
+    ("Height", 5, 145, 200),
+    ("Weight", 10, 40, 130),
 ]
 results["distribution_comparison"] = []
 for col, bin_width, lo, hi in comparison_features:
@@ -182,7 +188,7 @@ for n in range(4):
 # 5. BOX PLOT DATA (quartiles for each numeric feature by dry eye status)
 # ═══════════════════════════════════════════════════════════════════════════
 print("Computing box plot data...")
-box_features = ["Age", "Sleep duration", "Average screen time", "Heart rate", "BMI", "Daily steps"]
+box_features = numeric_cols  # All 13 numeric features
 results["box_plots"] = []
 for col in box_features:
     for label, flag in [("Dry Eye", 1), ("No Dry Eye", 0)]:
@@ -197,6 +203,39 @@ for col in box_features:
             "max": round(float(vals.max()), 2),
             "mean": round(float(vals.mean()), 2),
         })
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 6. CATEGORICAL / BINARY SUMMARY TABLE
+# ═══════════════════════════════════════════════════════════════════════════
+print("Computing categorical summary...")
+binary_cols = [
+    "Gender", "Sleep disorder", "Wake up during night", "Feel sleepy during day",
+    "Caffeine consumption", "Alcohol consumption", "Smoking", "Medical issue",
+    "Ongoing medication", "Smart device before bed", "Blue-light filter",
+    "Discomfort Eye-strain", "Redness in eye", "Itchiness/Irritation in eye",
+    "Dry Eye Disease",
+]
+categorical_summary = []
+for col in binary_cols:
+    vc = df[col].value_counts()
+    values = []
+    for val, cnt in vc.items():
+        sub = df[df[col] == val]
+        values.append({
+            "value": str(val),
+            "count": int(cnt),
+            "pct": round(float(cnt / len(df) * 100), 1),
+            "dry_eye_rate": round(float(sub["DryEye"].mean()) * 100, 1) if col != "Dry Eye Disease" else None,
+        })
+    categorical_summary.append({
+        "feature": col,
+        "type": "binary" if len(vc) == 2 else "categorical",
+        "unique": int(len(vc)),
+        "mode": str(vc.index[0]),
+        "mode_pct": round(float(vc.iloc[0] / len(df) * 100), 1),
+        "values": values,
+    })
+results["categorical_summary"] = categorical_summary
 
 # ═══════════════════════════════════════════════════════════════════════════
 # SAVE

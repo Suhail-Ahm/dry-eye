@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { LearnHint } from "@/components/learn-tooltip";
 import {
   BarChart,
   Bar,
@@ -12,12 +13,14 @@ import {
   Legend,
 } from "recharts";
 
-const TOOLTIP_STYLE = {
-  borderRadius: "8px",
+const TT_STYLE = {
+  borderRadius: "10px",
   border: "1px solid #e2e8f0",
-  boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.05)",
+  boxShadow: "0 8px 24px -4px rgb(0 0 0 / 0.08)",
   fontSize: "12px",
+  padding: "10px 14px",
 };
+const TT_WRAPPER = { zIndex: 100 };
 const AXIS_TICK = { fontSize: 10, fill: "#64748b" };
 
 interface LifestyleChartsProps {
@@ -73,12 +76,13 @@ export function LifestyleCharts({
           </p>
         </CardHeader>
         <CardContent>
+          <LearnHint text="These are binary (Yes/No) lifestyle factors. A heavily skewed distribution (e.g., 90% No for smoking) means fewer patients have that risk factor — the model has less evidence to learn from." />
           <ResponsiveContainer width="100%" height={320}>
             <BarChart data={distData} layout="vertical" barSize={14}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
               <XAxis type="number" tick={AXIS_TICK} axisLine={false} tickLine={false} tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} />
               <YAxis type="category" dataKey="name" tick={AXIS_TICK} axisLine={false} tickLine={false} width={80} />
-              <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v: number) => [v.toLocaleString(), ""]} />
+              <Tooltip contentStyle={TT_STYLE} wrapperStyle={TT_WRAPPER} formatter={(v: number) => [v.toLocaleString(), ""]} />
               <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: "11px" }} />
               <Bar dataKey="Yes" fill="#3b82f6" radius={[0, 4, 4, 0]} />
               <Bar dataKey="No" fill="#e2e8f0" radius={[0, 4, 4, 0]} />
@@ -98,12 +102,13 @@ export function LifestyleCharts({
           </p>
         </CardHeader>
         <CardContent>
+          <LearnHint text="Compare the orange (Has Factor) vs grey (No Factor) bars. A large gap means the lifestyle factor has a strong association with dry eye. Similar heights mean weak association." />
           <ResponsiveContainer width="100%" height={320}>
             <BarChart data={rateData} barSize={14}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
               <XAxis dataKey="name" tick={{ fontSize: 9, fill: "#64748b" }} axisLine={{ stroke: "#e2e8f0" }} tickLine={false} angle={-30} textAnchor="end" height={50} />
               <YAxis tick={AXIS_TICK} axisLine={false} tickLine={false} domain={[50, 80]} tickFormatter={(v) => `${v}%`} />
-              <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v: number) => [`${v}%`, ""]} />
+              <Tooltip contentStyle={TT_STYLE} wrapperStyle={TT_WRAPPER} formatter={(v: number) => [`${v}%`, ""]} />
               <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: "11px" }} />
               <Bar dataKey="Has Factor" fill="#f97316" radius={[4, 4, 0, 0]} />
               <Bar dataKey="No Factor" fill="#94a3b8" radius={[4, 4, 0, 0]} />

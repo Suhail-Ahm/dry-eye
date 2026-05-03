@@ -48,7 +48,7 @@ export function InfoTip({ text }: { text: string }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 4, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 p-2.5 rounded-lg bg-slate-800 text-white text-[11px] leading-relaxed shadow-xl pointer-events-none"
+            className="absolute z-[200] bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 p-2.5 rounded-lg bg-slate-800 text-white text-[11px] leading-relaxed shadow-xl pointer-events-none"
           >
             {text}
             <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-800 rotate-45 -mt-1" />

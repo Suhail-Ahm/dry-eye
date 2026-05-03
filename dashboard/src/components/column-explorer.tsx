@@ -117,7 +117,7 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
   return (
     <div className="space-y-5">
       {/* ── Column Selector ─────────────────────────────────── */}
-      <Card className="shadow-sm border-border/30 overflow-visible">
+      <Card className="shadow-sm border-border/30">
         <CardContent className="p-4">
           <div className="flex items-center gap-3">
             {/* Prev button */}
@@ -308,7 +308,7 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
                     <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                     <XAxis dataKey={col.type === "numeric" ? "range" : "value"} tick={AX} axisLine={{ stroke: "#e2e8f0" }} tickLine={false} />
                     <YAxis tick={AX} axisLine={false} tickLine={false} />
-                    <Tooltip contentStyle={TT} formatter={(v: number) => [v.toLocaleString(), "Count"]} />
+                    <Tooltip contentStyle={TT} wrapperStyle={{ zIndex: 100 }} formatter={(v: number) => [v.toLocaleString(), "Count"]} />
                     <Bar dataKey="count" radius={[4, 4, 0, 0]}>
                       {(col.type === "numeric" ? col.distribution : col.value_counts)?.map((_: any, i: number) => (
                         <Cell key={i} fill={meta.color} opacity={0.7 + (i % 3) * 0.1} />
@@ -334,7 +334,7 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
                       <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                       <XAxis dataKey={col.type === "numeric" ? "range" : "value"} tick={AX} axisLine={{ stroke: "#e2e8f0" }} tickLine={false} />
                       <YAxis tick={AX} axisLine={false} tickLine={false} domain={[40, 80]} tickFormatter={(v) => `${v}%`} />
-                      <Tooltip contentStyle={TT} formatter={(v: number) => [`${v}%`, "Dry Eye Rate"]} />
+                      <Tooltip contentStyle={TT} wrapperStyle={{ zIndex: 100 }} formatter={(v: number) => [`${v}%`, "Dry Eye Rate"]} />
                       <Bar dataKey="rate" radius={[4, 4, 0, 0]}>
                         {col.dry_eye_by_value.map((_: any, i: number) => (
                           <Cell key={i} fill={_?.rate > 65 ? "#ef4444" : _?.rate > 55 ? "#f59e0b" : "#22c55e"} />
