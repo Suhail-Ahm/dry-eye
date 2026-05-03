@@ -14,6 +14,7 @@ import { FeatureImportance } from "@/components/feature-importance";
 import { MLComparison } from "@/components/ml-comparison";
 import { HealthMetrics } from "@/components/health-metrics";
 import { DataOverview } from "@/components/data-overview";
+import { ColumnExplorer } from "@/components/column-explorer";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -22,6 +23,10 @@ const SECTION_META: Record<string, { title: string; subtitle: string }> = {
   target: {
     title: "Target Variable — Dry Eye Disease",
     subtitle: "Binary classification target showing class imbalance (65:35 ratio)",
+  },
+  columns: {
+    title: "Column Explorer",
+    subtitle: "Deep-dive EDA on any individual attribute — distribution, stats, dry eye breakdown, and auto-insights",
   },
   demographics: {
     title: "Demographic Analysis",
@@ -65,6 +70,7 @@ export default function DashboardPage() {
   const [data, setData] = useState<any>(null);
   const [mlData, setMlData] = useState<any>(null);
   const [extraData, setExtraData] = useState<any>(null);
+  const [columnData, setColumnData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("target");
 
@@ -73,11 +79,13 @@ export default function DashboardPage() {
       fetch("/data/eda_results.json").then((r) => r.json()),
       fetch("/data/ml_results.json").then((r) => r.json()),
       fetch("/data/extra_analysis.json").then((r) => r.json()),
+      fetch("/data/column_profiles.json").then((r) => r.json()),
     ])
-      .then(([eda, ml, extra]) => {
+      .then(([eda, ml, extra, cols]) => {
         setData(eda);
         setMlData(ml);
         setExtraData(extra);
+        setColumnData(cols);
         setLoading(false);
       })
       .catch((err) => {
@@ -169,6 +177,10 @@ export default function DashboardPage() {
           <div className="animate-tab-content" key={`content-${activeSection}`}>
             {activeSection === "target" && (
               <TargetDistribution data={data.target_distribution} />
+            )}
+
+            {activeSection === "columns" && columnData && (
+              <ColumnExplorer data={columnData} />
             )}
 
             {activeSection === "demographics" && (

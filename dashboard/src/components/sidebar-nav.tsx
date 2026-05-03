@@ -8,6 +8,7 @@ const NAV_GROUPS = [
     label: "Exploration",
     items: [
       { id: "target", icon: "🎯", name: "Target", badge: "65:35" },
+      { id: "columns", icon: "🔍", name: "Column Explorer", badge: "28" },
       { id: "demographics", icon: "👥", name: "Demographics" },
       { id: "sleep", icon: "😴", name: "Sleep & Stress" },
       { id: "lifestyle", icon: "🏃", name: "Lifestyle" },

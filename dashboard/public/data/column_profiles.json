@@ -1,0 +1,2453 @@
+[
+  {
+    "name": "Age",
+    "type": "numeric",
+    "unique": 28,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 31.42,
+      "median": 31.0,
+      "std": 8.1,
+      "min": 18.0,
+      "max": 45.0,
+      "q1": 24.0,
+      "q3": 39.0,
+      "iqr": 15.0,
+      "skew": 0.013
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "18.0-20.2",
+        "count": 2203
+      },
+      {
+        "range": "20.2-22.5",
+        "count": 1452
+      },
+      {
+        "range": "22.5-24.8",
+        "count": 1390
+      },
+      {
+        "range": "24.8-27.0",
+        "count": 1431
+      },
+      {
+        "range": "27.0-29.2",
+        "count": 2230
+      },
+      {
+        "range": "29.2-31.5",
+        "count": 1424
+      },
+      {
+        "range": "31.5-33.8",
+        "count": 1382
+      },
+      {
+        "range": "33.8-36.0",
+        "count": 1447
+      },
+      {
+        "range": "36.0-38.2",
+        "count": 2037
+      },
+      {
+        "range": "38.2-40.5",
+        "count": 1432
+      },
+      {
+        "range": "40.5-42.8",
+        "count": 1435
+      },
+      {
+        "range": "42.8-45.0",
+        "count": 2137
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "18.0-20.2",
+        "rate": 65.6,
+        "count": 2203
+      },
+      {
+        "range": "20.2-22.5",
+        "rate": 65.9,
+        "count": 1452
+      },
+      {
+        "range": "22.5-24.8",
+        "rate": 65.2,
+        "count": 1390
+      },
+      {
+        "range": "24.8-27.0",
+        "rate": 64.1,
+        "count": 2121
+      },
+      {
+        "range": "27.0-29.2",
+        "rate": 64.2,
+        "count": 1540
+      },
+      {
+        "range": "29.2-31.5",
+        "rate": 64.0,
+        "count": 1424
+      },
+      {
+        "range": "31.5-33.8",
+        "rate": 64.6,
+        "count": 1382
+      },
+      {
+        "range": "33.8-36.0",
+        "rate": 64.7,
+        "count": 2138
+      },
+      {
+        "range": "36.0-38.2",
+        "rate": 65.6,
+        "count": 1346
+      },
+      {
+        "range": "38.2-40.5",
+        "rate": 65.0,
+        "count": 1432
+      },
+      {
+        "range": "40.5-42.8",
+        "rate": 66.8,
+        "count": 1435
+      },
+      {
+        "range": "42.8-45.0",
+        "rate": 66.4,
+        "count": 2137
+      }
+    ],
+    "correlation": {
+      "r": 0.0053,
+      "p": 0.457149
+    },
+    "insight": "Age has a weak positive correlation with dry eye (r=0.005, p=0.4571). Age shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 18.0,
+        "q1": 24.0,
+        "median": 31.0,
+        "q3": 39.0,
+        "max": 45.0,
+        "mean": 31.45
+      },
+      "No Dry Eye": {
+        "min": 18.0,
+        "q1": 25.0,
+        "median": 31.0,
+        "q3": 38.0,
+        "max": 45.0,
+        "mean": 31.36
+      }
+    }
+  },
+  {
+    "name": "Gender",
+    "type": "categorical",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "M",
+        "count": 10028
+      },
+      {
+        "value": "F",
+        "count": 9972
+      }
+    ],
+    "stats": {
+      "mode": "M",
+      "mode_freq": 10028,
+      "mode_pct": 50.1
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "M",
+        "rate": 64.4,
+        "count": 10028
+      },
+      {
+        "value": "F",
+        "rate": 66.0,
+        "count": 9972
+      }
+    ],
+    "chi_square": {
+      "chi2": 5.26,
+      "p": 0.021828,
+      "cramers_v": 0.0162
+    },
+    "insight": "Gender has a weak association with dry eye (\u03c7\u00b2=5.3, Cram\u00e9r's V=0.016, p=0.0218). "
+  },
+  {
+    "name": "Sleep duration",
+    "type": "numeric",
+    "unique": 61,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 7.0,
+      "median": 7.0,
+      "std": 1.73,
+      "min": 4.0,
+      "max": 10.0,
+      "q1": 5.5,
+      "q3": 8.5,
+      "iqr": 3.0,
+      "skew": 0.002
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "4.0-4.5",
+        "count": 1526
+      },
+      {
+        "range": "4.5-5.0",
+        "count": 1598
+      },
+      {
+        "range": "5.0-5.5",
+        "count": 1732
+      },
+      {
+        "range": "5.5-6.0",
+        "count": 1602
+      },
+      {
+        "range": "6.0-6.5",
+        "count": 1700
+      },
+      {
+        "range": "6.5-7.0",
+        "count": 1686
+      },
+      {
+        "range": "7.0-7.5",
+        "count": 1720
+      },
+      {
+        "range": "7.5-8.0",
+        "count": 1646
+      },
+      {
+        "range": "8.0-8.5",
+        "count": 1628
+      },
+      {
+        "range": "8.5-9.0",
+        "count": 1601
+      },
+      {
+        "range": "9.0-9.5",
+        "count": 1717
+      },
+      {
+        "range": "9.5-10.0",
+        "count": 1844
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "4.0-4.5",
+        "rate": 64.4,
+        "count": 1860
+      },
+      {
+        "range": "4.5-5.0",
+        "rate": 64.8,
+        "count": 1618
+      },
+      {
+        "range": "5.0-5.5",
+        "rate": 66.9,
+        "count": 1715
+      },
+      {
+        "range": "5.5-6.0",
+        "rate": 64.5,
+        "count": 1589
+      },
+      {
+        "range": "6.0-6.5",
+        "rate": 64.8,
+        "count": 1703
+      },
+      {
+        "range": "6.5-7.0",
+        "rate": 66.2,
+        "count": 1704
+      },
+      {
+        "range": "7.0-7.5",
+        "rate": 64.7,
+        "count": 1692
+      },
+      {
+        "range": "7.5-8.0",
+        "rate": 65.6,
+        "count": 1668
+      },
+      {
+        "range": "8.0-8.5",
+        "rate": 66.3,
+        "count": 1583
+      },
+      {
+        "range": "8.5-9.0",
+        "rate": 63.3,
+        "count": 1647
+      },
+      {
+        "range": "9.0-9.5",
+        "rate": 66.5,
+        "count": 1741
+      },
+      {
+        "range": "9.5-10.0",
+        "rate": 64.1,
+        "count": 1480
+      }
+    ],
+    "correlation": {
+      "r": -0.0009,
+      "p": 0.901636
+    },
+    "insight": "Sleep duration has a weak negative correlation with dry eye (r=-0.001, p=0.9016). Sleep duration shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 4.0,
+        "q1": 5.5,
+        "median": 7.0,
+        "q3": 8.5,
+        "max": 10.0,
+        "mean": 7.0
+      },
+      "No Dry Eye": {
+        "min": 4.0,
+        "q1": 5.5,
+        "median": 7.0,
+        "q3": 8.5,
+        "max": 10.0,
+        "mean": 7.0
+      }
+    }
+  },
+  {
+    "name": "Sleep quality",
+    "type": "ordinal",
+    "unique": 5,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "3",
+        "count": 4024
+      },
+      {
+        "value": "4",
+        "count": 4010
+      },
+      {
+        "value": "1",
+        "count": 4003
+      },
+      {
+        "value": "2",
+        "count": 3995
+      },
+      {
+        "value": "5",
+        "count": 3968
+      }
+    ],
+    "stats": {
+      "mode": "3",
+      "mode_freq": 4024,
+      "mode_pct": 20.1
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "3",
+        "rate": 65.0,
+        "count": 4024
+      },
+      {
+        "value": "4",
+        "rate": 65.6,
+        "count": 4010
+      },
+      {
+        "value": "1",
+        "rate": 65.6,
+        "count": 4003
+      },
+      {
+        "value": "2",
+        "rate": 65.2,
+        "count": 3995
+      },
+      {
+        "value": "5",
+        "rate": 64.5,
+        "count": 3968
+      }
+    ],
+    "chi_square": {
+      "chi2": 1.4,
+      "p": 0.8447,
+      "cramers_v": 0.0084
+    },
+    "insight": "Sleep quality has a weak association with dry eye (\u03c7\u00b2=1.4, Cram\u00e9r's V=0.008, p=0.8447). "
+  },
+  {
+    "name": "Stress level",
+    "type": "ordinal",
+    "unique": 5,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "3",
+        "count": 4131
+      },
+      {
+        "value": "4",
+        "count": 4028
+      },
+      {
+        "value": "1",
+        "count": 4012
+      },
+      {
+        "value": "2",
+        "count": 3929
+      },
+      {
+        "value": "5",
+        "count": 3900
+      }
+    ],
+    "stats": {
+      "mode": "3",
+      "mode_freq": 4131,
+      "mode_pct": 20.7
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "3",
+        "rate": 65.7,
+        "count": 4131
+      },
+      {
+        "value": "4",
+        "rate": 64.7,
+        "count": 4028
+      },
+      {
+        "value": "1",
+        "rate": 65.2,
+        "count": 4012
+      },
+      {
+        "value": "2",
+        "rate": 64.4,
+        "count": 3929
+      },
+      {
+        "value": "5",
+        "rate": 65.9,
+        "count": 3900
+      }
+    ],
+    "chi_square": {
+      "chi2": 2.84,
+      "p": 0.585378,
+      "cramers_v": 0.0119
+    },
+    "insight": "Stress level has a weak association with dry eye (\u03c7\u00b2=2.8, Cram\u00e9r's V=0.012, p=0.5854). "
+  },
+  {
+    "name": "BP_Systolic",
+    "type": "numeric",
+    "unique": 51,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 114.99,
+      "median": 115.0,
+      "std": 14.73,
+      "min": 90.0,
+      "max": 140.0,
+      "q1": 102.0,
+      "q3": 128.0,
+      "iqr": 26.0,
+      "skew": -0.003
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "90.0-94.2",
+        "count": 1999
+      },
+      {
+        "range": "94.2-98.3",
+        "count": 1537
+      },
+      {
+        "range": "98.3-102.5",
+        "count": 1614
+      },
+      {
+        "range": "102.5-106.7",
+        "count": 1513
+      },
+      {
+        "range": "106.7-110.8",
+        "count": 1580
+      },
+      {
+        "range": "110.8-115.0",
+        "count": 1508
+      },
+      {
+        "range": "115.0-119.2",
+        "count": 1995
+      },
+      {
+        "range": "119.2-123.3",
+        "count": 1571
+      },
+      {
+        "range": "123.3-127.5",
+        "count": 1597
+      },
+      {
+        "range": "127.5-131.7",
+        "count": 1569
+      },
+      {
+        "range": "131.7-135.8",
+        "count": 1582
+      },
+      {
+        "range": "135.8-140.0",
+        "count": 1935
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "90.0-94.2",
+        "rate": 65.9,
+        "count": 1999
+      },
+      {
+        "range": "94.2-98.3",
+        "rate": 64.9,
+        "count": 1537
+      },
+      {
+        "range": "98.3-102.5",
+        "rate": 64.3,
+        "count": 1614
+      },
+      {
+        "range": "102.5-106.7",
+        "rate": 64.2,
+        "count": 1513
+      },
+      {
+        "range": "106.7-110.8",
+        "rate": 62.7,
+        "count": 1580
+      },
+      {
+        "range": "110.8-115.0",
+        "rate": 64.9,
+        "count": 1919
+      },
+      {
+        "range": "115.0-119.2",
+        "rate": 66.8,
+        "count": 1584
+      },
+      {
+        "range": "119.2-123.3",
+        "rate": 65.6,
+        "count": 1571
+      },
+      {
+        "range": "123.3-127.5",
+        "rate": 63.3,
+        "count": 1597
+      },
+      {
+        "range": "127.5-131.7",
+        "rate": 67.7,
+        "count": 1569
+      },
+      {
+        "range": "131.7-135.8",
+        "rate": 67.1,
+        "count": 1582
+      },
+      {
+        "range": "135.8-140.0",
+        "rate": 64.8,
+        "count": 1935
+      }
+    ],
+    "correlation": {
+      "r": 0.0073,
+      "p": 0.302619
+    },
+    "insight": "BP_Systolic has a weak positive correlation with dry eye (r=0.007, p=0.3026). BP_Systolic shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 90.0,
+        "q1": 102.0,
+        "median": 115.0,
+        "q3": 128.0,
+        "max": 140.0,
+        "mean": 115.06
+      },
+      "No Dry Eye": {
+        "min": 90.0,
+        "q1": 102.0,
+        "median": 115.0,
+        "q3": 127.0,
+        "max": 140.0,
+        "mean": 114.84
+      }
+    }
+  },
+  {
+    "name": "BP_Diastolic",
+    "type": "numeric",
+    "unique": 31,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 75.0,
+      "median": 75.0,
+      "std": 8.98,
+      "min": 60.0,
+      "max": 90.0,
+      "q1": 67.0,
+      "q3": 83.0,
+      "iqr": 16.0,
+      "skew": -0.003
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "60.0-62.5",
+        "count": 1982
+      },
+      {
+        "range": "62.5-65.0",
+        "count": 1288
+      },
+      {
+        "range": "65.0-67.5",
+        "count": 1900
+      },
+      {
+        "range": "67.5-70.0",
+        "count": 1276
+      },
+      {
+        "range": "70.0-72.5",
+        "count": 1915
+      },
+      {
+        "range": "72.5-75.0",
+        "count": 1371
+      },
+      {
+        "range": "75.0-77.5",
+        "count": 1883
+      },
+      {
+        "range": "77.5-80.0",
+        "count": 1233
+      },
+      {
+        "range": "80.0-82.5",
+        "count": 1948
+      },
+      {
+        "range": "82.5-85.0",
+        "count": 1303
+      },
+      {
+        "range": "85.0-87.5",
+        "count": 1963
+      },
+      {
+        "range": "87.5-90.0",
+        "count": 1938
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "60.0-62.5",
+        "rate": 67.2,
+        "count": 1982
+      },
+      {
+        "range": "62.5-65.0",
+        "rate": 65.9,
+        "count": 1939
+      },
+      {
+        "range": "65.0-67.5",
+        "rate": 64.9,
+        "count": 1249
+      },
+      {
+        "range": "67.5-70.0",
+        "rate": 64.4,
+        "count": 1933
+      },
+      {
+        "range": "70.0-72.5",
+        "rate": 62.6,
+        "count": 1258
+      },
+      {
+        "range": "72.5-75.0",
+        "rate": 64.4,
+        "count": 1995
+      },
+      {
+        "range": "75.0-77.5",
+        "rate": 65.0,
+        "count": 1259
+      },
+      {
+        "range": "77.5-80.0",
+        "rate": 65.2,
+        "count": 1863
+      },
+      {
+        "range": "80.0-82.5",
+        "rate": 66.2,
+        "count": 1318
+      },
+      {
+        "range": "82.5-85.0",
+        "rate": 65.7,
+        "count": 1979
+      },
+      {
+        "range": "85.0-87.5",
+        "rate": 65.3,
+        "count": 1287
+      },
+      {
+        "range": "87.5-90.0",
+        "rate": 64.7,
+        "count": 1938
+      }
+    ],
+    "correlation": {
+      "r": -0.0051,
+      "p": 0.475088
+    },
+    "insight": "BP_Diastolic has a weak negative correlation with dry eye (r=-0.005, p=0.4751). BP_Diastolic shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 60.0,
+        "q1": 67.0,
+        "median": 75.0,
+        "q3": 83.0,
+        "max": 90.0,
+        "mean": 74.97
+      },
+      "No Dry Eye": {
+        "min": 60.0,
+        "q1": 67.0,
+        "median": 75.0,
+        "q3": 83.0,
+        "max": 90.0,
+        "mean": 75.06
+      }
+    }
+  },
+  {
+    "name": "Heart rate",
+    "type": "numeric",
+    "unique": 41,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 79.91,
+      "median": 80.0,
+      "std": 11.81,
+      "min": 60.0,
+      "max": 100.0,
+      "q1": 70.0,
+      "q3": 90.0,
+      "iqr": 20.0,
+      "skew": 0.0
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "60.0-63.3",
+        "count": 1994
+      },
+      {
+        "range": "63.3-66.7",
+        "count": 1449
+      },
+      {
+        "range": "66.7-70.0",
+        "count": 1489
+      },
+      {
+        "range": "70.0-73.3",
+        "count": 1915
+      },
+      {
+        "range": "73.3-76.7",
+        "count": 1465
+      },
+      {
+        "range": "76.7-80.0",
+        "count": 1453
+      },
+      {
+        "range": "80.0-83.3",
+        "count": 1977
+      },
+      {
+        "range": "83.3-86.7",
+        "count": 1502
+      },
+      {
+        "range": "86.7-90.0",
+        "count": 1482
+      },
+      {
+        "range": "90.0-93.3",
+        "count": 1943
+      },
+      {
+        "range": "93.3-96.7",
+        "count": 1417
+      },
+      {
+        "range": "96.7-100.0",
+        "count": 1914
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "60.0-63.3",
+        "rate": 66.5,
+        "count": 1994
+      },
+      {
+        "range": "63.3-66.7",
+        "rate": 62.9,
+        "count": 1449
+      },
+      {
+        "range": "66.7-70.0",
+        "rate": 63.7,
+        "count": 1942
+      },
+      {
+        "range": "70.0-73.3",
+        "rate": 66.0,
+        "count": 1462
+      },
+      {
+        "range": "73.3-76.7",
+        "rate": 67.6,
+        "count": 1465
+      },
+      {
+        "range": "76.7-80.0",
+        "rate": 65.1,
+        "count": 1940
+      },
+      {
+        "range": "80.0-83.3",
+        "rate": 66.3,
+        "count": 1490
+      },
+      {
+        "range": "83.3-86.7",
+        "rate": 65.0,
+        "count": 1502
+      },
+      {
+        "range": "86.7-90.0",
+        "rate": 65.2,
+        "count": 1991
+      },
+      {
+        "range": "90.0-93.3",
+        "rate": 64.7,
+        "count": 1434
+      },
+      {
+        "range": "93.3-96.7",
+        "rate": 64.6,
+        "count": 1417
+      },
+      {
+        "range": "96.7-100.0",
+        "rate": 64.6,
+        "count": 1914
+      }
+    ],
+    "correlation": {
+      "r": -0.0021,
+      "p": 0.76832
+    },
+    "insight": "Heart rate has a weak negative correlation with dry eye (r=-0.002, p=0.7683). Heart rate shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 60.0,
+        "q1": 70.0,
+        "median": 80.0,
+        "q3": 90.0,
+        "max": 100.0,
+        "mean": 79.89
+      },
+      "No Dry Eye": {
+        "min": 60.0,
+        "q1": 70.0,
+        "median": 80.0,
+        "q3": 90.0,
+        "max": 100.0,
+        "mean": 79.95
+      }
+    }
+  },
+  {
+    "name": "Daily steps",
+    "type": "numeric",
+    "unique": 20,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 10536.9,
+      "median": 11000.0,
+      "std": 5752.73,
+      "min": 1000.0,
+      "max": 20000.0,
+      "q1": 6000.0,
+      "q3": 16000.0,
+      "iqr": 10000.0,
+      "skew": -0.008
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "1000.0-2583.3",
+        "count": 1970
+      },
+      {
+        "range": "2583.3-4166.7",
+        "count": 1935
+      },
+      {
+        "range": "4166.7-5750.0",
+        "count": 978
+      },
+      {
+        "range": "5750.0-7333.3",
+        "count": 2049
+      },
+      {
+        "range": "7333.3-8916.7",
+        "count": 1024
+      },
+      {
+        "range": "8916.7-10500.0",
+        "count": 2029
+      },
+      {
+        "range": "10500.0-12083.3",
+        "count": 2020
+      },
+      {
+        "range": "12083.3-13666.7",
+        "count": 959
+      },
+      {
+        "range": "13666.7-15250.0",
+        "count": 1973
+      },
+      {
+        "range": "15250.0-16833.3",
+        "count": 1034
+      },
+      {
+        "range": "16833.3-18416.7",
+        "count": 2033
+      },
+      {
+        "range": "18416.7-20000.0",
+        "count": 1996
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "981.0-2583.3",
+        "rate": 66.0,
+        "count": 1970
+      },
+      {
+        "range": "2583.3-4166.7",
+        "rate": 63.6,
+        "count": 1935
+      },
+      {
+        "range": "4166.7-5750.0",
+        "rate": 62.3,
+        "count": 978
+      },
+      {
+        "range": "5750.0-7333.3",
+        "rate": 66.3,
+        "count": 2049
+      },
+      {
+        "range": "7333.3-8916.7",
+        "rate": 65.3,
+        "count": 1024
+      },
+      {
+        "range": "8916.7-10500.0",
+        "rate": 65.5,
+        "count": 2029
+      },
+      {
+        "range": "10500.0-12083.3",
+        "rate": 62.7,
+        "count": 2020
+      },
+      {
+        "range": "12083.3-13666.7",
+        "rate": 65.2,
+        "count": 959
+      },
+      {
+        "range": "13666.7-15250.0",
+        "rate": 66.8,
+        "count": 1973
+      },
+      {
+        "range": "15250.0-16833.3",
+        "rate": 67.3,
+        "count": 1034
+      },
+      {
+        "range": "16833.3-18416.7",
+        "rate": 66.1,
+        "count": 2033
+      },
+      {
+        "range": "18416.7-20000.0",
+        "rate": 64.7,
+        "count": 1996
+      }
+    ],
+    "correlation": {
+      "r": 0.0057,
+      "p": 0.423154
+    },
+    "insight": "Daily steps has a weak positive correlation with dry eye (r=0.006, p=0.4232). Daily steps shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 1000.0,
+        "q1": 6000.0,
+        "median": 11000.0,
+        "q3": 16000.0,
+        "max": 20000.0,
+        "mean": 10560.71
+      },
+      "No Dry Eye": {
+        "min": 1000.0,
+        "q1": 5000.0,
+        "median": 10000.0,
+        "q3": 15000.0,
+        "max": 20000.0,
+        "mean": 10492.32
+      }
+    }
+  },
+  {
+    "name": "Physical activity",
+    "type": "numeric",
+    "unique": 181,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 90.07,
+      "median": 91.0,
+      "std": 52.32,
+      "min": 0.0,
+      "max": 180.0,
+      "q1": 45.0,
+      "q3": 135.0,
+      "iqr": 90.0,
+      "skew": -0.006
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "0.0-15.0",
+        "count": 1674
+      },
+      {
+        "range": "15.0-30.0",
+        "count": 1688
+      },
+      {
+        "range": "30.0-45.0",
+        "count": 1596
+      },
+      {
+        "range": "45.0-60.0",
+        "count": 1652
+      },
+      {
+        "range": "60.0-75.0",
+        "count": 1643
+      },
+      {
+        "range": "75.0-90.0",
+        "count": 1626
+      },
+      {
+        "range": "90.0-105.0",
+        "count": 1708
+      },
+      {
+        "range": "105.0-120.0",
+        "count": 1657
+      },
+      {
+        "range": "120.0-135.0",
+        "count": 1703
+      },
+      {
+        "range": "135.0-150.0",
+        "count": 1592
+      },
+      {
+        "range": "150.0-165.0",
+        "count": 1705
+      },
+      {
+        "range": "165.0-180.0",
+        "count": 1756
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "-0.2-15.0",
+        "rate": 66.5,
+        "count": 1796
+      },
+      {
+        "range": "15.0-30.0",
+        "rate": 65.1,
+        "count": 1657
+      },
+      {
+        "range": "30.0-45.0",
+        "rate": 64.7,
+        "count": 1599
+      },
+      {
+        "range": "45.0-60.0",
+        "rate": 66.5,
+        "count": 1666
+      },
+      {
+        "range": "60.0-75.0",
+        "rate": 63.6,
+        "count": 1634
+      },
+      {
+        "range": "75.0-90.0",
+        "rate": 64.4,
+        "count": 1644
+      },
+      {
+        "range": "90.0-105.0",
+        "rate": 65.6,
+        "count": 1716
+      },
+      {
+        "range": "105.0-120.0",
+        "rate": 65.4,
+        "count": 1644
+      },
+      {
+        "range": "120.0-135.0",
+        "rate": 65.5,
+        "count": 1708
+      },
+      {
+        "range": "135.0-150.0",
+        "rate": 64.5,
+        "count": 1579
+      },
+      {
+        "range": "150.0-165.0",
+        "rate": 65.4,
+        "count": 1704
+      },
+      {
+        "range": "165.0-180.0",
+        "rate": 64.8,
+        "count": 1653
+      }
+    ],
+    "correlation": {
+      "r": -0.0033,
+      "p": 0.641869
+    },
+    "insight": "Physical activity has a weak negative correlation with dry eye (r=-0.003, p=0.6419). Physical activity shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 0.0,
+        "q1": 45.0,
+        "median": 91.0,
+        "q3": 135.0,
+        "max": 180.0,
+        "mean": 89.94
+      },
+      "No Dry Eye": {
+        "min": 0.0,
+        "q1": 45.0,
+        "median": 90.0,
+        "q3": 135.0,
+        "max": 180.0,
+        "mean": 90.31
+      }
+    }
+  },
+  {
+    "name": "Height",
+    "type": "numeric",
+    "unique": 51,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 174.87,
+      "median": 175.0,
+      "std": 14.72,
+      "min": 150.0,
+      "max": 200.0,
+      "q1": 162.0,
+      "q3": 188.0,
+      "iqr": 26.0,
+      "skew": 0.014
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "150.0-154.2",
+        "count": 1941
+      },
+      {
+        "range": "154.2-158.3",
+        "count": 1644
+      },
+      {
+        "range": "158.3-162.5",
+        "count": 1651
+      },
+      {
+        "range": "162.5-166.7",
+        "count": 1532
+      },
+      {
+        "range": "166.7-170.8",
+        "count": 1549
+      },
+      {
+        "range": "170.8-175.0",
+        "count": 1578
+      },
+      {
+        "range": "175.0-179.2",
+        "count": 1948
+      },
+      {
+        "range": "179.2-183.3",
+        "count": 1541
+      },
+      {
+        "range": "183.3-187.5",
+        "count": 1554
+      },
+      {
+        "range": "187.5-191.7",
+        "count": 1553
+      },
+      {
+        "range": "191.7-195.8",
+        "count": 1589
+      },
+      {
+        "range": "195.8-200.0",
+        "count": 1920
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "149.9-154.2",
+        "rate": 65.6,
+        "count": 1941
+      },
+      {
+        "range": "154.2-158.3",
+        "rate": 65.8,
+        "count": 1644
+      },
+      {
+        "range": "158.3-162.5",
+        "rate": 64.9,
+        "count": 1651
+      },
+      {
+        "range": "162.5-166.7",
+        "rate": 66.2,
+        "count": 1532
+      },
+      {
+        "range": "166.7-170.8",
+        "rate": 65.4,
+        "count": 1549
+      },
+      {
+        "range": "170.8-175.0",
+        "rate": 66.3,
+        "count": 1990
+      },
+      {
+        "range": "175.0-179.2",
+        "rate": 62.9,
+        "count": 1536
+      },
+      {
+        "range": "179.2-183.3",
+        "rate": 63.5,
+        "count": 1541
+      },
+      {
+        "range": "183.3-187.5",
+        "rate": 66.3,
+        "count": 1554
+      },
+      {
+        "range": "187.5-191.7",
+        "rate": 66.6,
+        "count": 1553
+      },
+      {
+        "range": "191.7-195.8",
+        "rate": 65.1,
+        "count": 1589
+      },
+      {
+        "range": "195.8-200.0",
+        "rate": 63.6,
+        "count": 1920
+      }
+    ],
+    "correlation": {
+      "r": -0.0064,
+      "p": 0.362677
+    },
+    "insight": "Height has a weak negative correlation with dry eye (r=-0.006, p=0.3627). Height shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 150.0,
+        "q1": 162.0,
+        "median": 175.0,
+        "q3": 188.0,
+        "max": 200.0,
+        "mean": 174.8
+      },
+      "No Dry Eye": {
+        "min": 150.0,
+        "q1": 162.0,
+        "median": 175.0,
+        "q3": 188.0,
+        "max": 200.0,
+        "mean": 175.0
+      }
+    }
+  },
+  {
+    "name": "Weight",
+    "type": "numeric",
+    "unique": 51,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 74.89,
+      "median": 75.0,
+      "std": 14.73,
+      "min": 50.0,
+      "max": 100.0,
+      "q1": 62.0,
+      "q3": 88.0,
+      "iqr": 26.0,
+      "skew": 0.008
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "50.0-54.2",
+        "count": 1967
+      },
+      {
+        "range": "54.2-58.3",
+        "count": 1641
+      },
+      {
+        "range": "58.3-62.5",
+        "count": 1602
+      },
+      {
+        "range": "62.5-66.7",
+        "count": 1551
+      },
+      {
+        "range": "66.7-70.8",
+        "count": 1540
+      },
+      {
+        "range": "70.8-75.0",
+        "count": 1555
+      },
+      {
+        "range": "75.0-79.2",
+        "count": 1911
+      },
+      {
+        "range": "79.2-83.3",
+        "count": 1584
+      },
+      {
+        "range": "83.3-87.5",
+        "count": 1589
+      },
+      {
+        "range": "87.5-91.7",
+        "count": 1590
+      },
+      {
+        "range": "91.7-95.8",
+        "count": 1542
+      },
+      {
+        "range": "95.8-100.0",
+        "count": 1928
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "50.0-54.2",
+        "rate": 64.7,
+        "count": 1967
+      },
+      {
+        "range": "54.2-58.3",
+        "rate": 64.7,
+        "count": 1641
+      },
+      {
+        "range": "58.3-62.5",
+        "rate": 64.3,
+        "count": 1602
+      },
+      {
+        "range": "62.5-66.7",
+        "rate": 68.1,
+        "count": 1551
+      },
+      {
+        "range": "66.7-70.8",
+        "rate": 65.5,
+        "count": 1540
+      },
+      {
+        "range": "70.8-75.0",
+        "rate": 64.8,
+        "count": 1963
+      },
+      {
+        "range": "75.0-79.2",
+        "rate": 63.6,
+        "count": 1503
+      },
+      {
+        "range": "79.2-83.3",
+        "rate": 65.5,
+        "count": 1584
+      },
+      {
+        "range": "83.3-87.5",
+        "rate": 65.8,
+        "count": 1589
+      },
+      {
+        "range": "87.5-91.7",
+        "rate": 64.2,
+        "count": 1590
+      },
+      {
+        "range": "91.7-95.8",
+        "rate": 64.9,
+        "count": 1542
+      },
+      {
+        "range": "95.8-100.0",
+        "rate": 66.2,
+        "count": 1928
+      }
+    ],
+    "correlation": {
+      "r": 0.0025,
+      "p": 0.728973
+    },
+    "insight": "Weight has a weak positive correlation with dry eye (r=0.002, p=0.7290). Weight shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 50.0,
+        "q1": 62.0,
+        "median": 75.0,
+        "q3": 88.0,
+        "max": 100.0,
+        "mean": 74.92
+      },
+      "No Dry Eye": {
+        "min": 50.0,
+        "q1": 62.0,
+        "median": 75.0,
+        "q3": 88.0,
+        "max": 100.0,
+        "mean": 74.84
+      }
+    }
+  },
+  {
+    "name": "BMI",
+    "type": "numeric",
+    "unique": 309,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 25.02,
+      "median": 24.3,
+      "std": 6.57,
+      "min": 12.5,
+      "max": 44.4,
+      "q1": 20.1,
+      "q3": 29.3,
+      "iqr": 9.2,
+      "skew": 0.473
+    },
+    "outliers": 50,
+    "distribution": [
+      {
+        "range": "12.5-15.2",
+        "count": 833
+      },
+      {
+        "range": "15.2-17.8",
+        "count": 2005
+      },
+      {
+        "range": "17.8-20.5",
+        "count": 2614
+      },
+      {
+        "range": "20.5-23.1",
+        "count": 3192
+      },
+      {
+        "range": "23.1-25.8",
+        "count": 3038
+      },
+      {
+        "range": "25.8-28.4",
+        "count": 2695
+      },
+      {
+        "range": "28.4-31.1",
+        "count": 1856
+      },
+      {
+        "range": "31.1-33.8",
+        "count": 1447
+      },
+      {
+        "range": "33.8-36.4",
+        "count": 1069
+      },
+      {
+        "range": "36.4-39.1",
+        "count": 683
+      },
+      {
+        "range": "39.1-41.7",
+        "count": 416
+      },
+      {
+        "range": "41.7-44.4",
+        "count": 152
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "12.5-15.2",
+        "rate": 62.8,
+        "count": 833
+      },
+      {
+        "range": "15.2-17.8",
+        "rate": 66.8,
+        "count": 2005
+      },
+      {
+        "range": "17.8-20.5",
+        "rate": 64.7,
+        "count": 2614
+      },
+      {
+        "range": "20.5-23.1",
+        "rate": 65.3,
+        "count": 3192
+      },
+      {
+        "range": "23.1-25.8",
+        "rate": 64.5,
+        "count": 3038
+      },
+      {
+        "range": "25.8-28.4",
+        "rate": 64.5,
+        "count": 2695
+      },
+      {
+        "range": "28.4-31.1",
+        "rate": 65.4,
+        "count": 1856
+      },
+      {
+        "range": "31.1-33.8",
+        "rate": 65.2,
+        "count": 1447
+      },
+      {
+        "range": "33.8-36.4",
+        "rate": 65.9,
+        "count": 1069
+      },
+      {
+        "range": "36.4-39.1",
+        "rate": 68.8,
+        "count": 683
+      },
+      {
+        "range": "39.1-41.7",
+        "rate": 65.9,
+        "count": 416
+      },
+      {
+        "range": "41.7-44.4",
+        "rate": 65.1,
+        "count": 152
+      }
+    ],
+    "correlation": {
+      "r": 0.0072,
+      "p": 0.310608
+    },
+    "insight": "BMI has a weak positive correlation with dry eye (r=0.007, p=0.3106). BMI shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 12.5,
+        "q1": 20.0,
+        "median": 24.3,
+        "q3": 29.4,
+        "max": 44.4,
+        "mean": 25.06
+      },
+      "No Dry Eye": {
+        "min": 12.5,
+        "q1": 20.1,
+        "median": 24.3,
+        "q3": 29.1,
+        "max": 44.4,
+        "mean": 24.96
+      }
+    }
+  },
+  {
+    "name": "Sleep disorder",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "N",
+        "count": 10069
+      },
+      {
+        "value": "Y",
+        "count": 9931
+      }
+    ],
+    "stats": {
+      "mode": "N",
+      "mode_freq": 10069,
+      "mode_pct": 50.3
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "N",
+        "rate": 65.1,
+        "count": 10069
+      },
+      {
+        "value": "Y",
+        "rate": 65.3,
+        "count": 9931
+      }
+    ],
+    "chi_square": {
+      "chi2": 0.13,
+      "p": 0.722154,
+      "cramers_v": 0.0025
+    },
+    "insight": "Sleep disorder has a weak association with dry eye (\u03c7\u00b2=0.1, Cram\u00e9r's V=0.003, p=0.7222). Patients with sleep disorder have a higher dry eye rate (65.3% vs 65.1%)."
+  },
+  {
+    "name": "Wake up during night",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "N",
+        "count": 10000
+      },
+      {
+        "value": "Y",
+        "count": 10000
+      }
+    ],
+    "stats": {
+      "mode": "N",
+      "mode_freq": 10000,
+      "mode_pct": 50.0
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "N",
+        "rate": 65.2,
+        "count": 10000
+      },
+      {
+        "value": "Y",
+        "rate": 65.2,
+        "count": 10000
+      }
+    ],
+    "chi_square": {
+      "chi2": 0.0,
+      "p": 0.976317,
+      "cramers_v": 0.0002
+    },
+    "insight": "Wake up during night has a weak association with dry eye (\u03c7\u00b2=0.0, Cram\u00e9r's V=0.000, p=0.9763). Patients with wake up during night have a lower dry eye rate (65.2% vs 65.2%)."
+  },
+  {
+    "name": "Feel sleepy during day",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "N",
+        "count": 10178
+      },
+      {
+        "value": "Y",
+        "count": 9822
+      }
+    ],
+    "stats": {
+      "mode": "N",
+      "mode_freq": 10178,
+      "mode_pct": 50.9
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "N",
+        "rate": 65.0,
+        "count": 10178
+      },
+      {
+        "value": "Y",
+        "rate": 65.4,
+        "count": 9822
+      }
+    ],
+    "chi_square": {
+      "chi2": 0.43,
+      "p": 0.513064,
+      "cramers_v": 0.0046
+    },
+    "insight": "Feel sleepy during day has a weak association with dry eye (\u03c7\u00b2=0.4, Cram\u00e9r's V=0.005, p=0.5131). Patients with feel sleepy during day have a higher dry eye rate (65.4% vs 65.0%)."
+  },
+  {
+    "name": "Caffeine consumption",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "Y",
+        "count": 10089
+      },
+      {
+        "value": "N",
+        "count": 9911
+      }
+    ],
+    "stats": {
+      "mode": "Y",
+      "mode_freq": 10089,
+      "mode_pct": 50.4
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "Y",
+        "rate": 65.3,
+        "count": 10089
+      },
+      {
+        "value": "N",
+        "rate": 65.0,
+        "count": 9911
+      }
+    ],
+    "chi_square": {
+      "chi2": 0.15,
+      "p": 0.699864,
+      "cramers_v": 0.0027
+    },
+    "insight": "Caffeine consumption has a weak association with dry eye (\u03c7\u00b2=0.1, Cram\u00e9r's V=0.003, p=0.6999). Patients with caffeine consumption have a higher dry eye rate (65.3% vs 65.0%)."
+  },
+  {
+    "name": "Alcohol consumption",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "Y",
+        "count": 10009
+      },
+      {
+        "value": "N",
+        "count": 9991
+      }
+    ],
+    "stats": {
+      "mode": "Y",
+      "mode_freq": 10009,
+      "mode_pct": 50.0
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "Y",
+        "rate": 65.7,
+        "count": 10009
+      },
+      {
+        "value": "N",
+        "rate": 64.6,
+        "count": 9991
+      }
+    ],
+    "chi_square": {
+      "chi2": 2.49,
+      "p": 0.114717,
+      "cramers_v": 0.0112
+    },
+    "insight": "Alcohol consumption has a weak association with dry eye (\u03c7\u00b2=2.5, Cram\u00e9r's V=0.011, p=0.1147). Patients with alcohol consumption have a higher dry eye rate (65.7% vs 64.6%)."
+  },
+  {
+    "name": "Smoking",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "N",
+        "count": 10017
+      },
+      {
+        "value": "Y",
+        "count": 9983
+      }
+    ],
+    "stats": {
+      "mode": "N",
+      "mode_freq": 10017,
+      "mode_pct": 50.1
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "N",
+        "rate": 65.4,
+        "count": 10017
+      },
+      {
+        "value": "Y",
+        "rate": 64.9,
+        "count": 9983
+      }
+    ],
+    "chi_square": {
+      "chi2": 0.5,
+      "p": 0.477669,
+      "cramers_v": 0.005
+    },
+    "insight": "Smoking has a weak association with dry eye (\u03c7\u00b2=0.5, Cram\u00e9r's V=0.005, p=0.4777). Patients with smoking have a lower dry eye rate (64.9% vs 65.4%)."
+  },
+  {
+    "name": "Medical issue",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "N",
+        "count": 10111
+      },
+      {
+        "value": "Y",
+        "count": 9889
+      }
+    ],
+    "stats": {
+      "mode": "N",
+      "mode_freq": 10111,
+      "mode_pct": 50.6
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "N",
+        "rate": 65.2,
+        "count": 10111
+      },
+      {
+        "value": "Y",
+        "rate": 65.1,
+        "count": 9889
+      }
+    ],
+    "chi_square": {
+      "chi2": 0.02,
+      "p": 0.890326,
+      "cramers_v": 0.001
+    },
+    "insight": "Medical issue has a weak association with dry eye (\u03c7\u00b2=0.0, Cram\u00e9r's V=0.001, p=0.8903). Patients with medical issue have a lower dry eye rate (65.1% vs 65.2%)."
+  },
+  {
+    "name": "Ongoing medication",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "Y",
+        "count": 10082
+      },
+      {
+        "value": "N",
+        "count": 9918
+      }
+    ],
+    "stats": {
+      "mode": "Y",
+      "mode_freq": 10082,
+      "mode_pct": 50.4
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "Y",
+        "rate": 65.0,
+        "count": 10082
+      },
+      {
+        "value": "N",
+        "rate": 65.4,
+        "count": 9918
+      }
+    ],
+    "chi_square": {
+      "chi2": 0.33,
+      "p": 0.563621,
+      "cramers_v": 0.0041
+    },
+    "insight": "Ongoing medication has a weak association with dry eye (\u03c7\u00b2=0.3, Cram\u00e9r's V=0.004, p=0.5636). Patients with ongoing medication have a lower dry eye rate (65.0% vs 65.4%)."
+  },
+  {
+    "name": "Smart device before bed",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "Y",
+        "count": 10003
+      },
+      {
+        "value": "N",
+        "count": 9997
+      }
+    ],
+    "stats": {
+      "mode": "Y",
+      "mode_freq": 10003,
+      "mode_pct": 50.0
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "Y",
+        "rate": 64.6,
+        "count": 10003
+      },
+      {
+        "value": "N",
+        "rate": 65.8,
+        "count": 9997
+      }
+    ],
+    "chi_square": {
+      "chi2": 3.49,
+      "p": 0.061633,
+      "cramers_v": 0.0132
+    },
+    "insight": "Smart device before bed has a weak association with dry eye (\u03c7\u00b2=3.5, Cram\u00e9r's V=0.013, p=0.0616). Patients with smart device before bed have a lower dry eye rate (64.6% vs 65.8%)."
+  },
+  {
+    "name": "Average screen time",
+    "type": "numeric",
+    "unique": 91,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "stats": {
+      "mean": 5.52,
+      "median": 5.5,
+      "std": 2.61,
+      "min": 1.0,
+      "max": 10.0,
+      "q1": 3.3,
+      "q3": 7.8,
+      "iqr": 4.5,
+      "skew": -0.009
+    },
+    "outliers": 0,
+    "distribution": [
+      {
+        "range": "1.0-1.8",
+        "count": 1649
+      },
+      {
+        "range": "1.8-2.5",
+        "count": 1575
+      },
+      {
+        "range": "2.5-3.2",
+        "count": 1749
+      },
+      {
+        "range": "3.2-4.0",
+        "count": 1550
+      },
+      {
+        "range": "4.0-4.8",
+        "count": 1735
+      },
+      {
+        "range": "4.8-5.5",
+        "count": 1602
+      },
+      {
+        "range": "5.5-6.2",
+        "count": 1744
+      },
+      {
+        "range": "6.2-7.0",
+        "count": 1550
+      },
+      {
+        "range": "7.0-7.8",
+        "count": 1744
+      },
+      {
+        "range": "7.8-8.5",
+        "count": 1609
+      },
+      {
+        "range": "8.5-9.2",
+        "count": 1776
+      },
+      {
+        "range": "9.2-10.0",
+        "count": 1717
+      }
+    ],
+    "dry_eye_by_value": [
+      {
+        "range": "1.0-1.8",
+        "rate": 64.0,
+        "count": 1649
+      },
+      {
+        "range": "1.8-2.5",
+        "rate": 65.1,
+        "count": 1799
+      },
+      {
+        "range": "2.5-3.2",
+        "rate": 65.0,
+        "count": 1525
+      },
+      {
+        "range": "3.2-4.0",
+        "rate": 63.0,
+        "count": 1761
+      },
+      {
+        "range": "4.0-4.8",
+        "rate": 63.8,
+        "count": 1524
+      },
+      {
+        "range": "4.8-5.5",
+        "rate": 64.7,
+        "count": 1808
+      },
+      {
+        "range": "5.5-6.2",
+        "rate": 64.6,
+        "count": 1538
+      },
+      {
+        "range": "6.2-7.0",
+        "rate": 65.2,
+        "count": 1783
+      },
+      {
+        "range": "7.0-7.8",
+        "rate": 67.1,
+        "count": 1511
+      },
+      {
+        "range": "7.8-8.5",
+        "rate": 64.4,
+        "count": 1838
+      },
+      {
+        "range": "8.5-9.2",
+        "rate": 66.6,
+        "count": 1547
+      },
+      {
+        "range": "9.2-10.0",
+        "rate": 68.8,
+        "count": 1717
+      }
+    ],
+    "correlation": {
+      "r": 0.0225,
+      "p": 0.001469
+    },
+    "insight": "Average screen time has a weak positive correlation with dry eye (r=0.022, p=0.0015). Average screen time shows minimal association with dry eye.",
+    "box_plot": {
+      "Dry Eye": {
+        "min": 1.0,
+        "q1": 3.3,
+        "median": 5.6,
+        "q3": 7.8,
+        "max": 10.0,
+        "mean": 5.56
+      },
+      "No Dry Eye": {
+        "min": 1.0,
+        "q1": 3.2,
+        "median": 5.4,
+        "q3": 7.7,
+        "max": 10.0,
+        "mean": 5.44
+      }
+    }
+  },
+  {
+    "name": "Blue-light filter",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "N",
+        "count": 10016
+      },
+      {
+        "value": "Y",
+        "count": 9984
+      }
+    ],
+    "stats": {
+      "mode": "N",
+      "mode_freq": 10016,
+      "mode_pct": 50.1
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "N",
+        "rate": 64.9,
+        "count": 10016
+      },
+      {
+        "value": "Y",
+        "rate": 65.4,
+        "count": 9984
+      }
+    ],
+    "chi_square": {
+      "chi2": 0.48,
+      "p": 0.486716,
+      "cramers_v": 0.0049
+    },
+    "insight": "Blue-light filter has a weak association with dry eye (\u03c7\u00b2=0.5, Cram\u00e9r's V=0.005, p=0.4867). Patients with blue-light filter have a higher dry eye rate (65.4% vs 64.9%)."
+  },
+  {
+    "name": "Discomfort Eye-strain",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "Y",
+        "count": 10037
+      },
+      {
+        "value": "N",
+        "count": 9963
+      }
+    ],
+    "stats": {
+      "mode": "Y",
+      "mode_freq": 10037,
+      "mode_pct": 50.2
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "Y",
+        "rate": 70.4,
+        "count": 10037
+      },
+      {
+        "value": "N",
+        "rate": 59.9,
+        "count": 9963
+      }
+    ],
+    "chi_square": {
+      "chi2": 240.95,
+      "p": 0.0,
+      "cramers_v": 0.1098
+    },
+    "insight": "Discomfort Eye-strain has a moderate association with dry eye (\u03c7\u00b2=241.0, Cram\u00e9r's V=0.110, p=<0.001). Patients with discomfort eye-strain have a higher dry eye rate (70.4% vs 59.9%)."
+  },
+  {
+    "name": "Redness in eye",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "N",
+        "count": 10129
+      },
+      {
+        "value": "Y",
+        "count": 9871
+      }
+    ],
+    "stats": {
+      "mode": "N",
+      "mode_freq": 10129,
+      "mode_pct": 50.6
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "N",
+        "rate": 60.3,
+        "count": 10129
+      },
+      {
+        "value": "Y",
+        "rate": 70.2,
+        "count": 9871
+      }
+    ],
+    "chi_square": {
+      "chi2": 213.44,
+      "p": 0.0,
+      "cramers_v": 0.1033
+    },
+    "insight": "Redness in eye has a moderate association with dry eye (\u03c7\u00b2=213.4, Cram\u00e9r's V=0.103, p=<0.001). Patients with redness in eye have a higher dry eye rate (70.2% vs 60.3%)."
+  },
+  {
+    "name": "Itchiness/Irritation in eye",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "N",
+        "count": 10063
+      },
+      {
+        "value": "Y",
+        "count": 9937
+      }
+    ],
+    "stats": {
+      "mode": "N",
+      "mode_freq": 10063,
+      "mode_pct": 50.3
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "N",
+        "rate": 60.4,
+        "count": 10063
+      },
+      {
+        "value": "Y",
+        "rate": 70.0,
+        "count": 9937
+      }
+    ],
+    "chi_square": {
+      "chi2": 204.81,
+      "p": 0.0,
+      "cramers_v": 0.1012
+    },
+    "insight": "Itchiness/Irritation in eye has a moderate association with dry eye (\u03c7\u00b2=204.8, Cram\u00e9r's V=0.101, p=<0.001). Patients with itchiness/irritation in eye have a higher dry eye rate (70.0% vs 60.4%)."
+  },
+  {
+    "name": "Dry Eye Disease",
+    "type": "binary",
+    "unique": 2,
+    "missing": 0,
+    "total": 20000,
+    "completeness": 100.0,
+    "value_counts": [
+      {
+        "value": "Y",
+        "count": 13037
+      },
+      {
+        "value": "N",
+        "count": 6963
+      }
+    ],
+    "stats": {
+      "mode": "Y",
+      "mode_freq": 13037,
+      "mode_pct": 65.2
+    },
+    "dry_eye_by_value": [
+      {
+        "value": "Y",
+        "rate": 100.0,
+        "count": 13037
+      },
+      {
+        "value": "N",
+        "rate": 0.0,
+        "count": 6963
+      }
+    ],
+    "insight": "This is the target variable. 65.2% of patients have dry eye disease."
+  }
+]
