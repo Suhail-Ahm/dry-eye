@@ -1,0 +1,786 @@
+{
+  "summary_table": [
+    {
+      "feature": "Age",
+      "count": 20000,
+      "mean": 31.42,
+      "std": 8.1,
+      "min": 18.0,
+      "q25": 24.0,
+      "median": 31.0,
+      "q75": 39.0,
+      "max": 45.0
+    },
+    {
+      "feature": "Sleep duration",
+      "count": 20000,
+      "mean": 7.0,
+      "std": 1.73,
+      "min": 4.0,
+      "q25": 5.5,
+      "median": 7.0,
+      "q75": 8.5,
+      "max": 10.0
+    },
+    {
+      "feature": "Sleep quality",
+      "count": 20000,
+      "mean": 3.0,
+      "std": 1.41,
+      "min": 1.0,
+      "q25": 2.0,
+      "median": 3.0,
+      "q75": 4.0,
+      "max": 5.0
+    },
+    {
+      "feature": "Stress level",
+      "count": 20000,
+      "mean": 2.99,
+      "std": 1.41,
+      "min": 1.0,
+      "q25": 2.0,
+      "median": 3.0,
+      "q75": 4.0,
+      "max": 5.0
+    },
+    {
+      "feature": "BP_Systolic",
+      "count": 20000,
+      "mean": 114.99,
+      "std": 14.73,
+      "min": 90.0,
+      "q25": 102.0,
+      "median": 115.0,
+      "q75": 128.0,
+      "max": 140.0
+    },
+    {
+      "feature": "BP_Diastolic",
+      "count": 20000,
+      "mean": 75.0,
+      "std": 8.98,
+      "min": 60.0,
+      "q25": 67.0,
+      "median": 75.0,
+      "q75": 83.0,
+      "max": 90.0
+    },
+    {
+      "feature": "Heart rate",
+      "count": 20000,
+      "mean": 79.91,
+      "std": 11.81,
+      "min": 60.0,
+      "q25": 70.0,
+      "median": 80.0,
+      "q75": 90.0,
+      "max": 100.0
+    },
+    {
+      "feature": "Daily steps",
+      "count": 20000,
+      "mean": 10536.9,
+      "std": 5752.73,
+      "min": 1000.0,
+      "q25": 6000.0,
+      "median": 11000.0,
+      "q75": 16000.0,
+      "max": 20000.0
+    },
+    {
+      "feature": "Physical activity",
+      "count": 20000,
+      "mean": 90.07,
+      "std": 52.32,
+      "min": 0.0,
+      "q25": 45.0,
+      "median": 91.0,
+      "q75": 135.0,
+      "max": 180.0
+    },
+    {
+      "feature": "Height",
+      "count": 20000,
+      "mean": 174.87,
+      "std": 14.72,
+      "min": 150.0,
+      "q25": 162.0,
+      "median": 175.0,
+      "q75": 188.0,
+      "max": 200.0
+    },
+    {
+      "feature": "Weight",
+      "count": 20000,
+      "mean": 74.89,
+      "std": 14.73,
+      "min": 50.0,
+      "q25": 62.0,
+      "median": 75.0,
+      "q75": 88.0,
+      "max": 100.0
+    },
+    {
+      "feature": "BMI",
+      "count": 20000,
+      "mean": 25.02,
+      "std": 6.57,
+      "min": 12.5,
+      "q25": 20.1,
+      "median": 24.3,
+      "q75": 29.3,
+      "max": 44.4
+    },
+    {
+      "feature": "Average screen time",
+      "count": 20000,
+      "mean": 5.52,
+      "std": 2.61,
+      "min": 1.0,
+      "q25": 3.3,
+      "median": 5.5,
+      "q75": 7.8,
+      "max": 10.0
+    }
+  ],
+  "bmi_distribution": [
+    {
+      "name": "Underweight",
+      "count": 3479
+    },
+    {
+      "name": "Normal",
+      "count": 7421
+    },
+    {
+      "name": "Overweight",
+      "count": 4688
+    },
+    {
+      "name": "Obese I",
+      "count": 2640
+    },
+    {
+      "name": "Obese II+",
+      "count": 1772
+    }
+  ],
+  "dry_eye_by_bmi": [
+    {
+      "name": "Underweight",
+      "rate": 66.1,
+      "count": 3479
+    },
+    {
+      "name": "Normal",
+      "rate": 64.3,
+      "count": 7421
+    },
+    {
+      "name": "Overweight",
+      "rate": 64.9,
+      "count": 4688
+    },
+    {
+      "name": "Obese I",
+      "rate": 66.0,
+      "count": 2640
+    },
+    {
+      "name": "Obese II+",
+      "rate": 66.6,
+      "count": 1772
+    }
+  ],
+  "bp_distribution": [
+    {
+      "name": "Normal",
+      "count": 7537
+    },
+    {
+      "name": "Elevated",
+      "count": 2574
+    },
+    {
+      "name": "High Stage 1",
+      "count": 9880
+    },
+    {
+      "name": "High Stage 2",
+      "count": 9
+    }
+  ],
+  "dry_eye_by_bp": [
+    {
+      "name": "Normal",
+      "rate": 64.7,
+      "count": 7537
+    },
+    {
+      "name": "Elevated",
+      "rate": 64.1,
+      "count": 2574
+    },
+    {
+      "name": "High Stage 1",
+      "rate": 65.8,
+      "count": 9880
+    },
+    {
+      "name": "High Stage 2",
+      "rate": 66.7,
+      "count": 9
+    }
+  ],
+  "heart_rate_distribution": [
+    {
+      "range": "55-65",
+      "count": 2484
+    },
+    {
+      "range": "65-75",
+      "count": 4842
+    },
+    {
+      "range": "75-85",
+      "count": 4911
+    },
+    {
+      "range": "85-95",
+      "count": 4881
+    },
+    {
+      "range": "95-105",
+      "count": 2882
+    }
+  ],
+  "dry_eye_by_heart_rate": [
+    {
+      "name": "55-65",
+      "rate": 64.9
+    },
+    {
+      "name": "65-75",
+      "rate": 65.1
+    },
+    {
+      "name": "75-85",
+      "rate": 66.0
+    },
+    {
+      "name": "85-95",
+      "rate": 64.6
+    },
+    {
+      "name": "95-105",
+      "rate": 65.1
+    }
+  ],
+  "steps_distribution": [
+    {
+      "name": "<5k",
+      "count": 3905
+    },
+    {
+      "name": "5k-10k",
+      "count": 5030
+    },
+    {
+      "name": "10k-15k",
+      "count": 5024
+    },
+    {
+      "name": "15k-20k",
+      "count": 6041
+    }
+  ],
+  "dry_eye_by_steps": [
+    {
+      "name": "<5k",
+      "rate": 64.8
+    },
+    {
+      "name": "5k-10k",
+      "rate": 64.9
+    },
+    {
+      "name": "10k-15k",
+      "rate": 65.2
+    },
+    {
+      "name": "15k-20k",
+      "rate": 65.6
+    }
+  ],
+  "physical_activity_distribution": [
+    {
+      "name": "0-30 min",
+      "count": 3362
+    },
+    {
+      "name": "30-60 min",
+      "count": 3248
+    },
+    {
+      "name": "60-90 min",
+      "count": 3269
+    },
+    {
+      "name": "90-120 min",
+      "count": 3365
+    },
+    {
+      "name": "120-180 min",
+      "count": 6756
+    }
+  ],
+  "dry_eye_by_physical_activity": [
+    {
+      "name": "0-30",
+      "rate": 65.9
+    },
+    {
+      "name": "30-60",
+      "rate": 65.5
+    },
+    {
+      "name": "60-90",
+      "rate": 64.0
+    },
+    {
+      "name": "90-120",
+      "rate": 65.6
+    },
+    {
+      "name": "120-180",
+      "rate": 65.0
+    }
+  ],
+  "distribution_comparison": [
+    {
+      "feature": "Age",
+      "data": [
+        {
+          "range": "15",
+          "Dry Eye": 973,
+          "No Dry Eye": 512
+        },
+        {
+          "range": "20",
+          "Dry Eye": 2336,
+          "No Dry Eye": 1224
+        },
+        {
+          "range": "25",
+          "Dry Eye": 2349,
+          "No Dry Eye": 1312
+        },
+        {
+          "range": "30",
+          "Dry Eye": 2308,
+          "No Dry Eye": 1242
+        },
+        {
+          "range": "35",
+          "Dry Eye": 2245,
+          "No Dry Eye": 1239
+        },
+        {
+          "range": "40",
+          "Dry Eye": 2826,
+          "No Dry Eye": 1434
+        }
+      ]
+    },
+    {
+      "feature": "Sleep duration",
+      "data": [
+        {
+          "range": "4",
+          "Dry Eye": 968,
+          "No Dry Eye": 558
+        },
+        {
+          "range": "4",
+          "Dry Eye": 2196,
+          "No Dry Eye": 1134
+        },
+        {
+          "range": "6",
+          "Dry Eye": 2144,
+          "No Dry Eye": 1158
+        },
+        {
+          "range": "6",
+          "Dry Eye": 2238,
+          "No Dry Eye": 1168
+        },
+        {
+          "range": "8",
+          "Dry Eye": 2158,
+          "No Dry Eye": 1116
+        },
+        {
+          "range": "8",
+          "Dry Eye": 2133,
+          "No Dry Eye": 1185
+        },
+        {
+          "range": "10",
+          "Dry Eye": 1200,
+          "No Dry Eye": 644
+        }
+      ]
+    },
+    {
+      "feature": "Average screen time",
+      "data": [
+        {
+          "range": "0",
+          "Dry Eye": 632,
+          "No Dry Eye": 340
+        },
+        {
+          "range": "2",
+          "Dry Eye": 1453,
+          "No Dry Eye": 799
+        },
+        {
+          "range": "2",
+          "Dry Eye": 1432,
+          "No Dry Eye": 769
+        },
+        {
+          "range": "4",
+          "Dry Eye": 1348,
+          "No Dry Eye": 808
+        },
+        {
+          "range": "4",
+          "Dry Eye": 1465,
+          "No Dry Eye": 814
+        },
+        {
+          "range": "6",
+          "Dry Eye": 1422,
+          "No Dry Eye": 777
+        },
+        {
+          "range": "6",
+          "Dry Eye": 1438,
+          "No Dry Eye": 732
+        },
+        {
+          "range": "8",
+          "Dry Eye": 1480,
+          "No Dry Eye": 798
+        },
+        {
+          "range": "8",
+          "Dry Eye": 1481,
+          "No Dry Eye": 761
+        },
+        {
+          "range": "10",
+          "Dry Eye": 886,
+          "No Dry Eye": 365
+        }
+      ]
+    },
+    {
+      "feature": "Heart rate",
+      "data": [
+        {
+          "range": "55",
+          "Dry Eye": 989,
+          "No Dry Eye": 505
+        },
+        {
+          "range": "63",
+          "Dry Eye": 2486,
+          "No Dry Eye": 1405
+        },
+        {
+          "range": "71",
+          "Dry Eye": 2596,
+          "No Dry Eye": 1314
+        },
+        {
+          "range": "79",
+          "Dry Eye": 2588,
+          "No Dry Eye": 1361
+        },
+        {
+          "range": "87",
+          "Dry Eye": 2505,
+          "No Dry Eye": 1369
+        },
+        {
+          "range": "95",
+          "Dry Eye": 1873,
+          "No Dry Eye": 1009
+        }
+      ]
+    },
+    {
+      "feature": "BMI",
+      "data": [
+        {
+          "range": "12",
+          "Dry Eye": 447,
+          "No Dry Eye": 272
+        },
+        {
+          "range": "15",
+          "Dry Eye": 1475,
+          "No Dry Eye": 731
+        },
+        {
+          "range": "18",
+          "Dry Eye": 1997,
+          "No Dry Eye": 1079
+        },
+        {
+          "range": "21",
+          "Dry Eye": 2350,
+          "No Dry Eye": 1250
+        },
+        {
+          "range": "24",
+          "Dry Eye": 2156,
+          "No Dry Eye": 1201
+        },
+        {
+          "range": "27",
+          "Dry Eye": 1635,
+          "No Dry Eye": 916
+        },
+        {
+          "range": "30",
+          "Dry Eye": 1185,
+          "No Dry Eye": 618
+        },
+        {
+          "range": "33",
+          "Dry Eye": 862,
+          "No Dry Eye": 418
+        },
+        {
+          "range": "36",
+          "Dry Eye": 557,
+          "No Dry Eye": 283
+        }
+      ]
+    },
+    {
+      "feature": "Daily steps",
+      "data": [
+        {
+          "range": "0",
+          "Dry Eye": 1930,
+          "No Dry Eye": 1030
+        },
+        {
+          "range": "4000",
+          "Dry Eye": 2568,
+          "No Dry Eye": 1404
+        },
+        {
+          "range": "8000",
+          "Dry Eye": 2637,
+          "No Dry Eye": 1386
+        },
+        {
+          "range": "12000",
+          "Dry Eye": 2570,
+          "No Dry Eye": 1412
+        },
+        {
+          "range": "16000",
+          "Dry Eye": 3332,
+          "No Dry Eye": 1731
+        }
+      ]
+    },
+    {
+      "feature": "Physical activity",
+      "data": [
+        {
+          "range": "0",
+          "Dry Eye": 2215,
+          "No Dry Eye": 1147
+        },
+        {
+          "range": "30",
+          "Dry Eye": 2129,
+          "No Dry Eye": 1119
+        },
+        {
+          "range": "60",
+          "Dry Eye": 2093,
+          "No Dry Eye": 1176
+        },
+        {
+          "range": "90",
+          "Dry Eye": 2208,
+          "No Dry Eye": 1157
+        },
+        {
+          "range": "120",
+          "Dry Eye": 2136,
+          "No Dry Eye": 1159
+        },
+        {
+          "range": "150",
+          "Dry Eye": 2256,
+          "No Dry Eye": 1205
+        }
+      ]
+    }
+  ],
+  "symptom_cooccurrence": [
+    {
+      "symptoms": "0 symptoms",
+      "count": 2536,
+      "dry_eye_rate": 31.8
+    },
+    {
+      "symptoms": "1 symptoms",
+      "count": 7528,
+      "dry_eye_rate": 69.4
+    },
+    {
+      "symptoms": "2 symptoms",
+      "count": 7491,
+      "dry_eye_rate": 70.6
+    },
+    {
+      "symptoms": "3 symptoms",
+      "count": 2445,
+      "dry_eye_rate": 70.2
+    }
+  ],
+  "box_plots": [
+    {
+      "feature": "Age",
+      "group": "Dry Eye",
+      "min": 18.0,
+      "q1": 24.0,
+      "median": 31.0,
+      "q3": 39.0,
+      "max": 45.0,
+      "mean": 31.45
+    },
+    {
+      "feature": "Age",
+      "group": "No Dry Eye",
+      "min": 18.0,
+      "q1": 25.0,
+      "median": 31.0,
+      "q3": 38.0,
+      "max": 45.0,
+      "mean": 31.36
+    },
+    {
+      "feature": "Sleep duration",
+      "group": "Dry Eye",
+      "min": 4.0,
+      "q1": 5.5,
+      "median": 7.0,
+      "q3": 8.5,
+      "max": 10.0,
+      "mean": 7.0
+    },
+    {
+      "feature": "Sleep duration",
+      "group": "No Dry Eye",
+      "min": 4.0,
+      "q1": 5.5,
+      "median": 7.0,
+      "q3": 8.5,
+      "max": 10.0,
+      "mean": 7.0
+    },
+    {
+      "feature": "Average screen time",
+      "group": "Dry Eye",
+      "min": 1.0,
+      "q1": 3.3,
+      "median": 5.6,
+      "q3": 7.8,
+      "max": 10.0,
+      "mean": 5.56
+    },
+    {
+      "feature": "Average screen time",
+      "group": "No Dry Eye",
+      "min": 1.0,
+      "q1": 3.2,
+      "median": 5.4,
+      "q3": 7.7,
+      "max": 10.0,
+      "mean": 5.44
+    },
+    {
+      "feature": "Heart rate",
+      "group": "Dry Eye",
+      "min": 60.0,
+      "q1": 70.0,
+      "median": 80.0,
+      "q3": 90.0,
+      "max": 100.0,
+      "mean": 79.89
+    },
+    {
+      "feature": "Heart rate",
+      "group": "No Dry Eye",
+      "min": 60.0,
+      "q1": 70.0,
+      "median": 80.0,
+      "q3": 90.0,
+      "max": 100.0,
+      "mean": 79.95
+    },
+    {
+      "feature": "BMI",
+      "group": "Dry Eye",
+      "min": 12.5,
+      "q1": 20.0,
+      "median": 24.3,
+      "q3": 29.4,
+      "max": 44.4,
+      "mean": 25.06
+    },
+    {
+      "feature": "BMI",
+      "group": "No Dry Eye",
+      "min": 12.5,
+      "q1": 20.1,
+      "median": 24.3,
+      "q3": 29.1,
+      "max": 44.4,
+      "mean": 24.96
+    },
+    {
+      "feature": "Daily steps",
+      "group": "Dry Eye",
+      "min": 1000.0,
+      "q1": 6000.0,
+      "median": 11000.0,
+      "q3": 16000.0,
+      "max": 20000.0,
+      "mean": 10560.71
+    },
+    {
+      "feature": "Daily steps",
+      "group": "No Dry Eye",
+      "min": 1000.0,
+      "q1": 5000.0,
+      "median": 10000.0,
+      "q3": 15000.0,
+      "max": 20000.0,
+      "mean": 10492.32
+    }
+  ]
+}

@@ -1,0 +1,1489 @@
+{
+  "summary": {
+    "total_rows": 20000,
+    "total_columns": 26,
+    "positive_count": 13037,
+    "negative_count": 6963,
+    "positive_rate": 65.2,
+    "avg_age": 31.4,
+    "avg_screen_time": 5.5,
+    "avg_sleep_duration": 7.0,
+    "avg_heart_rate": 79.9,
+    "avg_daily_steps": 10536
+  },
+  "target_distribution": [
+    {
+      "name": "Dry Eye (Yes)",
+      "value": 13037,
+      "fill": "#3b82f6"
+    },
+    {
+      "name": "No Dry Eye",
+      "value": 6963,
+      "fill": "#94a3b8"
+    }
+  ],
+  "age_distribution": [
+    {
+      "range": "15-20",
+      "count": 1485
+    },
+    {
+      "range": "20-25",
+      "count": 3560
+    },
+    {
+      "range": "25-30",
+      "count": 3661
+    },
+    {
+      "range": "30-35",
+      "count": 3550
+    },
+    {
+      "range": "35-40",
+      "count": 3484
+    },
+    {
+      "range": "40-45",
+      "count": 4260
+    }
+  ],
+  "gender_distribution": [
+    {
+      "name": "Female",
+      "count": 9972
+    },
+    {
+      "name": "Male",
+      "count": 10028
+    }
+  ],
+  "dry_eye_by_gender": [
+    {
+      "name": "Female",
+      "rate": 66.0,
+      "positive": 6578,
+      "negative": 3394
+    },
+    {
+      "name": "Male",
+      "rate": 64.4,
+      "positive": 6459,
+      "negative": 3569
+    }
+  ],
+  "dry_eye_by_age_group": [
+    {
+      "name": "18-25",
+      "rate": 65.6,
+      "positive": 3792,
+      "total": 5779
+    },
+    {
+      "name": "26-35",
+      "rate": 64.5,
+      "positive": 4628,
+      "total": 7180
+    },
+    {
+      "name": "36-45",
+      "rate": 65.6,
+      "positive": 4617,
+      "total": 7041
+    }
+  ],
+  "sleep_duration_distribution": [
+    {
+      "range": "4-4",
+      "count": 1526
+    },
+    {
+      "range": "4-6",
+      "count": 3330
+    },
+    {
+      "range": "6-6",
+      "count": 3302
+    },
+    {
+      "range": "6-8",
+      "count": 3406
+    },
+    {
+      "range": "8-8",
+      "count": 3274
+    },
+    {
+      "range": "8-10",
+      "count": 3318
+    },
+    {
+      "range": "10-10",
+      "count": 1844
+    }
+  ],
+  "sleep_quality_distribution": [
+    {
+      "quality": "1",
+      "count": 4003
+    },
+    {
+      "quality": "2",
+      "count": 3995
+    },
+    {
+      "quality": "3",
+      "count": 4024
+    },
+    {
+      "quality": "4",
+      "count": 4010
+    },
+    {
+      "quality": "5",
+      "count": 3968
+    }
+  ],
+  "stress_level_distribution": [
+    {
+      "level": "1",
+      "count": 4012
+    },
+    {
+      "level": "2",
+      "count": 3929
+    },
+    {
+      "level": "3",
+      "count": 4131
+    },
+    {
+      "level": "4",
+      "count": 4028
+    },
+    {
+      "level": "5",
+      "count": 3900
+    }
+  ],
+  "dry_eye_by_sleep_quality": [
+    {
+      "quality": "1",
+      "rate": 65.6
+    },
+    {
+      "quality": "2",
+      "rate": 65.2
+    },
+    {
+      "quality": "3",
+      "rate": 65.0
+    },
+    {
+      "quality": "4",
+      "rate": 65.6
+    },
+    {
+      "quality": "5",
+      "rate": 64.5
+    }
+  ],
+  "dry_eye_by_stress_level": [
+    {
+      "level": "1",
+      "rate": 65.2
+    },
+    {
+      "level": "2",
+      "rate": 64.4
+    },
+    {
+      "level": "3",
+      "rate": 65.7
+    },
+    {
+      "level": "4",
+      "rate": 64.7
+    },
+    {
+      "level": "5",
+      "rate": 65.9
+    }
+  ],
+  "lifestyle_distribution": [
+    {
+      "name": "Sleep disorder",
+      "yes": 9931,
+      "no": 10069
+    },
+    {
+      "name": "Wake up during night",
+      "yes": 10000,
+      "no": 10000
+    },
+    {
+      "name": "Feel sleepy during day",
+      "yes": 9822,
+      "no": 10178
+    },
+    {
+      "name": "Caffeine consumption",
+      "yes": 10089,
+      "no": 9911
+    },
+    {
+      "name": "Alcohol consumption",
+      "yes": 10009,
+      "no": 9991
+    },
+    {
+      "name": "Smoking",
+      "yes": 9983,
+      "no": 10017
+    },
+    {
+      "name": "Medical issue",
+      "yes": 9889,
+      "no": 10111
+    },
+    {
+      "name": "Ongoing medication",
+      "yes": 10082,
+      "no": 9918
+    },
+    {
+      "name": "Smart device before bed",
+      "yes": 10003,
+      "no": 9997
+    }
+  ],
+  "dry_eye_by_lifestyle": [
+    {
+      "name": "Sleep disorder",
+      "yes_rate": 65.3,
+      "no_rate": 65.1
+    },
+    {
+      "name": "Wake up during night",
+      "yes_rate": 65.2,
+      "no_rate": 65.2
+    },
+    {
+      "name": "Feel sleepy during day",
+      "yes_rate": 65.4,
+      "no_rate": 65.0
+    },
+    {
+      "name": "Caffeine consumption",
+      "yes_rate": 65.3,
+      "no_rate": 65.0
+    },
+    {
+      "name": "Alcohol consumption",
+      "yes_rate": 65.7,
+      "no_rate": 64.6
+    },
+    {
+      "name": "Smoking",
+      "yes_rate": 64.9,
+      "no_rate": 65.4
+    },
+    {
+      "name": "Medical issue",
+      "yes_rate": 65.1,
+      "no_rate": 65.2
+    },
+    {
+      "name": "Ongoing medication",
+      "yes_rate": 65.0,
+      "no_rate": 65.4
+    },
+    {
+      "name": "Smart device before bed",
+      "yes_rate": 64.6,
+      "no_rate": 65.8
+    }
+  ],
+  "screen_time_distribution": [
+    {
+      "range": "0-2",
+      "count": 972
+    },
+    {
+      "range": "2-2",
+      "count": 2252
+    },
+    {
+      "range": "2-4",
+      "count": 2201
+    },
+    {
+      "range": "4-4",
+      "count": 2156
+    },
+    {
+      "range": "4-6",
+      "count": 2279
+    },
+    {
+      "range": "6-6",
+      "count": 2199
+    },
+    {
+      "range": "6-8",
+      "count": 2170
+    },
+    {
+      "range": "8-8",
+      "count": 2278
+    },
+    {
+      "range": "8-10",
+      "count": 2242
+    },
+    {
+      "range": "10-10",
+      "count": 1251
+    }
+  ],
+  "blue_light_impact": [
+    {
+      "name": "Uses Filter",
+      "rate": 65.4,
+      "count": 9984
+    },
+    {
+      "name": "No Filter",
+      "rate": 64.9,
+      "count": 10016
+    }
+  ],
+  "eye_symptoms_distribution": [
+    {
+      "name": "Discomfort Eye-strain",
+      "yes": 10037,
+      "no": 9963
+    },
+    {
+      "name": "Redness in eye",
+      "yes": 9871,
+      "no": 10129
+    },
+    {
+      "name": "Itchiness/Irritation in eye",
+      "yes": 9937,
+      "no": 10063
+    }
+  ],
+  "dry_eye_by_eye_symptom": [
+    {
+      "name": "Discomfort Eye-strain",
+      "with_symptom": 70.4,
+      "without_symptom": 59.9
+    },
+    {
+      "name": "Redness in eye",
+      "with_symptom": 70.2,
+      "without_symptom": 60.3
+    },
+    {
+      "name": "Itchiness/Irritation in eye",
+      "with_symptom": 70.0,
+      "without_symptom": 60.4
+    }
+  ],
+  "correlation_matrix": {
+    "labels": [
+      "Age",
+      "Sleep duration",
+      "Sleep quality",
+      "Stress level",
+      "Heart rate",
+      "Daily steps",
+      "Physical activity",
+      "Height",
+      "Weight",
+      "Average screen time",
+      "BP_Systolic",
+      "BP_Diastolic",
+      "Sleep disorder",
+      "Wake up during night",
+      "Feel sleepy during day",
+      "Caffeine consumption",
+      "Alcohol consumption",
+      "Smoking",
+      "Medical issue",
+      "Ongoing medication",
+      "Smart device before bed",
+      "Blue-light filter",
+      "Discomfort Eye-strain",
+      "Redness in eye",
+      "Itchiness/Irritation in eye",
+      "Dry Eye Disease"
+    ],
+    "values": [
+      [
+        1.0,
+        0.005,
+        0.003,
+        0.008,
+        -0.001,
+        0.001,
+        -0.009,
+        -0.005,
+        0.004,
+        0.003,
+        0.018,
+        -0.016,
+        -0.018,
+        0.005,
+        -0.007,
+        -0.001,
+        0.019,
+        -0.003,
+        -0.011,
+        0.008,
+        0.004,
+        -0.003,
+        -0.001,
+        -0.01,
+        0.01,
+        0.005
+      ],
+      [
+        0.005,
+        1.0,
+        -0.007,
+        -0.006,
+        -0.029,
+        0.003,
+        0.002,
+        0.005,
+        0.0,
+        -0.004,
+        -0.001,
+        -0.001,
+        0.013,
+        0.006,
+        0.005,
+        -0.008,
+        -0.005,
+        -0.004,
+        -0.002,
+        -0.0,
+        -0.003,
+        0.002,
+        0.007,
+        0.004,
+        -0.007,
+        -0.001
+      ],
+      [
+        0.003,
+        -0.007,
+        1.0,
+        0.001,
+        -0.014,
+        -0.003,
+        -0.01,
+        0.009,
+        0.006,
+        0.005,
+        0.007,
+        -0.007,
+        -0.0,
+        0.011,
+        0.008,
+        0.004,
+        0.004,
+        0.007,
+        0.0,
+        0.006,
+        -0.005,
+        -0.008,
+        0.001,
+        0.003,
+        -0.003,
+        -0.005
+      ],
+      [
+        0.008,
+        -0.006,
+        0.001,
+        1.0,
+        -0.008,
+        -0.006,
+        0.004,
+        -0.001,
+        -0.001,
+        -0.001,
+        0.004,
+        0.004,
+        -0.005,
+        0.008,
+        0.008,
+        0.007,
+        0.008,
+        0.001,
+        0.011,
+        -0.008,
+        -0.002,
+        -0.002,
+        0.004,
+        0.012,
+        -0.004,
+        0.005
+      ],
+      [
+        -0.001,
+        -0.029,
+        -0.014,
+        -0.008,
+        1.0,
+        -0.002,
+        0.001,
+        -0.005,
+        -0.01,
+        0.002,
+        -0.006,
+        0.005,
+        -0.006,
+        -0.002,
+        -0.002,
+        -0.004,
+        0.006,
+        -0.011,
+        0.004,
+        -0.013,
+        -0.008,
+        0.009,
+        0.019,
+        -0.004,
+        -0.0,
+        -0.002
+      ],
+      [
+        0.001,
+        0.003,
+        -0.003,
+        -0.006,
+        -0.002,
+        1.0,
+        0.008,
+        -0.017,
+        -0.001,
+        -0.009,
+        -0.003,
+        -0.001,
+        -0.001,
+        0.004,
+        0.002,
+        0.009,
+        -0.002,
+        0.002,
+        -0.006,
+        -0.008,
+        -0.0,
+        0.007,
+        0.0,
+        0.001,
+        -0.008,
+        0.006
+      ],
+      [
+        -0.009,
+        0.002,
+        -0.01,
+        0.004,
+        0.001,
+        0.008,
+        1.0,
+        -0.006,
+        0.016,
+        0.006,
+        -0.004,
+        0.006,
+        -0.004,
+        0.006,
+        -0.008,
+        -0.002,
+        -0.007,
+        -0.0,
+        -0.001,
+        0.002,
+        0.004,
+        0.013,
+        0.001,
+        0.001,
+        0.004,
+        -0.003
+      ],
+      [
+        -0.005,
+        0.005,
+        0.009,
+        -0.001,
+        -0.005,
+        -0.017,
+        -0.006,
+        1.0,
+        -0.001,
+        0.013,
+        -0.008,
+        0.001,
+        -0.002,
+        -0.01,
+        0.002,
+        -0.008,
+        0.01,
+        0.009,
+        -0.007,
+        0.013,
+        -0.005,
+        -0.002,
+        -0.009,
+        0.001,
+        0.007,
+        -0.006
+      ],
+      [
+        0.004,
+        0.0,
+        0.006,
+        -0.001,
+        -0.01,
+        -0.001,
+        0.016,
+        -0.001,
+        1.0,
+        0.008,
+        0.003,
+        -0.003,
+        -0.014,
+        -0.004,
+        -0.0,
+        0.003,
+        0.002,
+        -0.005,
+        0.0,
+        -0.012,
+        0.001,
+        0.008,
+        0.006,
+        0.009,
+        -0.012,
+        0.002
+      ],
+      [
+        0.003,
+        -0.004,
+        0.005,
+        -0.001,
+        0.002,
+        -0.009,
+        0.006,
+        0.013,
+        0.008,
+        1.0,
+        -0.009,
+        -0.01,
+        -0.007,
+        -0.007,
+        0.001,
+        -0.012,
+        -0.011,
+        -0.002,
+        0.009,
+        -0.015,
+        0.005,
+        -0.002,
+        0.01,
+        0.001,
+        0.007,
+        0.022
+      ],
+      [
+        0.018,
+        -0.001,
+        0.007,
+        0.004,
+        -0.006,
+        -0.003,
+        -0.004,
+        -0.008,
+        0.003,
+        -0.009,
+        1.0,
+        -0.0,
+        0.0,
+        0.007,
+        -0.016,
+        0.003,
+        -0.009,
+        0.02,
+        0.006,
+        -0.016,
+        -0.015,
+        -0.004,
+        0.015,
+        0.002,
+        -0.006,
+        0.007
+      ],
+      [
+        -0.016,
+        -0.001,
+        -0.007,
+        0.004,
+        0.005,
+        -0.001,
+        0.006,
+        0.001,
+        -0.003,
+        -0.01,
+        -0.0,
+        1.0,
+        -0.004,
+        -0.004,
+        -0.003,
+        0.006,
+        -0.0,
+        -0.013,
+        0.004,
+        0.016,
+        -0.004,
+        0.012,
+        -0.005,
+        0.0,
+        0.013,
+        -0.005
+      ],
+      [
+        -0.018,
+        0.013,
+        -0.0,
+        -0.005,
+        -0.006,
+        -0.001,
+        -0.004,
+        -0.002,
+        -0.014,
+        -0.007,
+        0.0,
+        -0.004,
+        1.0,
+        0.009,
+        -0.0,
+        -0.003,
+        0.003,
+        -0.002,
+        -0.002,
+        0.0,
+        -0.002,
+        0.004,
+        0.014,
+        -0.002,
+        -0.007,
+        0.003
+      ],
+      [
+        0.005,
+        0.006,
+        0.011,
+        0.008,
+        -0.002,
+        0.004,
+        0.006,
+        -0.01,
+        -0.004,
+        -0.007,
+        0.007,
+        -0.004,
+        0.009,
+        1.0,
+        -0.003,
+        -0.006,
+        -0.001,
+        0.014,
+        -0.005,
+        -0.002,
+        0.009,
+        0.007,
+        0.015,
+        -0.004,
+        0.004,
+        -0.0
+      ],
+      [
+        -0.007,
+        0.005,
+        0.008,
+        0.008,
+        -0.002,
+        0.002,
+        -0.008,
+        0.002,
+        -0.0,
+        0.001,
+        -0.016,
+        -0.003,
+        -0.0,
+        -0.003,
+        1.0,
+        -0.004,
+        -0.004,
+        0.018,
+        0.017,
+        -0.009,
+        0.008,
+        0.008,
+        0.01,
+        0.007,
+        -0.006,
+        0.005
+      ],
+      [
+        -0.001,
+        -0.008,
+        0.004,
+        0.007,
+        -0.004,
+        0.009,
+        -0.002,
+        -0.008,
+        0.003,
+        -0.012,
+        0.003,
+        0.006,
+        -0.003,
+        -0.006,
+        -0.004,
+        1.0,
+        0.005,
+        0.002,
+        0.004,
+        0.005,
+        -0.013,
+        0.01,
+        0.006,
+        0.001,
+        -0.001,
+        0.003
+      ],
+      [
+        0.019,
+        -0.005,
+        0.004,
+        0.008,
+        0.006,
+        -0.002,
+        -0.007,
+        0.01,
+        0.002,
+        -0.011,
+        -0.009,
+        -0.0,
+        0.003,
+        -0.001,
+        -0.004,
+        0.005,
+        1.0,
+        0.004,
+        0.001,
+        0.003,
+        0.007,
+        0.004,
+        -0.006,
+        -0.002,
+        -0.007,
+        0.011
+      ],
+      [
+        -0.003,
+        -0.004,
+        0.007,
+        0.001,
+        -0.011,
+        0.002,
+        -0.0,
+        0.009,
+        -0.005,
+        -0.002,
+        0.02,
+        -0.013,
+        -0.002,
+        0.014,
+        0.018,
+        0.002,
+        0.004,
+        1.0,
+        -0.004,
+        0.002,
+        -0.007,
+        -0.008,
+        -0.001,
+        0.0,
+        -0.009,
+        -0.005
+      ],
+      [
+        -0.011,
+        -0.002,
+        0.0,
+        0.011,
+        0.004,
+        -0.006,
+        -0.001,
+        -0.007,
+        0.0,
+        0.009,
+        0.006,
+        0.004,
+        -0.002,
+        -0.005,
+        0.017,
+        0.004,
+        0.001,
+        -0.004,
+        1.0,
+        -0.013,
+        -0.004,
+        0.003,
+        0.007,
+        -0.014,
+        -0.013,
+        -0.001
+      ],
+      [
+        0.008,
+        -0.0,
+        0.006,
+        -0.008,
+        -0.013,
+        -0.008,
+        0.002,
+        0.013,
+        -0.012,
+        -0.015,
+        -0.016,
+        0.016,
+        0.0,
+        -0.002,
+        -0.009,
+        0.005,
+        0.003,
+        0.002,
+        -0.013,
+        1.0,
+        0.01,
+        -0.004,
+        -0.0,
+        -0.001,
+        -0.019,
+        -0.004
+      ],
+      [
+        0.004,
+        -0.003,
+        -0.005,
+        -0.002,
+        -0.008,
+        -0.0,
+        0.004,
+        -0.005,
+        0.001,
+        0.005,
+        -0.015,
+        -0.004,
+        -0.002,
+        0.009,
+        0.008,
+        -0.013,
+        0.007,
+        -0.007,
+        -0.004,
+        0.01,
+        1.0,
+        0.002,
+        0.013,
+        -0.005,
+        0.003,
+        -0.013
+      ],
+      [
+        -0.003,
+        0.002,
+        -0.008,
+        -0.002,
+        0.009,
+        0.007,
+        0.013,
+        -0.002,
+        0.008,
+        -0.002,
+        -0.004,
+        0.012,
+        0.004,
+        0.007,
+        0.008,
+        0.01,
+        0.004,
+        -0.008,
+        0.003,
+        -0.004,
+        0.002,
+        1.0,
+        0.011,
+        0.0,
+        -0.001,
+        0.005
+      ],
+      [
+        -0.001,
+        0.007,
+        0.001,
+        0.004,
+        0.019,
+        0.0,
+        0.001,
+        -0.009,
+        0.006,
+        0.01,
+        0.015,
+        -0.005,
+        0.014,
+        0.015,
+        0.01,
+        0.006,
+        -0.006,
+        -0.001,
+        0.007,
+        -0.0,
+        0.013,
+        0.011,
+        1.0,
+        -0.008,
+        0.001,
+        0.11
+      ],
+      [
+        -0.01,
+        0.004,
+        0.003,
+        0.012,
+        -0.004,
+        0.001,
+        0.001,
+        0.001,
+        0.009,
+        0.001,
+        0.002,
+        0.0,
+        -0.002,
+        -0.004,
+        0.007,
+        0.001,
+        -0.002,
+        0.0,
+        -0.014,
+        -0.001,
+        -0.005,
+        0.0,
+        -0.008,
+        1.0,
+        0.004,
+        0.103
+      ],
+      [
+        0.01,
+        -0.007,
+        -0.003,
+        -0.004,
+        -0.0,
+        -0.008,
+        0.004,
+        0.007,
+        -0.012,
+        0.007,
+        -0.006,
+        0.013,
+        -0.007,
+        0.004,
+        -0.006,
+        -0.001,
+        -0.007,
+        -0.009,
+        -0.013,
+        -0.019,
+        0.003,
+        -0.001,
+        0.001,
+        0.004,
+        1.0,
+        0.101
+      ],
+      [
+        0.005,
+        -0.001,
+        -0.005,
+        0.005,
+        -0.002,
+        0.006,
+        -0.003,
+        -0.006,
+        0.002,
+        0.022,
+        0.007,
+        -0.005,
+        0.003,
+        -0.0,
+        0.005,
+        0.003,
+        0.011,
+        -0.005,
+        -0.001,
+        -0.004,
+        -0.013,
+        0.005,
+        0.11,
+        0.103,
+        0.101,
+        1.0
+      ]
+    ]
+  },
+  "top_correlations": [
+    {
+      "name": "Discomfort Eye-strain",
+      "correlation": 0.1099,
+      "abs_correlation": 0.1099
+    },
+    {
+      "name": "Redness in eye",
+      "correlation": 0.1034,
+      "abs_correlation": 0.1034
+    },
+    {
+      "name": "Itchiness/Irritation in eye",
+      "correlation": 0.1013,
+      "abs_correlation": 0.1013
+    },
+    {
+      "name": "Average screen time",
+      "correlation": 0.0225,
+      "abs_correlation": 0.0225
+    },
+    {
+      "name": "Smart device before bed",
+      "correlation": -0.0133,
+      "abs_correlation": 0.0133
+    },
+    {
+      "name": "Alcohol consumption",
+      "correlation": 0.0113,
+      "abs_correlation": 0.0113
+    },
+    {
+      "name": "BP_Systolic",
+      "correlation": 0.0073,
+      "abs_correlation": 0.0073
+    },
+    {
+      "name": "Height",
+      "correlation": -0.0064,
+      "abs_correlation": 0.0064
+    },
+    {
+      "name": "Daily steps",
+      "correlation": 0.0057,
+      "abs_correlation": 0.0057
+    },
+    {
+      "name": "Stress level",
+      "correlation": 0.0055,
+      "abs_correlation": 0.0055
+    },
+    {
+      "name": "Age",
+      "correlation": 0.0053,
+      "abs_correlation": 0.0053
+    },
+    {
+      "name": "BP_Diastolic",
+      "correlation": -0.0051,
+      "abs_correlation": 0.0051
+    },
+    {
+      "name": "Smoking",
+      "correlation": -0.0051,
+      "abs_correlation": 0.0051
+    },
+    {
+      "name": "Sleep quality",
+      "correlation": -0.005,
+      "abs_correlation": 0.005
+    },
+    {
+      "name": "Blue-light filter",
+      "correlation": 0.005,
+      "abs_correlation": 0.005
+    }
+  ],
+  "feature_importance": [
+    {
+      "name": "Discomfort Eye-strain",
+      "type": "categorical",
+      "chi2": 240.95,
+      "p_value": 0.0,
+      "cramers_v": 0.1098,
+      "score": 0.1098
+    },
+    {
+      "name": "Redness in eye",
+      "type": "categorical",
+      "chi2": 213.44,
+      "p_value": 0.0,
+      "cramers_v": 0.1033,
+      "score": 0.1033
+    },
+    {
+      "name": "Itchiness/Irritation in eye",
+      "type": "categorical",
+      "chi2": 204.81,
+      "p_value": 0.0,
+      "cramers_v": 0.1012,
+      "score": 0.1012
+    },
+    {
+      "name": "Average screen time",
+      "type": "numeric",
+      "correlation": 0.0225,
+      "p_value": 0.001469,
+      "score": 0.0225
+    },
+    {
+      "name": "Gender",
+      "type": "categorical",
+      "chi2": 5.26,
+      "p_value": 0.021828,
+      "cramers_v": 0.0162,
+      "score": 0.0162
+    },
+    {
+      "name": "Smart device before bed",
+      "type": "categorical",
+      "chi2": 3.49,
+      "p_value": 0.061633,
+      "cramers_v": 0.0132,
+      "score": 0.0132
+    },
+    {
+      "name": "Alcohol consumption",
+      "type": "categorical",
+      "chi2": 2.49,
+      "p_value": 0.114717,
+      "cramers_v": 0.0112,
+      "score": 0.0112
+    },
+    {
+      "name": "BP_Systolic",
+      "type": "numeric",
+      "correlation": 0.0073,
+      "p_value": 0.302619,
+      "score": 0.0073
+    },
+    {
+      "name": "Height",
+      "type": "numeric",
+      "correlation": -0.0064,
+      "p_value": 0.362677,
+      "score": 0.0064
+    },
+    {
+      "name": "Daily steps",
+      "type": "numeric",
+      "correlation": 0.0057,
+      "p_value": 0.423154,
+      "score": 0.0057
+    },
+    {
+      "name": "Stress level",
+      "type": "numeric",
+      "correlation": 0.0055,
+      "p_value": 0.438315,
+      "score": 0.0055
+    },
+    {
+      "name": "Age",
+      "type": "numeric",
+      "correlation": 0.0053,
+      "p_value": 0.457149,
+      "score": 0.0053
+    },
+    {
+      "name": "BP_Diastolic",
+      "type": "numeric",
+      "correlation": -0.0051,
+      "p_value": 0.475088,
+      "score": 0.0051
+    },
+    {
+      "name": "Smoking",
+      "type": "categorical",
+      "chi2": 0.5,
+      "p_value": 0.477669,
+      "cramers_v": 0.005,
+      "score": 0.005
+    },
+    {
+      "name": "Sleep quality",
+      "type": "numeric",
+      "correlation": -0.005,
+      "p_value": 0.480367,
+      "score": 0.005
+    },
+    {
+      "name": "Blue-light filter",
+      "type": "categorical",
+      "chi2": 0.48,
+      "p_value": 0.486716,
+      "cramers_v": 0.0049,
+      "score": 0.0049
+    },
+    {
+      "name": "Feel sleepy during day",
+      "type": "categorical",
+      "chi2": 0.43,
+      "p_value": 0.513064,
+      "cramers_v": 0.0046,
+      "score": 0.0046
+    },
+    {
+      "name": "Ongoing medication",
+      "type": "categorical",
+      "chi2": 0.33,
+      "p_value": 0.563621,
+      "cramers_v": 0.0041,
+      "score": 0.0041
+    },
+    {
+      "name": "Physical activity",
+      "type": "numeric",
+      "correlation": -0.0033,
+      "p_value": 0.641869,
+      "score": 0.0033
+    },
+    {
+      "name": "Caffeine consumption",
+      "type": "categorical",
+      "chi2": 0.15,
+      "p_value": 0.699864,
+      "cramers_v": 0.0027,
+      "score": 0.0027
+    },
+    {
+      "name": "Sleep disorder",
+      "type": "categorical",
+      "chi2": 0.13,
+      "p_value": 0.722154,
+      "cramers_v": 0.0025,
+      "score": 0.0025
+    },
+    {
+      "name": "Weight",
+      "type": "numeric",
+      "correlation": 0.0025,
+      "p_value": 0.728973,
+      "score": 0.0025
+    },
+    {
+      "name": "Heart rate",
+      "type": "numeric",
+      "correlation": -0.0021,
+      "p_value": 0.76832,
+      "score": 0.0021
+    },
+    {
+      "name": "Medical issue",
+      "type": "categorical",
+      "chi2": 0.02,
+      "p_value": 0.890326,
+      "cramers_v": 0.001,
+      "score": 0.001
+    },
+    {
+      "name": "Sleep duration",
+      "type": "numeric",
+      "correlation": -0.0009,
+      "p_value": 0.901636,
+      "score": 0.0009
+    },
+    {
+      "name": "Wake up during night",
+      "type": "categorical",
+      "chi2": 0.0,
+      "p_value": 0.976317,
+      "cramers_v": 0.0002,
+      "score": 0.0002
+    }
+  ],
+  "bp_systolic_distribution": [
+    {
+      "range": "80-100",
+      "count": 3936
+    },
+    {
+      "range": "100-120",
+      "count": 7810
+    },
+    {
+      "range": "120-140",
+      "count": 7844
+    },
+    {
+      "range": "140-160",
+      "count": 410
+    }
+  ],
+  "heart_rate_distribution": [
+    {
+      "range": "55-65",
+      "count": 2484
+    },
+    {
+      "range": "65-75",
+      "count": 4842
+    },
+    {
+      "range": "75-85",
+      "count": 4911
+    },
+    {
+      "range": "85-95",
+      "count": 4881
+    },
+    {
+      "range": "95-105",
+      "count": 2882
+    }
+  ],
+  "daily_steps_distribution": [
+    {
+      "range": "0k-5k",
+      "count": 3905
+    },
+    {
+      "range": "5k-10k",
+      "count": 5030
+    },
+    {
+      "range": "10k-15k",
+      "count": 5024
+    },
+    {
+      "range": "15k-20k",
+      "count": 6041
+    }
+  ]
+}
