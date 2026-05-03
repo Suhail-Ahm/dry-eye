@@ -91,14 +91,15 @@ export function DataOverview({ summaryTable, distributionComparison, boxPlots, c
       </div>
 
       {/* ── Sub-Tab Navigation ─────────────────────────────── */}
-      <div className="flex gap-1 bg-white/60 backdrop-blur-sm border border-border/30 rounded-xl p-1.5 shadow-sm">
+      <div className="flex gap-1 bg-white/60 backdrop-blur-sm border border-border/30 rounded-xl p-1.5 shadow-sm overflow-x-auto scrollbar-none -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex gap-1 min-w-max md:min-w-0 md:w-full">
         {TABS.map((tab) => (
           <motion.button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className={`relative flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium transition-colors duration-200
+            className={`relative flex items-center gap-1.5 px-3 md:px-4 py-2 rounded-lg text-xs font-medium transition-colors duration-200 whitespace-nowrap
               ${activeTab === tab.id ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
           >
             {activeTab === tab.id && (
@@ -112,6 +113,7 @@ export function DataOverview({ summaryTable, distributionComparison, boxPlots, c
             <span className="relative z-10">{tab.label}</span>
           </motion.button>
         ))}
+        </div>
       </div>
 
       {/* ── Tab Content ─────────────────────────────────────── */}

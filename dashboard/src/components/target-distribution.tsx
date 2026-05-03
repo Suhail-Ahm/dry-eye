@@ -34,7 +34,7 @@ export function TargetDistribution({ data }: TargetDistributionProps) {
   const total = data.reduce((s, d) => s + d.value, 0);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
       {/* Donut Chart */}
       <Card className="shadow-sm border-border/50">
         <CardHeader className="pb-2">

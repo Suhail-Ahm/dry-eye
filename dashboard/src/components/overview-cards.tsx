@@ -16,23 +16,23 @@ function StatCard({ title, value, subtitle, gradient, icon, trend }: StatCardPro
     <Card className={`${gradient} border-0 shadow-sm interactive-card group overflow-hidden relative`}>
       {/* Subtle ambient glow on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/40 group-hover:to-transparent transition-all duration-500 pointer-events-none" />
-      <CardContent className="p-5 relative z-10">
+      <CardContent className="p-3 md:p-5 relative z-10">
         <div className="flex items-start justify-between">
-          <div className="space-y-1.5">
-            <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-[0.08em]">
+          <div className="space-y-0.5 md:space-y-1.5 min-w-0">
+            <p className="text-[8px] md:text-[10px] font-semibold text-muted-foreground uppercase tracking-[0.08em] truncate">
               {title}
             </p>
-            <p className="text-2xl font-bold tracking-tight animate-counter">{value}</p>
+            <p className="text-lg md:text-2xl font-bold tracking-tight animate-counter truncate">{value}</p>
             {subtitle && (
-              <p className="text-[11px] text-muted-foreground/70">{subtitle}</p>
+              <p className="text-[9px] md:text-[11px] text-muted-foreground/70 hidden sm:block">{subtitle}</p>
             )}
           </div>
-          <div className="flex flex-col items-end gap-1.5">
-            <div className="rounded-xl p-2.5 bg-white/70 backdrop-blur-sm shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+          <div className="flex flex-col items-end gap-1.5 shrink-0">
+            <div className="rounded-lg md:rounded-xl p-1.5 md:p-2.5 bg-white/70 backdrop-blur-sm shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
               {icon}
             </div>
             {trend && (
-              <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">
+              <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full hidden md:inline">
                 {trend}
               </span>
             )}
@@ -56,7 +56,7 @@ interface OverviewCardsProps {
 
 export function OverviewCards({ data }: OverviewCardsProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+    <div className="grid grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4">
       <StatCard
         title="Total Records"
         value={data.total_rows.toLocaleString()}

@@ -129,29 +129,31 @@ export default function DashboardPage() {
       {/* ── Sidebar ──────────────────────────────────────────── */}
       <SidebarNav activeSection={activeSection} onSectionChange={handleSectionChange} />
 
-      {/* ── Main content area (offset by sidebar width) ──── */}
-      <div className="ml-[220px] transition-all duration-300">
+      {/* ── Main content area (offset by sidebar on desktop) ──── */}
+      <div className="md:ml-[220px] transition-all duration-300">
         {/* ── Top Bar ──────────────────────────────────────── */}
         <header className="sticky top-0 z-30 border-b border-border/20 bg-white/60 backdrop-blur-xl">
-          <div className="px-8 py-3 flex items-center justify-between">
+          <div className="px-4 md:px-8 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
+              {/* Spacer for hamburger button on mobile */}
+              <div className="w-10 md:hidden" />
               {/* Breadcrumb-style context */}
               <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground/50">
-                <span className="font-medium">EDA</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3">
+                <span className="font-medium hidden sm:inline">EDA</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3 hidden sm:block">
                   <path d="M9 18l6-6-6-6" />
                 </svg>
-                <span className="font-semibold text-foreground/70">
+                <span className="font-semibold text-foreground/70 truncate max-w-[180px] sm:max-w-none">
                   {meta.title.split("—")[0].trim()}
                 </span>
               </div>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 shrink-0">
               <Badge variant="secondary" className="bg-blue-50/80 text-blue-600 border-blue-100 text-[9px] px-2 py-0.5">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 mr-1 pulse-glow" />
-                20K Records
+                20K
               </Badge>
-              <Badge variant="secondary" className="bg-slate-50 text-slate-500 border-slate-100 text-[9px] px-2 py-0.5">
+              <Badge variant="secondary" className="bg-slate-50 text-slate-500 border-slate-100 text-[9px] px-2 py-0.5 hidden sm:inline-flex">
                 26 Features
               </Badge>
             </div>
@@ -159,16 +161,16 @@ export default function DashboardPage() {
         </header>
 
         {/* ── Content ─────────────────────────────────────── */}
-        <main className="px-8 py-6 max-w-[1280px]">
+        <main className="px-4 md:px-8 py-4 md:py-6 max-w-[1280px]">
           {/* ── KPI Cards (always visible) ────────────────── */}
           <section className="mb-6 animate-section">
             <OverviewCards data={data.summary} />
           </section>
 
           {/* ── Section Header ────────────────────────────── */}
-          <div className="mb-6 animate-tab-content" key={activeSection}>
-            <h2 className="section-heading">{meta.title}</h2>
-            <p className="text-xs text-muted-foreground/60 mt-1 ml-3">
+          <div className="mb-4 md:mb-6 animate-tab-content" key={activeSection}>
+            <h2 className="section-heading text-sm md:text-base">{meta.title}</h2>
+            <p className="text-[11px] md:text-xs text-muted-foreground/60 mt-1 ml-3">
               {meta.subtitle}
             </p>
           </div>
@@ -245,9 +247,9 @@ export default function DashboardPage() {
           </div>
 
           {/* ── Footer ────────────────────────────────────── */}
-          <footer className="border-t border-border/20 mt-12 pt-6 pb-8">
-            <div className="flex items-center justify-between text-[10px] text-muted-foreground/40">
-              <p>Dry Eye Disease — EDA Dashboard • Next.js • ShadCN • Recharts</p>
+          <footer className="border-t border-border/20 mt-8 md:mt-12 pt-4 md:pt-6 pb-6 md:pb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-1 text-[10px] text-muted-foreground/40">
+              <p>Dry Eye Disease — EDA Dashboard</p>
               <p>20,000 records × 26 features</p>
             </div>
           </footer>

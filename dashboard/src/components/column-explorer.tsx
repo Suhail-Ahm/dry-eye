@@ -228,12 +228,12 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
           {/* Profile Card */}
           <Card className="shadow-sm border-border/30 overflow-hidden">
             <div className="h-1" style={{ background: meta.color }} />
-            <CardContent className="p-5">
+            <CardContent className="p-4 md:p-5">
               <div className="flex items-start justify-between">
                 <div className="space-y-2 flex-1">
                   <div className="flex items-center gap-2.5 flex-wrap">
                     <span className="text-xl">{meta.emoji}</span>
-                    <h3 className="text-lg font-bold tracking-tight">{col.name}</h3>
+                    <h3 className="text-base md:text-lg font-bold tracking-tight">{col.name}</h3>
                     <Badge className={`${meta.bg} text-[9px] font-semibold border`}>{col.type}</Badge>
                     {col.clinical_category && (
                       <Badge variant="secondary" className="text-[8px] font-medium">{col.clinical_category}</Badge>
@@ -250,7 +250,7 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
                     </p>
                   )}
 
-                  <div className="flex gap-4 text-[11px] text-muted-foreground/60 flex-wrap">
+                  <div className="flex gap-3 md:gap-4 text-[10px] md:text-[11px] text-muted-foreground/60 flex-wrap">
                     <span><strong className="text-foreground">{col.unique}</strong> unique</span>
                     <span><strong className="text-foreground">{col.missing}</strong> missing</span>
                     <span><strong className="text-foreground">{col.total.toLocaleString()}</strong> total</span>
@@ -264,8 +264,8 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
                     <p className="text-[10px] text-muted-foreground/50 italic">{col.relevance_label}</p>
                   )}
                 </div>
-                <div className="text-right shrink-0 ml-4">
-                  <p className="text-2xl font-bold" style={{ color: meta.color }}>
+                <div className="text-right shrink-0 ml-2 md:ml-4">
+                  <p className="text-xl md:text-2xl font-bold" style={{ color: meta.color }}>
                     {col.completeness}%
                   </p>
                   <p className="text-[9px] text-muted-foreground/50 font-semibold uppercase">Complete</p>
@@ -286,7 +286,7 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
           </Card>
 
           {/* Charts Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
             {/* Distribution */}
             <Card className="shadow-sm border-border/30">
               <CardHeader className="pb-2">

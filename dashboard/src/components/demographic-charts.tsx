@@ -48,7 +48,7 @@ export function DemographicCharts({
   dryEyeByAgeGroup,
 }: DemographicChartsProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
       {/* Age Distribution */}
       <Card className="shadow-sm border-border/50">
         <CardHeader className="pb-2">

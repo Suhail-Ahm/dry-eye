@@ -159,8 +159,8 @@ export function MLComparison({ data }: MLComparisonProps) {
             transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
           />
 
-          <CardContent className="p-8 relative z-10 text-white">
-            <div className="flex items-center justify-between flex-wrap gap-6">
+          <CardContent className="p-5 md:p-8 relative z-10 text-white">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6">
               <motion.div className="space-y-3" variants={slideRight}>
                 <div className="flex items-center gap-2.5">
                   <motion.span
@@ -174,15 +174,15 @@ export function MLComparison({ data }: MLComparisonProps) {
                     Best Performing Model
                   </Badge>
                 </div>
-                <h3 className="text-3xl font-bold tracking-tight">{data.best_model}</h3>
-                <p className="text-sm text-white/60 max-w-md leading-relaxed">
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight">{data.best_model}</h3>
+                <p className="text-xs md:text-sm text-white/60 max-w-md leading-relaxed">
                   {selected.description}
                 </p>
-                <p className="text-[10px] text-white/40 max-w-md leading-relaxed italic">
+                <p className="text-[10px] text-white/40 max-w-md leading-relaxed italic hidden md:block">
                   ☝️ Selected as best because it has the highest F1 Score — the single best metric
                   for imbalanced datasets like ours (65% positive rate).
                 </p>
-                <div className="flex gap-2 pt-1">
+                <div className="flex gap-2 pt-1 flex-wrap">
                   {[
                     { l: "Train", v: data.split_info.train_size.toLocaleString() },
                     { l: "Test", v: data.split_info.test_size.toLocaleString() },
@@ -195,7 +195,7 @@ export function MLComparison({ data }: MLComparisonProps) {
                 </div>
               </motion.div>
 
-              <motion.div className="flex gap-3" variants={stagger}>
+              <motion.div className="flex gap-2 md:gap-3 flex-wrap" variants={stagger}>
                 {[
                   { v: selected.metrics.f1_score, l: "F1 Score", d: 0 },
                   { v: selected.metrics.accuracy, l: "Accuracy", d: 0.1 },
@@ -207,9 +207,9 @@ export function MLComparison({ data }: MLComparisonProps) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: m.d + 0.3, duration: 0.4 }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="bg-white/10 backdrop-blur-md rounded-2xl px-5 py-4 text-center border border-white/15 min-w-[100px]"
+                    className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl px-3 md:px-5 py-3 md:py-4 text-center border border-white/15 min-w-[80px] md:min-w-[100px]"
                   >
-                    <p className="text-3xl font-bold tabular-nums">{m.v}%</p>
+                    <p className="text-2xl md:text-3xl font-bold tabular-nums">{m.v}%</p>
                     <p className="text-[9px] text-white/50 font-semibold uppercase tracking-wider mt-1">{m.l}</p>
                   </motion.div>
                 ))}
@@ -236,7 +236,7 @@ export function MLComparison({ data }: MLComparisonProps) {
           </button>
         </div>
 
-        <motion.div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3" variants={stagger}>
+        <motion.div className="grid grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3" variants={stagger}>
           {data.models.map((m: any, i: number) => {
             const isActive = compareMode ? compareModels.includes(m.name) : selectedModel === m.name;
             return (
@@ -315,7 +315,7 @@ export function MLComparison({ data }: MLComparisonProps) {
               <p className="text-[11px] text-muted-foreground/60 mt-1">{selected.description}</p>
             </CardHeader>
             <CardContent className="pt-1 pb-4">
-              <div className="grid grid-cols-3 md:grid-cols-7 gap-2">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-2">
                 {[
                   { v: selected.metrics.accuracy, l: "Accuracy", d: 0 },
                   { v: selected.metrics.precision, l: "Precision", d: 0.05 },
@@ -344,14 +344,15 @@ export function MLComparison({ data }: MLComparisonProps) {
       {/* ══════════════════════════════════════════════════════════════════
           Sub-Tab Navigation
           ══════════════════════════════════════════════════════════════════ */}
-      <motion.div variants={fadeUp} className="flex gap-1 bg-white/60 backdrop-blur-sm border border-border/30 rounded-xl p-1.5 shadow-sm">
+      <motion.div variants={fadeUp} className="flex gap-1 bg-white/60 backdrop-blur-sm border border-border/30 rounded-xl p-1.5 shadow-sm overflow-x-auto scrollbar-none -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex gap-1 min-w-max md:min-w-0 md:w-full">
         {SUB_TABS.map((tab) => (
           <motion.button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className={`relative flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium transition-colors duration-200
+            className={`relative flex items-center gap-1.5 px-3 md:px-4 py-2 rounded-lg text-xs font-medium transition-colors duration-200 whitespace-nowrap
               ${activeTab === tab.id ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
           >
             {activeTab === tab.id && (
@@ -365,6 +366,7 @@ export function MLComparison({ data }: MLComparisonProps) {
             <span className="relative z-10">{tab.label}</span>
           </motion.button>
         ))}
+        </div>
       </motion.div>
 
       {/* ══════════════════════════════════════════════════════════════════
