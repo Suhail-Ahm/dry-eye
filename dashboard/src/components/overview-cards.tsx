@@ -13,20 +13,22 @@ interface StatCardProps {
 
 function StatCard({ title, value, subtitle, gradient, icon, trend }: StatCardProps) {
   return (
-    <Card className={`${gradient} border-0 shadow-sm hover:shadow-md transition-all duration-300 group`}>
-      <CardContent className="p-5">
+    <Card className={`${gradient} border-0 shadow-sm interactive-card group overflow-hidden relative`}>
+      {/* Subtle ambient glow on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/40 group-hover:to-transparent transition-all duration-500 pointer-events-none" />
+      <CardContent className="p-5 relative z-10">
         <div className="flex items-start justify-between">
-          <div className="space-y-1">
-            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+          <div className="space-y-1.5">
+            <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-[0.08em]">
               {title}
             </p>
-            <p className="text-2xl font-bold tracking-tight">{value}</p>
+            <p className="text-2xl font-bold tracking-tight animate-counter">{value}</p>
             {subtitle && (
-              <p className="text-xs text-muted-foreground">{subtitle}</p>
+              <p className="text-[11px] text-muted-foreground/70">{subtitle}</p>
             )}
           </div>
           <div className="flex flex-col items-end gap-1.5">
-            <div className="rounded-lg p-2 bg-white/60 shadow-sm group-hover:scale-105 transition-transform">
+            <div className="rounded-xl p-2.5 bg-white/70 backdrop-blur-sm shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
               {icon}
             </div>
             {trend && (

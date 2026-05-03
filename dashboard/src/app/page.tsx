@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Separator } from "@/components/ui/separator";
-import { DashboardHeader } from "@/components/dashboard-header";
+import { useEffect, useState, useCallback } from "react";
+import { Badge } from "@/components/ui/badge";
+import { SidebarNav } from "@/components/sidebar-nav";
 import { OverviewCards } from "@/components/overview-cards";
 import { TargetDistribution } from "@/components/target-distribution";
 import { DemographicCharts } from "@/components/demographic-charts";
@@ -18,11 +17,56 @@ import { DataOverview } from "@/components/data-overview";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+/* ── Section metadata ─────────────────────────────────────────────────── */
+const SECTION_META: Record<string, { title: string; subtitle: string }> = {
+  target: {
+    title: "Target Variable — Dry Eye Disease",
+    subtitle: "Binary classification target showing class imbalance (65:35 ratio)",
+  },
+  demographics: {
+    title: "Demographic Analysis",
+    subtitle: "Age and gender distributions with dry eye prevalence breakdown",
+  },
+  sleep: {
+    title: "Sleep & Stress Analysis",
+    subtitle: "Sleep patterns, stress levels, and their association with dry eye disease",
+  },
+  lifestyle: {
+    title: "Lifestyle & Habits",
+    subtitle: "Binary lifestyle factors and their impact on dry eye prevalence",
+  },
+  health: {
+    title: "Health Metrics",
+    subtitle: "BMI, blood pressure, heart rate, daily steps, physical activity, and multi-symptom co-occurrence",
+  },
+  eyes: {
+    title: "Screen Time & Eye Symptoms",
+    subtitle: "Digital habits, blue-light filter usage, and ocular symptom analysis",
+  },
+  overview: {
+    title: "Data Summary & Distribution Comparison",
+    subtitle: "Summary statistics, overlaid class histograms, and box plot quartiles",
+  },
+  correlations: {
+    title: "Feature Correlations",
+    subtitle: "Pearson correlation matrix between key numeric and binary features",
+  },
+  importance: {
+    title: "Feature Importance",
+    subtitle: "Statistical association strength (Chi-square / Point-Biserial)",
+  },
+  ml: {
+    title: "Machine Learning Model Comparison",
+    subtitle: "6 classifiers trained on 80/20 stratified split — accuracy, precision, recall, F1, AUC-ROC",
+  },
+};
+
 export default function DashboardPage() {
   const [data, setData] = useState<any>(null);
   const [mlData, setMlData] = useState<any>(null);
   const [extraData, setExtraData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [activeSection, setActiveSection] = useState("target");
 
   useEffect(() => {
     Promise.all([
@@ -40,6 +84,11 @@ export default function DashboardPage() {
         console.error("Failed to load data:", err);
         setLoading(false);
       });
+  }, []);
+
+  const handleSectionChange = useCallback((id: string) => {
+    setActiveSection(id);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   if (loading) {
@@ -65,262 +114,132 @@ export default function DashboardPage() {
     );
   }
 
+  const meta = SECTION_META[activeSection];
+
   return (
     <div className="min-h-screen bg-[#f8fafc]">
-      <DashboardHeader />
+      {/* ── Sidebar ──────────────────────────────────────────── */}
+      <SidebarNav activeSection={activeSection} onSectionChange={handleSectionChange} />
 
-      <main className="mx-auto max-w-[1440px] px-6 py-6 space-y-8">
-        {/* ── Section 1: Overview ──────────────────────────────────── */}
-        <section id="overview">
-          <OverviewCards data={data.summary} />
-        </section>
-
-        <Separator className="bg-border/40" />
-
-        {/* ── Tabbed Sections ─────────────────────────────────────── */}
-        <Tabs defaultValue="target" className="space-y-6">
-          <TabsList className="bg-white border border-border/50 shadow-sm p-1 h-auto flex-wrap">
-            <TabsTrigger
-              value="target"
-              className="text-xs data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700 data-[state=active]:shadow-sm px-4 py-2"
-            >
-              🎯 Target Distribution
-            </TabsTrigger>
-            <TabsTrigger
-              value="demographics"
-              className="text-xs data-[state=active]:bg-violet-50 data-[state=active]:text-violet-700 data-[state=active]:shadow-sm px-4 py-2"
-            >
-              👥 Demographics
-            </TabsTrigger>
-            <TabsTrigger
-              value="sleep"
-              className="text-xs data-[state=active]:bg-indigo-50 data-[state=active]:text-indigo-700 data-[state=active]:shadow-sm px-4 py-2"
-            >
-              😴 Sleep & Stress
-            </TabsTrigger>
-            <TabsTrigger
-              value="lifestyle"
-              className="text-xs data-[state=active]:bg-orange-50 data-[state=active]:text-orange-700 data-[state=active]:shadow-sm px-4 py-2"
-            >
-              🏃 Lifestyle
-            </TabsTrigger>
-            <TabsTrigger
-              value="health"
-              className="text-xs data-[state=active]:bg-pink-50 data-[state=active]:text-pink-700 data-[state=active]:shadow-sm px-4 py-2"
-            >
-              🩺 Health Metrics
-            </TabsTrigger>
-            <TabsTrigger
-              value="eyes"
-              className="text-xs data-[state=active]:bg-red-50 data-[state=active]:text-red-700 data-[state=active]:shadow-sm px-4 py-2"
-            >
-              👁️ Screen & Eyes
-            </TabsTrigger>
-            <TabsTrigger
-              value="correlations"
-              className="text-xs data-[state=active]:bg-teal-50 data-[state=active]:text-teal-700 data-[state=active]:shadow-sm px-4 py-2"
-            >
-              📊 Correlations
-            </TabsTrigger>
-            <TabsTrigger
-              value="overview"
-              className="text-xs data-[state=active]:bg-cyan-50 data-[state=active]:text-cyan-700 data-[state=active]:shadow-sm px-4 py-2"
-            >
-              📋 Data Overview
-            </TabsTrigger>
-            <TabsTrigger
-              value="importance"
-              className="text-xs data-[state=active]:bg-emerald-50 data-[state=active]:text-emerald-700 data-[state=active]:shadow-sm px-4 py-2"
-            >
-              ⭐ Feature Importance
-            </TabsTrigger>
-            <TabsTrigger
-              value="ml"
-              className="text-xs data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-50 data-[state=active]:to-violet-50 data-[state=active]:text-indigo-700 data-[state=active]:shadow-sm px-4 py-2 font-semibold"
-            >
-              🤖 ML Models
-            </TabsTrigger>
-          </TabsList>
-
-          {/* ── Target Distribution ─────────────────────────────── */}
-          <TabsContent value="target" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Target Variable — Dry Eye Disease
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Binary classification target showing class imbalance (65:35
-                ratio)
-              </p>
+      {/* ── Main content area (offset by sidebar width) ──── */}
+      <div className="ml-[220px] transition-all duration-300">
+        {/* ── Top Bar ──────────────────────────────────────── */}
+        <header className="sticky top-0 z-30 border-b border-border/20 bg-white/60 backdrop-blur-xl">
+          <div className="px-8 py-3 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              {/* Breadcrumb-style context */}
+              <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground/50">
+                <span className="font-medium">EDA</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+                <span className="font-semibold text-foreground/70">
+                  {meta.title.split("—")[0].trim()}
+                </span>
+              </div>
             </div>
-            <TargetDistribution data={data.target_distribution} />
-          </TabsContent>
-
-          {/* ── Demographics ────────────────────────────────────── */}
-          <TabsContent value="demographics" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Demographic Analysis
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Age and gender distributions with dry eye prevalence breakdown
-              </p>
+            <div className="flex items-center gap-1.5">
+              <Badge variant="secondary" className="bg-blue-50/80 text-blue-600 border-blue-100 text-[9px] px-2 py-0.5">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 mr-1 pulse-glow" />
+                20K Records
+              </Badge>
+              <Badge variant="secondary" className="bg-slate-50 text-slate-500 border-slate-100 text-[9px] px-2 py-0.5">
+                26 Features
+              </Badge>
             </div>
-            <DemographicCharts
-              ageDistribution={data.age_distribution}
-              genderDistribution={data.gender_distribution}
-              dryEyeByGender={data.dry_eye_by_gender}
-              dryEyeByAgeGroup={data.dry_eye_by_age_group}
-            />
-          </TabsContent>
+          </div>
+        </header>
 
-          {/* ── Sleep & Stress ──────────────────────────────────── */}
-          <TabsContent value="sleep" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Sleep & Stress Analysis
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Sleep patterns, stress levels, and their association with dry
-                eye disease
-              </p>
-            </div>
-            <SleepStressCharts
-              sleepDurationDistribution={data.sleep_duration_distribution}
-              sleepQualityDistribution={data.sleep_quality_distribution}
-              stressLevelDistribution={data.stress_level_distribution}
-              dryEyeBySleepQuality={data.dry_eye_by_sleep_quality}
-              dryEyeByStressLevel={data.dry_eye_by_stress_level}
-            />
-          </TabsContent>
+        {/* ── Content ─────────────────────────────────────── */}
+        <main className="px-8 py-6 max-w-[1280px]">
+          {/* ── KPI Cards (always visible) ────────────────── */}
+          <section className="mb-6 animate-section">
+            <OverviewCards data={data.summary} />
+          </section>
 
-          {/* ── Lifestyle ───────────────────────────────────────── */}
-          <TabsContent value="lifestyle" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Lifestyle & Habits
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Binary lifestyle factors and their impact on dry eye prevalence
-              </p>
-            </div>
-            <LifestyleCharts
-              lifestyleDistribution={data.lifestyle_distribution}
-              dryEyeByLifestyle={data.dry_eye_by_lifestyle}
-            />
-          </TabsContent>
+          {/* ── Section Header ────────────────────────────── */}
+          <div className="mb-6 animate-tab-content" key={activeSection}>
+            <h2 className="section-heading">{meta.title}</h2>
+            <p className="text-xs text-muted-foreground/60 mt-1 ml-3">
+              {meta.subtitle}
+            </p>
+          </div>
 
-          {/* ── Health Metrics ────────────────────────────────── */}
-          <TabsContent value="health" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Health Metrics
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                BMI, blood pressure, heart rate, daily steps, physical activity,
-                and multi-symptom co-occurrence analysis
-              </p>
-            </div>
-            {extraData && <HealthMetrics data={extraData} />}
-          </TabsContent>
+          {/* ── Section Content ───────────────────────────── */}
+          <div className="animate-tab-content" key={`content-${activeSection}`}>
+            {activeSection === "target" && (
+              <TargetDistribution data={data.target_distribution} />
+            )}
 
-          {/* ── Screen & Eyes ───────────────────────────────────── */}
-          <TabsContent value="eyes" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Screen Time & Eye Symptoms
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Digital habits, blue-light filter usage, and ocular symptom
-                analysis
-              </p>
-            </div>
-            <EyeSymptomsCharts
-              screenTimeDistribution={data.screen_time_distribution}
-              blueLightImpact={data.blue_light_impact}
-              eyeSymptomsDistribution={data.eye_symptoms_distribution}
-              dryEyeByEyeSymptom={data.dry_eye_by_eye_symptom}
-            />
-          </TabsContent>
+            {activeSection === "demographics" && (
+              <DemographicCharts
+                ageDistribution={data.age_distribution}
+                genderDistribution={data.gender_distribution}
+                dryEyeByGender={data.dry_eye_by_gender}
+                dryEyeByAgeGroup={data.dry_eye_by_age_group}
+              />
+            )}
 
-          {/* ── Correlations ────────────────────────────────────── */}
-          <TabsContent value="correlations" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Feature Correlations
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Pearson correlation matrix between key numeric and binary
-                features
-              </p>
-            </div>
-            <CorrelationHeatmap data={data.correlation_matrix} />
-          </TabsContent>
+            {activeSection === "sleep" && (
+              <SleepStressCharts
+                sleepDurationDistribution={data.sleep_duration_distribution}
+                sleepQualityDistribution={data.sleep_quality_distribution}
+                stressLevelDistribution={data.stress_level_distribution}
+                dryEyeBySleepQuality={data.dry_eye_by_sleep_quality}
+                dryEyeByStressLevel={data.dry_eye_by_stress_level}
+              />
+            )}
 
-          {/* ── Data Overview ────────────────────────────────── */}
-          <TabsContent value="overview" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Data Overview & Distribution Comparison
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Summary statistics table, overlaid histograms by class, and
-                box plot quartiles
-              </p>
-            </div>
-            {extraData && (
+            {activeSection === "lifestyle" && (
+              <LifestyleCharts
+                lifestyleDistribution={data.lifestyle_distribution}
+                dryEyeByLifestyle={data.dry_eye_by_lifestyle}
+              />
+            )}
+
+            {activeSection === "health" && extraData && (
+              <HealthMetrics data={extraData} />
+            )}
+
+            {activeSection === "eyes" && (
+              <EyeSymptomsCharts
+                screenTimeDistribution={data.screen_time_distribution}
+                blueLightImpact={data.blue_light_impact}
+                eyeSymptomsDistribution={data.eye_symptoms_distribution}
+                dryEyeByEyeSymptom={data.dry_eye_by_eye_symptom}
+              />
+            )}
+
+            {activeSection === "overview" && extraData && (
               <DataOverview
                 summaryTable={extraData.summary_table}
                 distributionComparison={extraData.distribution_comparison}
                 boxPlots={extraData.box_plots}
               />
             )}
-          </TabsContent>
 
-          {/* ── Feature Importance ────────────────────────────── */}
-          <TabsContent value="importance" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Feature Importance
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Statistical association strength between each feature and dry
-                eye disease (Chi-square / Point-Biserial)
-              </p>
-            </div>
-            <FeatureImportance data={data.feature_importance} />
-          </TabsContent>
-
-          {/* ── ML Models ──────────────────────────────────────── */}
-          <TabsContent value="ml" className="space-y-4">
-            <div>
-              <h2 className="text-base font-bold text-foreground">
-                Machine Learning Model Comparison
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                6 classifiers trained on 80/20 stratified split — compare accuracy,
-                precision, recall, F1, and AUC-ROC
-              </p>
-            </div>
-            {mlData ? (
-              <MLComparison data={mlData} />
-            ) : (
-              <p className="text-sm text-muted-foreground">ML data not available.</p>
+            {activeSection === "correlations" && (
+              <CorrelationHeatmap data={data.correlation_matrix} />
             )}
-          </TabsContent>
-        </Tabs>
 
-        {/* ── Footer ──────────────────────────────────────────── */}
-        <footer className="border-t border-border/40 pt-6 pb-8">
-          <div className="flex items-center justify-between text-xs text-muted-foreground">
-            <p>
-              Dry Eye Disease — EDA Dashboard • Built with Next.js, ShadCN &
-              Recharts
-            </p>
-            <p>Dataset: 20,000 records × 26 features</p>
+            {activeSection === "importance" && (
+              <FeatureImportance data={data.feature_importance} />
+            )}
+
+            {activeSection === "ml" && mlData && (
+              <MLComparison data={mlData} />
+            )}
           </div>
-        </footer>
-      </main>
+
+          {/* ── Footer ────────────────────────────────────── */}
+          <footer className="border-t border-border/20 mt-12 pt-6 pb-8">
+            <div className="flex items-center justify-between text-[10px] text-muted-foreground/40">
+              <p>Dry Eye Disease — EDA Dashboard • Next.js • ShadCN • Recharts</p>
+              <p>20,000 records × 26 features</p>
+            </div>
+          </footer>
+        </main>
+      </div>
     </div>
   );
 }
