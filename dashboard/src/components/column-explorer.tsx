@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -43,11 +43,26 @@ interface ColumnExplorerProps { data: any[] }
 export function ColumnExplorer({ data }: ColumnExplorerProps) {
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [search, setSearch] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [highlightIdx, setHighlightIdx] = useState(-1);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(() => {
     if (!search.trim()) return data;
     return data.filter((c: any) => c.name.toLowerCase().includes(search.toLowerCase()));
   }, [data, search]);
+
+  // Group filtered results by type
+  const grouped = useMemo(() => {
+    const groups: Record<string, any[]> = {};
+    filtered.forEach((c: any) => {
+      const key = c.type;
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(c);
+    });
+    return groups;
+  }, [filtered]);
 
   const col = data[selectedIdx];
   const meta = TYPE_META[col.type] || TYPE_META.categorical;
@@ -56,62 +71,138 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
     const idx = data.findIndex((c: any) => c.name === name);
     if (idx >= 0) setSelectedIdx(idx);
     setSearch("");
+    setIsOpen(false);
+    setHighlightIdx(-1);
+    inputRef.current?.blur();
   };
 
   const goPrev = () => setSelectedIdx((i) => (i > 0 ? i - 1 : data.length - 1));
   const goNext = () => setSelectedIdx((i) => (i < data.length - 1 ? i + 1 : 0));
 
+  // Close on click outside
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+        setSearch("");
+        setHighlightIdx(-1);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  // Keyboard navigation
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setIsOpen(false);
+      setSearch("");
+      setHighlightIdx(-1);
+      inputRef.current?.blur();
+      return;
+    }
+    if (!isOpen) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setHighlightIdx((i) => (i < filtered.length - 1 ? i + 1 : 0));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setHighlightIdx((i) => (i > 0 ? i - 1 : filtered.length - 1));
+    } else if (e.key === "Enter" && highlightIdx >= 0 && highlightIdx < filtered.length) {
+      e.preventDefault();
+      selectColumn(filtered[highlightIdx].name);
+    }
+  };
+
   return (
     <div className="space-y-5">
       {/* ── Column Selector ─────────────────────────────────── */}
-      <Card className="shadow-sm border-border/30">
+      <Card className="shadow-sm border-border/30 overflow-visible">
         <CardContent className="p-4">
           <div className="flex items-center gap-3">
             {/* Prev button */}
             <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
               onClick={goPrev}
               className="shrink-0 w-8 h-8 rounded-lg border border-border/40 bg-white flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-border transition-all"
+              title="Previous column"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><path d="M15 18l-6-6 6-6"/></svg>
             </motion.button>
 
             {/* Search/Select */}
-            <div className="flex-1 relative">
+            <div className="flex-1 relative" ref={dropdownRef}>
               <input
+                ref={inputRef}
                 type="text"
                 placeholder={`🔍 Search columns… (${data.length} total)`}
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                value={isOpen ? search : ""}
+                onChange={(e) => { setSearch(e.target.value); setHighlightIdx(-1); }}
+                onFocus={() => setIsOpen(true)}
+                onKeyDown={handleKeyDown}
                 className="w-full px-3 py-2 rounded-lg border border-border/40 bg-white text-xs focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-300 placeholder:text-muted-foreground/40"
               />
-              {search && (
-                <motion.div
-                  initial={{ opacity: 0, y: 4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="absolute top-full left-0 right-0 mt-1 bg-white border border-border/40 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto"
+              {/* Show current column name when not searching */}
+              {!isOpen && (
+                <button
+                  onClick={() => { setIsOpen(true); inputRef.current?.focus(); }}
+                  className="absolute inset-0 flex items-center px-3 text-xs font-medium text-foreground cursor-text"
                 >
-                  {filtered.length === 0 && (
-                    <p className="text-xs text-muted-foreground p-3">No columns match</p>
-                  )}
-                  {filtered.map((c: any) => (
-                    <button
-                      key={c.name}
-                      onClick={() => selectColumn(c.name)}
-                      className="w-full text-left px-3 py-2 text-xs hover:bg-blue-50 transition-colors flex items-center gap-2"
-                    >
-                      <span>{TYPE_META[c.type]?.emoji}</span>
-                      <span className="font-medium">{c.name}</span>
-                      <Badge variant="secondary" className="text-[8px] ml-auto">{c.type}</Badge>
-                    </button>
-                  ))}
-                </motion.div>
+                  <span className="mr-1.5">{meta.emoji}</span>
+                  {col.name}
+                  <span className="ml-1.5 text-muted-foreground/40 text-[9px]">— click to search</span>
+                </button>
               )}
+
+              {/* Dropdown */}
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 4 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 right-0 mt-1.5 bg-white/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl shadow-black/10 ring-1 ring-black/[0.03] z-[100] max-h-80 overflow-y-auto scroll-smooth"
+                  >
+                    {filtered.length === 0 && (
+                      <p className="text-xs text-muted-foreground p-3 text-center">No columns match &ldquo;{search}&rdquo;</p>
+                    )}
+                    {Object.entries(grouped).map(([type, cols]) => (
+                      <div key={type}>
+                        <p className="text-[9px] font-semibold text-muted-foreground/50 uppercase tracking-wider px-3 pt-2.5 pb-1.5 sticky top-0 bg-white/90 backdrop-blur-sm border-b border-border/10 z-10">
+                          {TYPE_META[type]?.emoji} {type} ({cols.length})
+                        </p>
+                        {cols.map((c: any) => {
+                          const flatIdx = filtered.indexOf(c);
+                          const isHighlighted = flatIdx === highlightIdx;
+                          const isSelected = c.name === col.name;
+                          return (
+                            <button
+                              key={c.name}
+                              onClick={() => selectColumn(c.name)}
+                              onMouseEnter={() => setHighlightIdx(flatIdx)}
+                              className={`w-full text-left px-3 py-2 text-xs transition-all duration-150 flex items-center gap-2
+                                ${isHighlighted ? "bg-blue-50/80" : "hover:bg-slate-50/80"}
+                                ${isSelected ? "font-semibold bg-blue-50/40" : ""}`}
+                            >
+                              <span className="text-[10px]">{TYPE_META[c.type]?.emoji}</span>
+                              <span className={`flex-1 truncate ${isSelected ? "text-blue-600" : ""}`}>{c.name}</span>
+                              {isSelected && <span className="text-blue-500 text-[9px]">✓</span>}
+                              <Badge variant="secondary" className="text-[8px] ml-auto shrink-0">{c.type}</Badge>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Next button */}
             <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
               onClick={goNext}
               className="shrink-0 w-8 h-8 rounded-lg border border-border/40 bg-white flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-border transition-all"
+              title="Next column"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><path d="M9 18l6-6-6-6"/></svg>
             </motion.button>
@@ -139,19 +230,41 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
             <div className="h-1" style={{ background: meta.color }} />
             <CardContent className="p-5">
               <div className="flex items-start justify-between">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2.5">
+                <div className="space-y-2 flex-1">
+                  <div className="flex items-center gap-2.5 flex-wrap">
                     <span className="text-xl">{meta.emoji}</span>
                     <h3 className="text-lg font-bold tracking-tight">{col.name}</h3>
                     <Badge className={`${meta.bg} text-[9px] font-semibold border`}>{col.type}</Badge>
+                    {col.clinical_category && (
+                      <Badge variant="secondary" className="text-[8px] font-medium">{col.clinical_category}</Badge>
+                    )}
+                    {col.unit && (
+                      <span className="text-[9px] text-muted-foreground/50">({col.unit})</span>
+                    )}
                   </div>
-                  <div className="flex gap-4 text-[11px] text-muted-foreground/60">
-                    <span><strong className="text-foreground">{col.unique}</strong> unique values</span>
+
+                  {/* Clinical description */}
+                  {col.description && (
+                    <p className="text-[11px] text-muted-foreground/70 leading-relaxed max-w-2xl">
+                      {col.description}
+                    </p>
+                  )}
+
+                  <div className="flex gap-4 text-[11px] text-muted-foreground/60 flex-wrap">
+                    <span><strong className="text-foreground">{col.unique}</strong> unique</span>
                     <span><strong className="text-foreground">{col.missing}</strong> missing</span>
                     <span><strong className="text-foreground">{col.total.toLocaleString()}</strong> total</span>
+                    {col.clinical_range && (
+                      <span className="text-blue-600/60">📏 {col.clinical_range}</span>
+                    )}
                   </div>
+
+                  {/* Clinical relevance */}
+                  {col.relevance_label && (
+                    <p className="text-[10px] text-muted-foreground/50 italic">{col.relevance_label}</p>
+                  )}
                 </div>
-                <div className="text-right">
+                <div className="text-right shrink-0 ml-4">
                   <p className="text-2xl font-bold" style={{ color: meta.color }}>
                     {col.completeness}%
                   </p>
@@ -182,6 +295,11 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
                 </CardTitle>
                 <p className="text-[10px] text-muted-foreground/50">
                   {col.type === "numeric" ? "Histogram of values" : "Frequency of each category"}
+                  {col.normality && (
+                    <span className={`ml-2 font-semibold ${col.normality.is_normal ? "text-emerald-500" : "text-amber-500"}`}>
+                      • {col.normality.label}
+                    </span>
+                  )}
                 </p>
               </CardHeader>
               <CardContent>
@@ -204,9 +322,9 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
             {/* Dry Eye Rate */}
             <Card className="shadow-sm border-border/30">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-bold">Dry Eye Rate</CardTitle>
+                <CardTitle className="text-sm font-bold">Dry Eye Rate by {col.name}</CardTitle>
                 <p className="text-[10px] text-muted-foreground/50">
-                  How dry eye prevalence changes across {col.name.toLowerCase()} values
+                  Prevalence across values — <span className="text-red-400">red</span> = above avg, <span className="text-emerald-500">green</span> = below
                 </p>
               </CardHeader>
               <CardContent>
@@ -248,6 +366,7 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
                   <StatTile label="Q3" value={col.stats.q3} delay={0.18} />
                   <StatTile label="IQR" value={col.stats.iqr} delay={0.21} />
                   <StatTile label="Skew" value={col.stats.skew} delay={0.24} />
+                  {col.stats.kurtosis !== undefined && <StatTile label="Kurtosis" value={col.stats.kurtosis} delay={0.27} />}
                 </div>
               ) : col.stats ? (
                 <div className="grid grid-cols-3 gap-2">
@@ -257,27 +376,40 @@ export function ColumnExplorer({ data }: ColumnExplorerProps) {
                 </div>
               ) : null}
 
-              {/* Extra: correlation or chi-square */}
               <div className="mt-3 flex gap-2 flex-wrap">
+                {col.effect_size && (
+                  <Badge variant="secondary" className={`text-[9px] ${
+                    col.effect_size.strength === "strong" ? "bg-red-50 text-red-600 border-red-200" :
+                    col.effect_size.strength === "moderate" ? "bg-amber-50 text-amber-600 border-amber-200" :
+                    "bg-slate-50 text-slate-500"
+                  }`}>
+                    Effect: {col.effect_size.strength} ({col.effect_size.type} = {col.effect_size.value})
+                  </Badge>
+                )}
                 {col.correlation && (
-                  <>
                     <Badge variant="secondary" className="text-[9px]">
-                      r = {col.correlation.r} (Point-Biserial)
+                      r = {col.correlation.r} | p = {col.correlation.p < 0.001 ? "<0.001" : col.correlation.p}
                     </Badge>
-                    <Badge variant="secondary" className="text-[9px]">
-                      p = {col.correlation.p < 0.001 ? "<0.001" : col.correlation.p}
-                    </Badge>
-                  </>
                 )}
                 {col.chi_square && (
-                  <>
                     <Badge variant="secondary" className="text-[9px]">
-                      χ² = {col.chi_square.chi2}
+                      χ² = {col.chi_square.chi2} | Cramér&apos;s V = {col.chi_square.cramers_v}
                     </Badge>
-                    <Badge variant="secondary" className="text-[9px]">
-                      Cramér&apos;s V = {col.chi_square.cramers_v}
-                    </Badge>
-                  </>
+                )}
+                {col.normality && (
+                  <Badge variant="secondary" className={`text-[9px] ${col.normality.is_normal ? "bg-emerald-50 text-emerald-600 border-emerald-200" : "bg-amber-50 text-amber-600 border-amber-200"}`}>
+                    Shapiro p={col.normality.shapiro_p < 0.001 ? "<0.001" : col.normality.shapiro_p} — {col.normality.label}
+                  </Badge>
+                )}
+                {col.group_test && (
+                  <Badge variant="secondary" className={`text-[9px] ${col.group_test.significant ? "bg-blue-50 text-blue-600 border-blue-200" : ""}`}>
+                    {col.group_test.test}: {col.group_test.significant ? "Significant ✓" : "Not significant"} (p={col.group_test.p < 0.001 ? "<0.001" : col.group_test.p})
+                  </Badge>
+                )}
+                {col.odds_ratio && (
+                  <Badge variant="secondary" className="text-[9px] bg-violet-50 text-violet-600 border-violet-200">
+                    Odds Ratio: {col.odds_ratio}
+                  </Badge>
                 )}
                 {col.outliers !== undefined && (
                   <Badge variant="secondary" className={`text-[9px] ${col.outliers > 0 ? "bg-amber-50 text-amber-700 border-amber-200" : ""}`}>

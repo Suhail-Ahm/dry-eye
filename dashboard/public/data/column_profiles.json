@@ -6,6 +6,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Patient age at the time of examination. Dry eye prevalence generally increases with age, especially after 50, due to decreased tear production.",
+    "unit": "years",
+    "clinical_range": "18\u201345 (study cohort)",
+    "clinical_category": "Demographics",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "stats": {
       "mean": 31.42,
       "median": 31.0,
@@ -15,7 +21,13 @@
       "q1": 24.0,
       "q3": 39.0,
       "iqr": 15.0,
-      "skew": 0.013
+      "skew": 0.013,
+      "kurtosis": -1.202
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -134,7 +146,18 @@
       "r": 0.0053,
       "p": 0.457149
     },
-    "insight": "Age has a weak positive correlation with dry eye (r=0.005, p=0.4571). Age shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0053,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45671544.5,
+      "p": 0.466242,
+      "significant": false
+    },
+    "insight": "Age has a weak positive correlation with dry eye (r=0.005, p=0.4571). Age shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.4662).",
     "box_plot": {
       "Dry Eye": {
         "min": 18.0,
@@ -161,6 +184,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Biological sex. Women are 2\u00d7 more likely to develop dry eye due to hormonal fluctuations (menopause, pregnancy, oral contraceptives).",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Demographics",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "value_counts": [
       {
         "value": "M",
@@ -193,6 +222,11 @@
       "p": 0.021828,
       "cramers_v": 0.0162
     },
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0162,
+      "strength": "weak"
+    },
     "insight": "Gender has a weak association with dry eye (\u03c7\u00b2=5.3, Cram\u00e9r's V=0.016, p=0.0218). "
   },
   {
@@ -202,6 +236,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Total hours of sleep per night. Insufficient sleep (<6h) reduces tear film stability and increases ocular surface inflammation.",
+    "unit": "hours/night",
+    "clinical_range": "Recommended: 7\u20139h (adults)",
+    "clinical_category": "Sleep",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "stats": {
       "mean": 7.0,
       "median": 7.0,
@@ -211,7 +251,13 @@
       "q1": 5.5,
       "q3": 8.5,
       "iqr": 3.0,
-      "skew": 0.002
+      "skew": 0.002,
+      "kurtosis": -1.195
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -330,7 +376,18 @@
       "r": -0.0009,
       "p": 0.901636
     },
-    "insight": "Sleep duration has a weak negative correlation with dry eye (r=-0.001, p=0.9016). Sleep duration shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0009,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45342140.0,
+      "p": 0.905493,
+      "significant": false
+    },
+    "insight": "Sleep duration has a weak negative correlation with dry eye (r=-0.001, p=0.9016). Sleep duration shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.9055).",
     "box_plot": {
       "Dry Eye": {
         "min": 4.0,
@@ -357,6 +414,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Self-reported sleep quality on a 1\u20135 scale (1=very poor, 5=excellent). Poor sleep quality correlates with increased inflammatory markers affecting the ocular surface.",
+    "unit": "1\u20135 scale",
+    "clinical_range": "\u22653 considered adequate",
+    "clinical_category": "Sleep",
+    "clinical_relevance": "medium",
+    "relevance_label": "\ud83d\udfe1 Moderate clinical evidence",
     "value_counts": [
       {
         "value": "3",
@@ -416,6 +479,11 @@
       "p": 0.8447,
       "cramers_v": 0.0084
     },
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0084,
+      "strength": "weak"
+    },
     "insight": "Sleep quality has a weak association with dry eye (\u03c7\u00b2=1.4, Cram\u00e9r's V=0.008, p=0.8447). "
   },
   {
@@ -425,6 +493,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Self-reported stress on a 1\u20135 scale (1=low, 5=high). Chronic stress triggers cortisol release, which disrupts meibomian gland function and tear composition.",
+    "unit": "1\u20135 scale",
+    "clinical_range": "\u22643 considered manageable",
+    "clinical_category": "Mental Health",
+    "clinical_relevance": "medium",
+    "relevance_label": "\ud83d\udfe1 Moderate clinical evidence",
     "value_counts": [
       {
         "value": "3",
@@ -484,6 +558,11 @@
       "p": 0.585378,
       "cramers_v": 0.0119
     },
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0119,
+      "strength": "weak"
+    },
     "insight": "Stress level has a weak association with dry eye (\u03c7\u00b2=2.8, Cram\u00e9r's V=0.012, p=0.5854). "
   },
   {
@@ -493,6 +572,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Systolic blood pressure \u2014 the upper number. Hypertension can impair microvascular circulation to the lacrimal gland, reducing tear production.",
+    "unit": "mmHg",
+    "clinical_range": "Normal: <120 | Elevated: 120\u2013129 | High: \u2265130",
+    "clinical_category": "Cardiovascular",
+    "clinical_relevance": "low",
+    "relevance_label": "\ud83d\udfe2 Weak or indirect clinical association",
     "stats": {
       "mean": 114.99,
       "median": 115.0,
@@ -502,7 +587,13 @@
       "q1": 102.0,
       "q3": 128.0,
       "iqr": 26.0,
-      "skew": -0.003
+      "skew": -0.003,
+      "kurtosis": -1.202
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -621,7 +712,18 @@
       "r": 0.0073,
       "p": 0.302619
     },
-    "insight": "BP_Systolic has a weak positive correlation with dry eye (r=0.007, p=0.3026). BP_Systolic shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0073,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45790102.0,
+      "p": 0.301541,
+      "significant": false
+    },
+    "insight": "BP_Systolic has a weak positive correlation with dry eye (r=0.007, p=0.3026). BP_Systolic shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.3015).",
     "box_plot": {
       "Dry Eye": {
         "min": 90.0,
@@ -648,6 +750,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Diastolic blood pressure \u2014 the lower number. Elevated diastolic BP reflects increased peripheral resistance, which may affect orbital blood supply.",
+    "unit": "mmHg",
+    "clinical_range": "Normal: <80 | Elevated: 80\u201389 | High: \u226590",
+    "clinical_category": "Cardiovascular",
+    "clinical_relevance": "low",
+    "relevance_label": "\ud83d\udfe2 Weak or indirect clinical association",
     "stats": {
       "mean": 75.0,
       "median": 75.0,
@@ -657,7 +765,13 @@
       "q1": 67.0,
       "q3": 83.0,
       "iqr": 16.0,
-      "skew": -0.003
+      "skew": -0.003,
+      "kurtosis": -1.209
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -776,7 +890,18 @@
       "r": -0.0051,
       "p": 0.475088
     },
-    "insight": "BP_Diastolic has a weak negative correlation with dry eye (r=-0.005, p=0.4751). BP_Diastolic shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0051,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45109654.0,
+      "p": 0.473515,
+      "significant": false
+    },
+    "insight": "BP_Diastolic has a weak negative correlation with dry eye (r=-0.005, p=0.4751). BP_Diastolic shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.4735).",
     "box_plot": {
       "Dry Eye": {
         "min": 60.0,
@@ -803,6 +928,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Resting heart rate. Autonomic nervous system imbalance (reflected in HR) can affect lacrimal gland secretion via parasympathetic pathways.",
+    "unit": "bpm",
+    "clinical_range": "Normal: 60\u2013100 bpm",
+    "clinical_category": "Cardiovascular",
+    "clinical_relevance": "low",
+    "relevance_label": "\ud83d\udfe2 Weak or indirect clinical association",
     "stats": {
       "mean": 79.91,
       "median": 80.0,
@@ -812,7 +943,13 @@
       "q1": 70.0,
       "q3": 90.0,
       "iqr": 20.0,
-      "skew": 0.0
+      "skew": 0.0,
+      "kurtosis": -1.196
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -931,7 +1068,18 @@
       "r": -0.0021,
       "p": 0.76832
     },
-    "insight": "Heart rate has a weak negative correlation with dry eye (r=-0.002, p=0.7683). Heart rate shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0021,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45271298.0,
+      "p": 0.763473,
+      "significant": false
+    },
+    "insight": "Heart rate has a weak negative correlation with dry eye (r=-0.002, p=0.7683). Heart rate shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.7635).",
     "box_plot": {
       "Dry Eye": {
         "min": 60.0,
@@ -958,6 +1106,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Average daily step count. Physical activity improves systemic circulation and has anti-inflammatory effects that may protect the ocular surface.",
+    "unit": "steps/day",
+    "clinical_range": "Recommended: \u22657,500 steps/day",
+    "clinical_category": "Physical Activity",
+    "clinical_relevance": "low",
+    "relevance_label": "\ud83d\udfe2 Weak or indirect clinical association",
     "stats": {
       "mean": 10536.9,
       "median": 11000.0,
@@ -967,7 +1121,13 @@
       "q1": 6000.0,
       "q3": 16000.0,
       "iqr": 10000.0,
-      "skew": -0.008
+      "skew": -0.008,
+      "kurtosis": -1.199
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -1086,7 +1246,18 @@
       "r": 0.0057,
       "p": 0.423154
     },
-    "insight": "Daily steps has a weak positive correlation with dry eye (r=0.006, p=0.4232). Daily steps shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0057,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45699209.0,
+      "p": 0.423557,
+      "significant": false
+    },
+    "insight": "Daily steps has a weak positive correlation with dry eye (r=0.006, p=0.4232). Daily steps shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.4236).",
     "box_plot": {
       "Dry Eye": {
         "min": 1000.0,
@@ -1113,6 +1284,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Self-rated physical activity level (1\u20135 scale). Regular exercise is associated with improved tear film quality through reduced systemic inflammation.",
+    "unit": "1\u20135 scale",
+    "clinical_range": "\u22653 considered active",
+    "clinical_category": "Physical Activity",
+    "clinical_relevance": "low",
+    "relevance_label": "\ud83d\udfe2 Weak or indirect clinical association",
     "stats": {
       "mean": 90.07,
       "median": 91.0,
@@ -1122,7 +1299,13 @@
       "q1": 45.0,
       "q3": 135.0,
       "iqr": 90.0,
-      "skew": -0.006
+      "skew": -0.006,
+      "kurtosis": -1.197
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -1241,7 +1424,18 @@
       "r": -0.0033,
       "p": 0.641869
     },
-    "insight": "Physical activity has a weak negative correlation with dry eye (r=-0.003, p=0.6419). Physical activity shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0033,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45206961.5,
+      "p": 0.641043,
+      "significant": false
+    },
+    "insight": "Physical activity has a weak negative correlation with dry eye (r=-0.003, p=0.6419). Physical activity shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.6410).",
     "box_plot": {
       "Dry Eye": {
         "min": 0.0,
@@ -1268,6 +1462,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Patient height in centimeters. Used to derive BMI. Not directly linked to dry eye but part of the metabolic profile.",
+    "unit": "cm",
+    "clinical_range": "Varies by population",
+    "clinical_category": "Anthropometrics",
+    "clinical_relevance": "none",
+    "relevance_label": "\u26aa No direct clinical link \u2014 auxiliary variable",
     "stats": {
       "mean": 174.87,
       "median": 175.0,
@@ -1277,7 +1477,13 @@
       "q1": 162.0,
       "q3": 188.0,
       "iqr": 26.0,
-      "skew": 0.014
+      "skew": 0.014,
+      "kurtosis": -1.211
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -1396,7 +1602,18 @@
       "r": -0.0064,
       "p": 0.362677
     },
-    "insight": "Height has a weak negative correlation with dry eye (r=-0.006, p=0.3627). Height shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0064,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45032773.5,
+      "p": 0.3606,
+      "significant": false
+    },
+    "insight": "Height has a weak negative correlation with dry eye (r=-0.006, p=0.3627). Height shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.3606).",
     "box_plot": {
       "Dry Eye": {
         "min": 150.0,
@@ -1423,6 +1640,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Patient weight in kilograms. Obesity (high weight) is linked to chronic low-grade inflammation that can exacerbate dry eye symptoms.",
+    "unit": "kg",
+    "clinical_range": "Varies by height/age",
+    "clinical_category": "Anthropometrics",
+    "clinical_relevance": "low",
+    "relevance_label": "\ud83d\udfe2 Weak or indirect clinical association",
     "stats": {
       "mean": 74.89,
       "median": 75.0,
@@ -1432,7 +1655,13 @@
       "q1": 62.0,
       "q3": 88.0,
       "iqr": 26.0,
-      "skew": 0.008
+      "skew": 0.008,
+      "kurtosis": -1.209
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -1551,7 +1780,18 @@
       "r": 0.0025,
       "p": 0.728973
     },
-    "insight": "Weight has a weak positive correlation with dry eye (r=0.002, p=0.7290). Weight shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0025,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45524949.0,
+      "p": 0.72534,
+      "significant": false
+    },
+    "insight": "Weight has a weak positive correlation with dry eye (r=0.002, p=0.7290). Weight shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.7253).",
     "box_plot": {
       "Dry Eye": {
         "min": 50.0,
@@ -1578,6 +1818,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Body Mass Index (Weight/Height\u00b2). Obese individuals (BMI \u226530) have higher rates of meibomian gland dysfunction due to metabolic syndrome-related inflammation.",
+    "unit": "kg/m\u00b2",
+    "clinical_range": "Underweight: <18.5 | Normal: 18.5\u201324.9 | Overweight: 25\u201329.9 | Obese: \u226530",
+    "clinical_category": "Anthropometrics",
+    "clinical_relevance": "medium",
+    "relevance_label": "\ud83d\udfe1 Moderate clinical evidence",
     "stats": {
       "mean": 25.02,
       "median": 24.3,
@@ -1587,7 +1833,13 @@
       "q1": 20.1,
       "q3": 29.3,
       "iqr": 9.2,
-      "skew": 0.473
+      "skew": 0.473,
+      "kurtosis": -0.349
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 50,
     "distribution": [
@@ -1706,7 +1958,18 @@
       "r": 0.0072,
       "p": 0.310608
     },
-    "insight": "BMI has a weak positive correlation with dry eye (r=0.007, p=0.3106). BMI shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0072,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 45655218.5,
+      "p": 0.492601,
+      "significant": false
+    },
+    "insight": "BMI has a weak positive correlation with dry eye (r=0.007, p=0.3106). BMI shows minimal statistical association with dry eye. Mann-Whitney U test: not significant (p=0.4926).",
     "box_plot": {
       "Dry Eye": {
         "min": 12.5,
@@ -1733,6 +1996,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Diagnosed sleep disorder (Y/N). Sleep apnea and insomnia are associated with a 2\u20133\u00d7 increase in dry eye risk through floppy eyelid syndrome and reduced REM-phase tear film maintenance.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Sleep",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "value_counts": [
       {
         "value": "N",
@@ -1765,7 +2034,13 @@
       "p": 0.722154,
       "cramers_v": 0.0025
     },
-    "insight": "Sleep disorder has a weak association with dry eye (\u03c7\u00b2=0.1, Cram\u00e9r's V=0.003, p=0.7222). Patients with sleep disorder have a higher dry eye rate (65.3% vs 65.1%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0025,
+      "strength": "weak"
+    },
+    "odds_ratio": 1.011,
+    "insight": "Sleep disorder has a weak association with dry eye (\u03c7\u00b2=0.1, Cram\u00e9r's V=0.003, p=0.7222). Patients with sleep disorder have a higher dry eye rate (65.3% vs 65.1%). Odds ratio: 1.01."
   },
   {
     "name": "Wake up during night",
@@ -1774,6 +2049,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Frequent nighttime awakening (Y/N). Disrupted sleep architecture reduces the nocturnal tear film regeneration cycle, leaving eyes more vulnerable in the morning.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Sleep",
+    "clinical_relevance": "medium",
+    "relevance_label": "\ud83d\udfe1 Moderate clinical evidence",
     "value_counts": [
       {
         "value": "N",
@@ -1806,7 +2087,13 @@
       "p": 0.976317,
       "cramers_v": 0.0002
     },
-    "insight": "Wake up during night has a weak association with dry eye (\u03c7\u00b2=0.0, Cram\u00e9r's V=0.000, p=0.9763). Patients with wake up during night have a lower dry eye rate (65.2% vs 65.2%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0002,
+      "strength": "weak"
+    },
+    "odds_ratio": 0.999,
+    "insight": "Wake up during night has a weak association with dry eye (\u03c7\u00b2=0.0, Cram\u00e9r's V=0.000, p=0.9763). Patients with wake up during night have a lower dry eye rate (65.2% vs 65.2%). Odds ratio: 1.00."
   },
   {
     "name": "Feel sleepy during day",
@@ -1815,6 +2102,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Daytime drowsiness (Y/N). A proxy for sleep insufficiency \u2014 correlates with reduced blink rate and incomplete blinks during drowsy periods.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Sleep",
+    "clinical_relevance": "medium",
+    "relevance_label": "\ud83d\udfe1 Moderate clinical evidence",
     "value_counts": [
       {
         "value": "N",
@@ -1847,7 +2140,13 @@
       "p": 0.513064,
       "cramers_v": 0.0046
     },
-    "insight": "Feel sleepy during day has a weak association with dry eye (\u03c7\u00b2=0.4, Cram\u00e9r's V=0.005, p=0.5131). Patients with feel sleepy during day have a higher dry eye rate (65.4% vs 65.0%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0046,
+      "strength": "weak"
+    },
+    "odds_ratio": 1.02,
+    "insight": "Feel sleepy during day has a weak association with dry eye (\u03c7\u00b2=0.4, Cram\u00e9r's V=0.005, p=0.5131). Patients with feel sleepy during day have a higher dry eye rate (65.4% vs 65.0%). Odds ratio: 1.02."
   },
   {
     "name": "Caffeine consumption",
@@ -1856,6 +2155,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Regular caffeine intake (Y/N). Caffeine has a mild diuretic effect but studies show it may paradoxically increase tear secretion via adenosine A2 receptor stimulation.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Lifestyle",
+    "clinical_relevance": "low",
+    "relevance_label": "\ud83d\udfe2 Weak or indirect clinical association",
     "value_counts": [
       {
         "value": "Y",
@@ -1888,7 +2193,13 @@
       "p": 0.699864,
       "cramers_v": 0.0027
     },
-    "insight": "Caffeine consumption has a weak association with dry eye (\u03c7\u00b2=0.1, Cram\u00e9r's V=0.003, p=0.6999). Patients with caffeine consumption have a higher dry eye rate (65.3% vs 65.0%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0027,
+      "strength": "weak"
+    },
+    "odds_ratio": 1.012,
+    "insight": "Caffeine consumption has a weak association with dry eye (\u03c7\u00b2=0.1, Cram\u00e9r's V=0.003, p=0.6999). Patients with caffeine consumption have a higher dry eye rate (65.3% vs 65.0%). Odds ratio: 1.01."
   },
   {
     "name": "Alcohol consumption",
@@ -1897,6 +2208,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Regular alcohol consumption (Y/N). Alcohol is a vasodilator and diuretic \u2014 chronic use can cause systemic dehydration affecting tear osmolarity and volume.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Lifestyle",
+    "clinical_relevance": "medium",
+    "relevance_label": "\ud83d\udfe1 Moderate clinical evidence",
     "value_counts": [
       {
         "value": "Y",
@@ -1929,7 +2246,13 @@
       "p": 0.114717,
       "cramers_v": 0.0112
     },
-    "insight": "Alcohol consumption has a weak association with dry eye (\u03c7\u00b2=2.5, Cram\u00e9r's V=0.011, p=0.1147). Patients with alcohol consumption have a higher dry eye rate (65.7% vs 64.6%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0112,
+      "strength": "weak"
+    },
+    "odds_ratio": 1.048,
+    "insight": "Alcohol consumption has a weak association with dry eye (\u03c7\u00b2=2.5, Cram\u00e9r's V=0.011, p=0.1147). Patients with alcohol consumption have a higher dry eye rate (65.7% vs 64.6%). Odds ratio: 1.05."
   },
   {
     "name": "Smoking",
@@ -1938,6 +2261,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Active smoker (Y/N). Cigarette smoke is a direct ocular surface irritant and contains >7,000 chemicals that destabilize the tear film lipid layer.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Lifestyle",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "value_counts": [
       {
         "value": "N",
@@ -1970,7 +2299,13 @@
       "p": 0.477669,
       "cramers_v": 0.005
     },
-    "insight": "Smoking has a weak association with dry eye (\u03c7\u00b2=0.5, Cram\u00e9r's V=0.005, p=0.4777). Patients with smoking have a lower dry eye rate (64.9% vs 65.4%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.005,
+      "strength": "weak"
+    },
+    "odds_ratio": 0.979,
+    "insight": "Smoking has a weak association with dry eye (\u03c7\u00b2=0.5, Cram\u00e9r's V=0.005, p=0.4777). Patients with smoking have a lower dry eye rate (64.9% vs 65.4%). Odds ratio: 0.98."
   },
   {
     "name": "Medical issue",
@@ -1979,6 +2314,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Pre-existing medical condition (Y/N). Conditions like diabetes, rheumatoid arthritis, and thyroid disease are strongly linked to dry eye through inflammatory and autoimmune pathways.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Medical History",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "value_counts": [
       {
         "value": "N",
@@ -2011,7 +2352,13 @@
       "p": 0.890326,
       "cramers_v": 0.001
     },
-    "insight": "Medical issue has a weak association with dry eye (\u03c7\u00b2=0.0, Cram\u00e9r's V=0.001, p=0.8903). Patients with medical issue have a lower dry eye rate (65.1% vs 65.2%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.001,
+      "strength": "weak"
+    },
+    "odds_ratio": 0.995,
+    "insight": "Medical issue has a weak association with dry eye (\u03c7\u00b2=0.0, Cram\u00e9r's V=0.001, p=0.8903). Patients with medical issue have a lower dry eye rate (65.1% vs 65.2%). Odds ratio: 0.99."
   },
   {
     "name": "Ongoing medication",
@@ -2020,6 +2367,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Currently taking medication (Y/N). Many medications (antihistamines, antidepressants, beta-blockers, diuretics) have anticholinergic effects that reduce tear secretion.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Medical History",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "value_counts": [
       {
         "value": "Y",
@@ -2052,7 +2405,13 @@
       "p": 0.563621,
       "cramers_v": 0.0041
     },
-    "insight": "Ongoing medication has a weak association with dry eye (\u03c7\u00b2=0.3, Cram\u00e9r's V=0.004, p=0.5636). Patients with ongoing medication have a lower dry eye rate (65.0% vs 65.4%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0041,
+      "strength": "weak"
+    },
+    "odds_ratio": 0.983,
+    "insight": "Ongoing medication has a weak association with dry eye (\u03c7\u00b2=0.3, Cram\u00e9r's V=0.004, p=0.5636). Patients with ongoing medication have a lower dry eye rate (65.0% vs 65.4%). Odds ratio: 0.98."
   },
   {
     "name": "Smart device before bed",
@@ -2061,6 +2420,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Uses smartphone/tablet within 1 hour of sleep (Y/N). Blue light from screens suppresses melatonin production and concentrated screen fixation reduces blink rate by 60%.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Digital Habits",
+    "clinical_relevance": "medium",
+    "relevance_label": "\ud83d\udfe1 Moderate clinical evidence",
     "value_counts": [
       {
         "value": "Y",
@@ -2093,7 +2458,13 @@
       "p": 0.061633,
       "cramers_v": 0.0132
     },
-    "insight": "Smart device before bed has a weak association with dry eye (\u03c7\u00b2=3.5, Cram\u00e9r's V=0.013, p=0.0616). Patients with smart device before bed have a lower dry eye rate (64.6% vs 65.8%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0132,
+      "strength": "weak"
+    },
+    "odds_ratio": 0.946,
+    "insight": "Smart device before bed has a weak association with dry eye (\u03c7\u00b2=3.5, Cram\u00e9r's V=0.013, p=0.0616). Patients with smart device before bed have a lower dry eye rate (64.6% vs 65.8%). Odds ratio: 0.95."
   },
   {
     "name": "Average screen time",
@@ -2102,6 +2473,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Daily hours spent on digital screens. Prolonged screen use reduces blink rate from ~15/min to ~5/min, causing incomplete meibomian oil spread and rapid tear evaporation.",
+    "unit": "hours/day",
+    "clinical_range": "Low risk: <4h | Moderate: 4\u20138h | High risk: >8h",
+    "clinical_category": "Digital Habits",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "stats": {
       "mean": 5.52,
       "median": 5.5,
@@ -2111,7 +2488,13 @@
       "q1": 3.3,
       "q3": 7.8,
       "iqr": 4.5,
-      "skew": -0.009
+      "skew": -0.009,
+      "kurtosis": -1.203
+    },
+    "normality": {
+      "shapiro_p": 0.0,
+      "is_normal": false,
+      "label": "Non-normal distribution"
     },
     "outliers": 0,
     "distribution": [
@@ -2230,7 +2613,18 @@
       "r": 0.0225,
       "p": 0.001469
     },
-    "insight": "Average screen time has a weak positive correlation with dry eye (r=0.022, p=0.0015). Average screen time shows minimal association with dry eye.",
+    "effect_size": {
+      "type": "Point-Biserial r",
+      "value": 0.0225,
+      "strength": "weak"
+    },
+    "group_test": {
+      "test": "Mann-Whitney U",
+      "statistic": 46627880.0,
+      "p": 0.001438,
+      "significant": true
+    },
+    "insight": "Average screen time has a weak positive correlation with dry eye (r=0.022, p=0.0015). Average screen time shows minimal statistical association with dry eye. Mann-Whitney U test: significant (p=0.0014).",
     "box_plot": {
       "Dry Eye": {
         "min": 1.0,
@@ -2257,6 +2651,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Uses blue-light filtering glasses or screen filter (Y/N). Reduces high-energy visible (HEV) light that can cause retinal photoxicity and ocular surface inflammation.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Digital Habits",
+    "clinical_relevance": "medium",
+    "relevance_label": "\ud83d\udfe1 Moderate clinical evidence",
     "value_counts": [
       {
         "value": "N",
@@ -2289,7 +2689,13 @@
       "p": 0.486716,
       "cramers_v": 0.0049
     },
-    "insight": "Blue-light filter has a weak association with dry eye (\u03c7\u00b2=0.5, Cram\u00e9r's V=0.005, p=0.4867). Patients with blue-light filter have a higher dry eye rate (65.4% vs 64.9%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.0049,
+      "strength": "weak"
+    },
+    "odds_ratio": 1.021,
+    "insight": "Blue-light filter has a weak association with dry eye (\u03c7\u00b2=0.5, Cram\u00e9r's V=0.005, p=0.4867). Patients with blue-light filter have a higher dry eye rate (65.4% vs 64.9%). Odds ratio: 1.02."
   },
   {
     "name": "Discomfort Eye-strain",
@@ -2298,6 +2704,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Experiences eye strain or discomfort (Y/N). A primary symptom of dry eye \u2014 caused by corneal nerve exposure when tear film breaks up. Often worst in the afternoon.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Symptoms",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "value_counts": [
       {
         "value": "Y",
@@ -2330,7 +2742,13 @@
       "p": 0.0,
       "cramers_v": 0.1098
     },
-    "insight": "Discomfort Eye-strain has a moderate association with dry eye (\u03c7\u00b2=241.0, Cram\u00e9r's V=0.110, p=<0.001). Patients with discomfort eye-strain have a higher dry eye rate (70.4% vs 59.9%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.1098,
+      "strength": "moderate"
+    },
+    "odds_ratio": 1.59,
+    "insight": "Discomfort Eye-strain has a moderate association with dry eye (\u03c7\u00b2=241.0, Cram\u00e9r's V=0.110, p=<0.001). Patients with discomfort eye-strain have a higher dry eye rate (70.4% vs 59.9%). Odds ratio: 1.59."
   },
   {
     "name": "Redness in eye",
@@ -2339,6 +2757,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Visible redness/bloodshot eyes (Y/N). Conjunctival hyperemia occurs when the tear film fails to protect the ocular surface, triggering vasodilation of conjunctival blood vessels.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Symptoms",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "value_counts": [
       {
         "value": "N",
@@ -2371,7 +2795,13 @@
       "p": 0.0,
       "cramers_v": 0.1033
     },
-    "insight": "Redness in eye has a moderate association with dry eye (\u03c7\u00b2=213.4, Cram\u00e9r's V=0.103, p=<0.001). Patients with redness in eye have a higher dry eye rate (70.2% vs 60.3%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.1033,
+      "strength": "moderate"
+    },
+    "odds_ratio": 1.548,
+    "insight": "Redness in eye has a moderate association with dry eye (\u03c7\u00b2=213.4, Cram\u00e9r's V=0.103, p=<0.001). Patients with redness in eye have a higher dry eye rate (70.2% vs 60.3%). Odds ratio: 1.55."
   },
   {
     "name": "Itchiness/Irritation in eye",
@@ -2380,6 +2810,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "Eye itchiness or irritation (Y/N). Can indicate allergic conjunctivitis co-occurring with dry eye \u2014 a common overlap. Inflammation releases histamine causing the itch reflex.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Symptoms",
+    "clinical_relevance": "high",
+    "relevance_label": "\ud83d\udd34 Strongly associated with dry eye in clinical literature",
     "value_counts": [
       {
         "value": "N",
@@ -2412,7 +2848,13 @@
       "p": 0.0,
       "cramers_v": 0.1012
     },
-    "insight": "Itchiness/Irritation in eye has a moderate association with dry eye (\u03c7\u00b2=204.8, Cram\u00e9r's V=0.101, p=<0.001). Patients with itchiness/irritation in eye have a higher dry eye rate (70.0% vs 60.4%)."
+    "effect_size": {
+      "type": "Cram\u00e9r's V",
+      "value": 0.1012,
+      "strength": "moderate"
+    },
+    "odds_ratio": 1.533,
+    "insight": "Itchiness/Irritation in eye has a moderate association with dry eye (\u03c7\u00b2=204.8, Cram\u00e9r's V=0.101, p=<0.001). Patients with itchiness/irritation in eye have a higher dry eye rate (70.0% vs 60.4%). Odds ratio: 1.53."
   },
   {
     "name": "Dry Eye Disease",
@@ -2421,6 +2863,12 @@
     "missing": 0,
     "total": 20000,
     "completeness": 100.0,
+    "description": "The target variable \u2014 diagnosed Dry Eye Disease (Y/N). Defined as a multifactorial disease of the ocular surface characterized by tear film instability, hyperosmolarity, and neurosensory abnormalities.",
+    "unit": null,
+    "clinical_range": null,
+    "clinical_category": "Target",
+    "clinical_relevance": "target",
+    "relevance_label": "\ud83c\udfaf This is the prediction target",
     "value_counts": [
       {
         "value": "Y",
